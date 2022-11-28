@@ -1,0 +1,52 @@
+—————————————————————————-------------------------------------------------------------
+I/ BASE DE DONNÉE : MYSQL mot de passe BLOQUÉ !
+—————————————————————————-------------------------------------------------------------
+
+a) Fermer XAMPP
+——————————————————————————————————————————————————————————————————————
+b) Ouvrir le fichier : « config.inc.php »
+   Qui se trouve dans :
+ > Applications > XAMPP > xamppfiles > phpmyadmin >  config.inc.php
+——————————————————————————————————————————————————————————————————————
+3) Et modifier ces 2 lignes dans le fichier : config.inc.php
+   Et mettre : root en USER et MDP
+
+   $cfg['Servers'][$i]['user'] = 'root';
+   $cfg['Servers'][$i]['password'] = 'root';
+—————————————————————————-------------------------------------------------------------
+
+
+
+
+
+
+
+—————————————————————————-------------------------------------------------------------
+II/ CONNEXION EN PHP PROCÉDURAL via un objet PDO
+—————————————————————————-------------------------------------------------------------
+
+a) Ouvrir XAMPP
+——————————————————————————————————————————————————————————————————————
+b) cliquez sur le bouton : Configure
+——————————————————————————————————————————————————————————————————————
+c) cliquez sur le bouton : Open Conf File
+   Le fichier : httpd.conf
+——————————————————————————————————————————————————————————————————————
+d) Rechercher le mot : localhost
+——————————————————————————————————————————————————————————————————————
+e) Remplacer le mot : localhost par 127.0.0.1
+   La ligne ressemble à ça : ServerName 127.0.0.1
+——————————————————————————————————————————————————————————————————————
+f) Dans mon fichier de connexion, écrire l'adresse de mon objet $pdo comme ceci :
+——————————————————————————————————————————————————————————————————————
+
+<?php
+
+$pdo = new PDO('mysql:host=127.0.0.1;charset=utf8;dbname=blogpoo','root', 'root', array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC // mode de fetch par défaut : FETCH_ASSOC => array(), tableau associatif
+)
+);
+
+?>
+—————————————————————————-------------------------------------------------------------

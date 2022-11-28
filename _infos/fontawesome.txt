@@ -1,0 +1,17 @@
+Pour connecter mon site à la base de données ou au serveur de FONAWESOME,
+je dois d'abord insérer le lien CDN de fontawesome sur la page HTML de mon site.
+
+Lien JavaScript :
+1) Je me connecte à mon compte fontawesome : Sign In
+2) Sur la page : mon compte, descendre jusqu'à trouver le bouton : mamage Kit.
+3) Nom de mon kit gratuit : Kit_01_FontAwesome_Val_2022
+4) A droite (en tout petit grisé), cliquez sur : "Open"
+5) Dans le menu : cliquez sur : "How to Use"
+6) Copier le script dans le <head> pour JavaScript
+<script src="https://kit.fontawesome.com/de663da828.js" crossorigin="anonymous"></script>
+
+
+Lien CDN :
+1) Aller sur : https://cdnjs.com/libraries/font-awesome
+2) Copier le premier URL : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css
+3) Le coller dans le <head> du fichier : index.html

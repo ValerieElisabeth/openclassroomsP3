@@ -1,0 +1,13 @@
+{
+  "name": "elisabeth_valerie_3_ohmyfood_141122",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/style.scss:css/style.css compressed",
+    "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}

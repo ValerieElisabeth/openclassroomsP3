@@ -1,0 +1,162 @@
+/*
+/////////////////////////////////////////////////////////
+///////////////////// GLOBAL CSS ////////////////////////
+/////////////////////////////////////////////////////////
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
+  max-width: 320px; /* Largeur max du site pour du mobile first */
+  margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: $color-black;
+}
+
+/*
+/////////////////////////////////////////////////////////
+///////////////////// LES FONTES ////////////////////////
+/////////////////////////////////////////////////////////
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Shrikhand", cursive;
+}
+
+/*
+///////////////////// < ul > /////////////////////////////
+*/
+
+ul,
+li {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+///////////////////// < a > //////////////////////////////
+*/
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  color: $color-black;
+}
+
+button {
+  border-style: none;
+  background-color: transparent;
+}
+/*
+/////////////////////////////////////////////////////////
+////////////////////// CONTAINERS ///////////////////////
+/////////////////////////////////////////////////////////
+*/
+
+.container {
+  max-width: 90%;
+  margin: auto;
+  /*
+  MARGES
+  HautBas = 0px.
+  DroiteGauche = auto.
+  */
+  &--mt-mb {
+    //container--mt-mb
+    max-width: 90%;
+    margin: 20px auto;
+    /*
+    MARGES
+    HautBas = 20px.
+    DroiteGauche = auto.
+    */
+  }
+}
+
+.container-03 {
+  margin: 25px auto;
+  /*
+  MARGES
+  HautBas = 25px.
+  DroiteGauche = auto.
+  */
+}
+
+.container-04 {
+  max-width: 100%;
+  margin: 0px;
+}
+
+/*
+/////////////////////////////////////////////////////////
+///////////////////////// FLEXBOX ///////////////////////
+/////////////////////////////////////////////////////////
+*/
+
+.d-flex {
+  display: flex;
+
+  &-fw {
+    //flex flex-fw
+    flex-wrap: wrap;
+  }
+
+  &-fd-c {
+    //flex flex-fd-c
+    flex-direction: column;
+  }
+
+  &-ai-b {
+    //flex flex-ai-b
+    align-items: baseline;
+  }
+
+  &-ai-c {
+    //flex flex-ai-c
+    align-items: center;
+  }
+
+  &-ai-s {
+    //flex flex-ai-s
+    align-items: stretch;
+  }
+
+  &-jc-c {
+    //flex flex-jc-c
+    justify-content: center;
+  }
+
+  &-jc-sa {
+    //flex flex-jc-sa
+    justify-content: space-around;
+  }
+
+  &-jc-sb {
+    //flex flex-jc-sb
+    justify-content: space-between;
+  }
+}

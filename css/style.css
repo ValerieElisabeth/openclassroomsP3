@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/*
+LES UTILITAIRES :
+Ils doivent être à placer en premier dans le code
+pour le bon fonctionnement de SASS
+
+UTILS */
+/*
+/////////////////////////////////////////////////////////
+/////////////////////// VARIABLES ///////////////////////
+/////////////////////////////////////////////////////////
+*/
+/*
+/////////////////////////////////////////////////////////
+//////////////////////// MIXINS /////////////////////////
+/////////////////////////////////////////////////////////
+*/
+/* GLOBAL CSS */
+/*
+/////////////////////////////////////////////////////////
+///////////////////// GLOBAL CSS ////////////////////////
+/////////////////////////////////////////////////////////
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
+  max-width: 320px; /* Largeur max du site pour du mobile first */
+  margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: black;
+}
+
+/*
+/////////////////////////////////////////////////////////
+///////////////////// LES FONTES ////////////////////////
+/////////////////////////////////////////////////////////
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Shrikhand", cursive;
+}
+
+/*
+///////////////////// < ul > /////////////////////////////
+*/
+ul,
+li {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+///////////////////// < a > //////////////////////////////
+*/
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+button {
+  border-style: none;
+  background-color: transparent;
+}
+
+/*
+/////////////////////////////////////////////////////////
+////////////////////// CONTAINERS ///////////////////////
+/////////////////////////////////////////////////////////
+*/
+.container {
+  max-width: 90%;
+  margin: auto;
+  /*
+  MARGES
+  HautBas = 0px.
+  DroiteGauche = auto.
+  */
+}
+.container--mt-mb {
+  max-width: 90%;
+  margin: 20px auto;
+  /*
+  MARGES
+  HautBas = 20px.
+  DroiteGauche = auto.
+  */
+}
+
+.container-03 {
+  margin: 25px auto;
+  /*
+  MARGES
+  HautBas = 25px.
+  DroiteGauche = auto.
+  */
+}
+
+.container-04 {
+  max-width: 100%;
+  margin: 0px;
+}
+
+/*
+/////////////////////////////////////////////////////////
+///////////////////////// FLEXBOX ///////////////////////
+/////////////////////////////////////////////////////////
+*/
+.d-flex {
+  display: flex;
+}
+.d-flex-fw {
+  flex-wrap: wrap;
+}
+.d-flex-fd-c {
+  flex-direction: column;
+}
+.d-flex-ai-b {
+  align-items: baseline;
+}
+.d-flex-ai-c {
+  align-items: center;
+}
+.d-flex-ai-s {
+  align-items: stretch;
+}
+.d-flex-jc-c {
+  justify-content: center;
+}
+.d-flex-jc-sa {
+  justify-content: space-around;
+}
+.d-flex-jc-sb {
+  justify-content: space-between;
+}
+
+/* CONPONENTS */
+/* MISES EN PAGES : LAYOUT : SASS */
+/* LES PAGES QUI COMPOSENT LE SITE : SASS */
+
+/*# sourceMappingURL=style.css.map */

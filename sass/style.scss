@@ -1,0 +1,26 @@
+/*
+LES UTILITAIRES :
+Ils doivent être à placer en premier dans le code
+pour le bon fonctionnement de SASS
+
+UTILS */
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+
+/* GLOBAL CSS */
+@import "./base/global";
+
+/* CONPONENTS */
+@import "./components/buttons";
+
+/* MISES EN PAGES : LAYOUT : SASS */
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/nav";
+@import "./layout/footer";
+
+/* LES PAGES QUI COMPOSENT LE SITE : SASS */
+@import "./pages/home";
+@import "./pages/contact";
+@import "./pages/cgv";
