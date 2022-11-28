@@ -1,3 +1,4 @@
+LUNDI 28 NOVEMBRE 2022
 ///////////////////////////////////////////////////////////////////////////////////////
 
                         (1) C O M M A N D E S : GIT
@@ -180,6 +181,8 @@ LISTE DES COMMANDES GIT détaillées :
 08. Push les commits locaux sur GitHub
             | git push origin
             | git push -u origin main
+
+            ATTENTION ! ! ! Pour le premier "git push" ne surtout pas oublier d'ajouter : "-u origin main"
 -------------------------------------------------------------------
 
 09. AU PREMIER COMMIT normalement, il faut... (Tapez la CMD (git) fournit par le terminal)

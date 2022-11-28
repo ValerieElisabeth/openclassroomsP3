@@ -1,3 +1,4 @@
+LUNDI 28 NOVEMBRE 2022
 ///////////////////////////////////////////////////////////////////////////////////////
 
                         (1) INSTALLATION DE SASS (MAC)
@@ -225,9 +226,10 @@ A) COMMANDE DE COMPILATION du (STYLE.scss) VERS_LE (STYLE.css)
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 b) WATCH : Permet de voir les changements en direct.
+ATTENTION ! ! ! ! à bien pointer sur le fichier : "style.css" surtout si ce fichier est dans un dossier css.
 
-            |sass --watch style.scss:style.css
-           (2) |sass --watch sass/style.scss:sass/style.css
+              |sass --watch style.scss:style.css
+           (2)|sass --watch sass/style.scss:css/style.css
 
 
 /////////////////////////////////////////////////////////////////////////////////////

@@ -53,6 +53,7 @@ h4,
 h5,
 h6 {
   font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 /*
@@ -159,6 +160,10 @@ button {
 
 /* CONPONENTS */
 /* MISES EN PAGES : LAYOUT : SASS */
+img {
+  width: 100%;
+}
+
 /* LES PAGES QUI COMPOSENT LE SITE : SASS */
 
 /*# sourceMappingURL=style.css.map */
