@@ -13,7 +13,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
-  max-width: 320px; /* Largeur max du site pour du mobile first */
+  max-width: 375px; /* Largeur max du site pour du mobile first */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -97,7 +97,7 @@ img {
     //container--01
     margin: 20px auto;
     padding: 0px 20px;
-    border: solid 1px rgb(0, 255, 0); //TEST
+    // border: solid 1px rgb(0, 255, 0); //TEST
 
     // MARGES : HautBas = 20px / DroiteGauche = auto.
     // PADDING : HautBas = 0px / DroiteGauche = 20px.
@@ -113,7 +113,7 @@ img {
   &__03 {
     //container--03
     padding: 30px 20px;
-    border: solid 1px rgb(11, 198, 255); //TEST
+    // border: solid 1px rgb(11, 198, 255); //TEST
     // MARGES : container__01.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
   }

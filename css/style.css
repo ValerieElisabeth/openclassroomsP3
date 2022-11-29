@@ -30,7 +30,7 @@ UTILS */
 html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
-  max-width: 320px; /* Largeur max du site pour du mobile first */
+  max-width: 375px; /* Largeur max du site pour du mobile first */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -96,14 +96,12 @@ img {
 .container__01 {
   margin: 20px auto;
   padding: 0px 20px;
-  border: solid 1px rgb(0, 255, 0);
 }
 .container__02 {
   padding: 40px 20px;
 }
 .container__03 {
   padding: 30px 20px;
-  border: solid 1px rgb(11, 198, 255);
 }
 
 /*
@@ -168,12 +166,14 @@ img {
 .box-title button {
   max-width: 100%;
   height: 50px;
+  cursor: pointer;
   border-radius: 50px;
   margin: 10px auto;
   padding: 0px 20px;
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 5px 2px 5px #8c8c8c;
 }
 
 .box-function,
@@ -182,8 +182,42 @@ img {
   padding-bottom: 30px;
 }
 
-.test {
-  border: solid 2px red;
+.nav {
+  margin-left: 10px;
+}
+.nav__btn {
+  position: relative;
+  max-width: 100%;
+  height: 70px;
+  margin: 20px auto;
+  padding: 0px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 5px #cccccc;
+}
+.nav__btn__number {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-weight: 300;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 20px;
+  left: -15px;
+}
+.nav__btn__icon {
+  margin-right: 20px;
+  margin-left: 15px;
+  font-size: 20px;
+  color: gray;
+}
+.nav__btn:hover {
+  background-color: #e4d5f6;
+}
+.nav__btn:hover .nav__btn__icon {
+  color: #9356dc;
 }
 
 footer {
