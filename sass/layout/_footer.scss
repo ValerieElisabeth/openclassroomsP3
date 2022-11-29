@@ -1,0 +1,14 @@
+footer {
+  background: lighten($color-black, 20%);
+  & a,
+  i {
+    color: $color-white;
+  }
+  // footer__logo
+  & svg {
+    width: 40%;
+    & path {
+      fill: $color-white;
+    }
+  }
+}

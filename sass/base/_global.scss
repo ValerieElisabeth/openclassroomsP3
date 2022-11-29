@@ -122,42 +122,42 @@ button {
   display: flex;
 
   &-fw {
-    //flex flex-fw
+    //flex d-flex-fw
     flex-wrap: wrap;
   }
 
   &-fd-c {
-    //flex flex-fd-c
+    //flex d-flex-fd-c
     flex-direction: column;
   }
 
   &-ai-b {
-    //flex flex-ai-b
+    //flex d-flex-ai-b
     align-items: baseline;
   }
 
   &-ai-c {
-    //flex flex-ai-c
+    //flex d-flex-ai-c
     align-items: center;
   }
 
   &-ai-s {
-    //flex flex-ai-s
+    //flex d-flex-ai-s
     align-items: stretch;
   }
 
   &-jc-c {
-    //flex flex-jc-c
+    //flex d-flex-jc-c
     justify-content: center;
   }
 
   &-jc-sa {
-    //flex flex-jc-sa
+    //flex d-flex-jc-sa
     justify-content: space-around;
   }
 
   &-jc-sb {
-    //flex flex-jc-sb
+    //flex d-flex-jc-sb
     justify-content: space-between;
   }
 }

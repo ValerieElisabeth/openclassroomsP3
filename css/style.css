@@ -164,6 +164,36 @@ img {
   width: 100%;
 }
 
+.red {
+  border: solid 1px red;
+}
+
+.yellow {
+  border: solid 1px rgb(255, 221, 0);
+}
+
+.blue {
+  border: solid 1px rgb(0, 179, 255);
+}
+
+nav {
+  text-align: center;
+}
+
+footer {
+  background: #333333;
+}
+footer a,
+footer i {
+  color: white;
+}
+footer svg {
+  width: 40%;
+}
+footer svg path {
+  fill: white;
+}
+
 /* LES PAGES QUI COMPOSENT LE SITE : SASS */
 
 /*# sourceMappingURL=style.css.map */
