@@ -102,7 +102,6 @@ img {
 .container {
   padding-top: 20px;
   margin: auto;
-  border: solid 2px rgb(255, 5, 138);
 }
 .container__01 {
   margin: 20px auto;
@@ -153,7 +152,20 @@ img {
 /* CONPONENTS */
 /* MISES EN PAGES : LAYOUT : SASS */
 header {
+  background-color: #fafafa;
+}
+
+.box-logo {
+  width: 50%;
+}
+.box-logo__location {
+  margin-top: 10px;
+  width: 100%;
+  box-shadow: inset 0px 5px 5px -2px #b3b3b3;
   background-color: #e6e6e6;
+}
+.box-logo__location__icon {
+  margin-right: 20px;
 }
 
 nav {

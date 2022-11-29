@@ -1,5 +1,18 @@
+header {
+  background-color: lighten($color-black, 98%);
+}
 
-header{
+.box-logo {
+  width: 50%;
+
+  &__location {
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: inset 0px 5px 5px -2px lighten($color-black, 70%);
     background-color: lighten($color-black, 90%);
-   
+
+    &__icon {
+      margin-right: 20px;
+    }
+  }
 }
