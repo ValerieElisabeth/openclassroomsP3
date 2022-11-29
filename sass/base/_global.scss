@@ -20,15 +20,12 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Shrikhand", cursive;
   font-family: "Roboto", sans-serif;
   color: $color-black;
 }
 
-/*
-/////////////////////////////////////////////////////////
-///////////////////// LES FONTES ////////////////////////
-/////////////////////////////////////////////////////////
-*/
+///////////////////// < titles > ////////////////////////
 
 h1,
 h2,
@@ -36,13 +33,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Shrikhand", cursive;
-  font-family: "Roboto", sans-serif;
+  margin: 5px auto;
+  padding: 0;
+}
+///////////////////////// < p > ////////////////////////
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
-/*
-///////////////////// < ul > /////////////////////////////
-*/
+///////////////////// < ul > ///////////////////////////
 
 ul,
 li {
@@ -53,7 +54,7 @@ li {
 }
 
 /*
-///////////////////// < a > //////////////////////////////
+/////////////////÷÷//// < a > //////////////////////////
 */
 
 a,
@@ -68,28 +69,27 @@ a {
   color: $color-black;
 }
 
+///////////////////// < button > ///////////////////////
+
 button {
   border-style: none;
   background-color: transparent;
 }
-/*
-///////////////////// < img > //////////////////////////////
-*/
+
+///////////////////// < img > //////////////////////////
 
 img {
   width: 100%;
 }
 
-/*
 /////////////////////////////////////////////////////////
 ////////////////////// CONTAINERS ///////////////////////
 /////////////////////////////////////////////////////////
-*/
 
 .container {
   padding-top: 20px;
   margin: auto;
-  // border: solid 2px rgb(255, 5, 138); //TEST
+  // border: solid 1px rgb(255, 5, 138); //TEST
 
   // MARGES : HautBas = 0px / DroiteGauche = auto.
 
@@ -97,7 +97,7 @@ img {
     //container--01
     margin: 20px auto;
     padding: 0px 20px;
-    border: solid 2px rgb(0, 255, 0); //TEST
+    border: solid 1px rgb(0, 255, 0); //TEST
 
     // MARGES : HautBas = 20px / DroiteGauche = auto.
     // PADDING : HautBas = 0px / DroiteGauche = 20px.
@@ -111,9 +111,9 @@ img {
   }
 
   &__03 {
-    //container--02
+    //container--03
     padding: 30px 20px;
-    border: solid 2px rgb(255, 11, 198); //TEST
+    border: solid 1px rgb(11, 198, 255); //TEST
     // MARGES : container__01.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
   }
