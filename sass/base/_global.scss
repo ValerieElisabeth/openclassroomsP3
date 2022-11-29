@@ -73,43 +73,50 @@ button {
   background-color: transparent;
 }
 /*
+///////////////////// < img > //////////////////////////////
+*/
+
+img {
+  width: 100%;
+}
+
+/*
 /////////////////////////////////////////////////////////
 ////////////////////// CONTAINERS ///////////////////////
 /////////////////////////////////////////////////////////
 */
 
 .container {
-  max-width: 90%;
+  padding-top: 20px;
   margin: auto;
-  /*
-  MARGES
-  HautBas = 0px.
-  DroiteGauche = auto.
-  */
-  &--mt-mb {
-    //container--mt-mb
-    max-width: 90%;
+  border: solid 2px rgb(255, 5, 138); //TEST
+
+  // MARGES : HautBas = 0px / DroiteGauche = auto.
+
+  &__01 {
+    //container--01
     margin: 20px auto;
-    /*
-    MARGES
-    HautBas = 20px.
-    DroiteGauche = auto.
-    */
+    padding: 0px 20px;
+    border: solid 2px rgb(0, 255, 0); //TEST
+
+    // MARGES : HautBas = 20px / DroiteGauche = auto.
+    // PADDING : HautBas = 0px / DroiteGauche = 20px.
   }
-}
 
-.container-03 {
-  margin: 25px auto;
-  /*
-  MARGES
-  HautBas = 25px.
-  DroiteGauche = auto.
-  */
-}
+  &__02 {
+    //container--02
+    padding: 40px 20px;
+    // MARGES : container__01.
+    // PADDING : HautBas = 40px / DroiteGauche = 20px.
+  }
 
-.container-04 {
-  max-width: 100%;
-  margin: 0px;
+  &__03 {
+    //container--02
+    padding: 30px 20px;
+    border: solid 2px rgb(255, 11, 198); //TEST
+    // MARGES : container__01.
+    // PADDING : HautBas = 40px / DroiteGauche = 20px.
+  }
 }
 
 /*

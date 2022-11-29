@@ -88,41 +88,33 @@ button {
 }
 
 /*
+///////////////////// < img > //////////////////////////////
+*/
+img {
+  width: 100%;
+}
+
+/*
 /////////////////////////////////////////////////////////
 ////////////////////// CONTAINERS ///////////////////////
 /////////////////////////////////////////////////////////
 */
 .container {
-  max-width: 90%;
+  padding-top: 20px;
   margin: auto;
-  /*
-  MARGES
-  HautBas = 0px.
-  DroiteGauche = auto.
-  */
+  border: solid 2px rgb(255, 5, 138);
 }
-.container--mt-mb {
-  max-width: 90%;
+.container__01 {
   margin: 20px auto;
-  /*
-  MARGES
-  HautBas = 20px.
-  DroiteGauche = auto.
-  */
+  padding: 0px 20px;
+  border: solid 2px rgb(0, 255, 0);
 }
-
-.container-03 {
-  margin: 25px auto;
-  /*
-  MARGES
-  HautBas = 25px.
-  DroiteGauche = auto.
-  */
+.container__02 {
+  padding: 40px 20px;
 }
-
-.container-04 {
-  max-width: 100%;
-  margin: 0px;
+.container__03 {
+  padding: 30px 20px;
+  border: solid 2px rgb(255, 11, 198);
 }
 
 /*
@@ -160,20 +152,8 @@ button {
 
 /* CONPONENTS */
 /* MISES EN PAGES : LAYOUT : SASS */
-img {
-  width: 100%;
-}
-
-.red {
-  border: solid 1px red;
-}
-
-.yellow {
-  border: solid 1px rgb(255, 221, 0);
-}
-
-.blue {
-  border: solid 1px rgb(0, 179, 255);
+header {
+  background-color: #e6e6e6;
 }
 
 nav {

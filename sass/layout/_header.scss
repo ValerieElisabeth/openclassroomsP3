@@ -1,16 +1,5 @@
-img {
-  width: 100%;
+
+header{
+    background-color: lighten($color-black, 90%);
+   
 }
-
-.red {
-  border: solid 1px red;
-}
-
-.yellow {
-    border: solid 1px rgb(255, 221, 0);
-  }
-
-  .blue{
-    border: solid 1px rgb(0, 179, 255);
-
-  }
