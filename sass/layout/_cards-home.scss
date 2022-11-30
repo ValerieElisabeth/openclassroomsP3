@@ -1,16 +1,7 @@
-.test {
-  border: solid 0.5px rgb(88, 255, 4);
-}
-
-main {
-  background-color: lighten($color-black, 97%);
-}
-
 .card {
   // border: solid 0.5px rgb(255, 4, 4); //TEST
   background-color: $color-white;
   @include shadow-box-size(5px, 80%);
-
   border-radius: 20px;
   position: relative;
 
@@ -25,7 +16,6 @@ main {
 
   &__new {
     @include shadow-box-size(3px, 30%);
-
     position: absolute;
     height: 30px;
     padding: 0px 10px 0px 10px;
@@ -34,11 +24,16 @@ main {
     background-color: $color-03;
     color: darken($color-03, 35%);
   }
+
   &__title {
     // position des textes à l'intérieur de la div TITRE.
+
     padding: 20px;
     height: 75px;
-    // border: solid 0.5px rgb(88, 255, 4); //TEST
+
+    & h3 {
+      margin-bottom: 5px;
+    }
 
     &__i {
       max-width: 100%;
@@ -48,28 +43,31 @@ main {
   }
 } // fin card
 
-.checkbox-heart-container {
-  position: absolute;
-  left: 285px;
-  bottom: 25px;
-  // transform: translate(-50%, -50%);
-}
+// .checkbox-heart-container {
+//   position: absolute;
+//   left: 285px;
+//   bottom: 25px;
+//   // transform: translate(-50%, -50%);
+// }
 
-.heart-anim {
-  & i {
-    width: 100%;
-    font-size: 25px;
-    color: $color-black;
-  }
-}
+// .toggle-content {
+//   & i {
+//     width: 100%;
+//     font-size: 25px;
+//     color: $color-black;
+//     background: red;
+//   }
+// }
 
-input[type="checkbox"] {
-  // display: none;
-}
+// input[type="checkbox"] {
+//   // display: none;
+// }
 
-input[type="checkbox"]:checked + .heart-anim {
-  color: $color-black;
-}
+// input[type="checkbox"]:checked + .toggle-content {
+//   background: rgb(0, 106, 255);
+// }
+
+////////////////////////////////////////////////////////////////////////////////////
 
 // .before,
 // .after {

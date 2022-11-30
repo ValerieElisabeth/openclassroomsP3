@@ -15,31 +15,27 @@
 }
 
 .box-title {
+  // TITRE : RÉSERVEZ LE MENU QUI VOUS CONVIENT
   background-color: lighten($color-black, 97%);
   text-align: center;
+  padding-top: 50px;
 
   & p {
     margin: 10px auto;
     font-size: 16px;
     font-weight: 100;
+
     color: lighten($color-black, 50%);
   }
-  & button {
-    max-width: 100%;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 50px;
-    margin: 10px auto;
-    padding: 0px 20px;
-    font-size: 16px;
-    color: $color-white;
-    background: linear-gradient($color-02, $color-01);
-    @include shadow-box-size(5px, 80%);
-}
+
+  &.btn {
+    @include btn-shadow(25px);
+  }
 }
 
-.box-function,
-.box-title {
-  padding-top: 30px;
+.box-function {
+  // SECTION : FONCTIONNEMENT
   padding-bottom: 30px;
+  padding-top: 40px;
+  // border: solid 1px rgb(0, 213, 255); //TEST
 }

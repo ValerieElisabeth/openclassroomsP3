@@ -1,0 +1,10 @@
+.header-menu {
+  height: 65px;
+  margin: auto 20px;
+
+  & i {
+    font-size: 25px;
+    margin-right: 65px;
+    // border: solid 2px rgb(119, 255, 0); //TEST
+  }
+}

@@ -15,12 +15,14 @@ UTILS */
 @import "./components/buttons";
 
 /* MISES EN PAGES : LAYOUT : SASS */
-@import "./layout/header";
-@import "./layout/main";
 @import "./layout/nav";
 @import "./layout/footer";
+@import "./layout/main-home";
+@import "./layout/main-menu";
+@import "./layout/header-home";
+@import "./layout/header-menu";
+@import "./layout/cards-home";
 
 /* LES PAGES QUI COMPOSENT LE SITE : SASS */
 @import "./pages/home";
-@import "./pages/contact";
-@import "./pages/cgv";
+@import "./pages/menu";

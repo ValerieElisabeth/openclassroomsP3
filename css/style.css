@@ -10,11 +10,6 @@ UTILS */
 /////////////////////// VARIABLES ///////////////////////
 /////////////////////////////////////////////////////////
 */
-/*
-/////////////////////////////////////////////////////////
-//////////////////////// MIXINS /////////////////////////
-/////////////////////////////////////////////////////////
-*/
 /* GLOBAL CSS */
 /*
 /////////////////////////////////////////////////////////
@@ -48,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 5px auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -128,6 +123,9 @@ img {
 .d-flex-ai-s {
   align-items: stretch;
 }
+.d-flex-ai-fe {
+  align-items: flex-end;
+}
 .d-flex-jc-c {
   justify-content: center;
 }
@@ -139,107 +137,20 @@ img {
 }
 
 /* CONPONENTS */
-/* MISES EN PAGES : LAYOUT : SASS */
-.box-logo {
-  width: 50%;
-}
-.box-logo__location {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  box-shadow: inset 0px 5px 5px -2px #b3b3b3;
-  background-color: #e6e6e6;
-}
-.box-logo__location__icon {
-  margin-right: 20px;
-}
-
-.box-title {
-  background-color: #f7f7f7;
-  text-align: center;
-}
-.box-title p {
-  margin: 10px auto;
-  font-size: 16px;
-  font-weight: 100;
-  color: gray;
-}
-.box-title button {
+.btn {
   max-width: 100%;
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 10px auto;
-  padding: 0px 20px;
+  margin: 20px auto 50px auto;
+  padding: 0px 0px;
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
   box-shadow: 5px 5px 5px #cccccc;
 }
 
-.box-function,
-.box-title {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.test {
-  border: solid 0.5px rgb(88, 255, 4);
-}
-
-main {
-  background-color: #f7f7f7;
-}
-
-.card {
-  background-color: white;
-  box-shadow: 5px 5px 5px #cccccc;
-  border-radius: 20px;
-  position: relative;
-}
-.card__mb {
-  margin-bottom: 30px;
-}
-.card img {
-  height: 174px;
-  border-radius: 20px 20px 0px 0px;
-}
-.card__new {
-  box-shadow: 3px 3px 3px #4d4d4d;
-  position: absolute;
-  height: 30px;
-  padding: 0px 10px 0px 10px;
-  top: 20px;
-  right: 20px;
-  background-color: #99e2d0;
-  color: #2c9c81;
-}
-.card__title {
-  padding: 20px;
-  height: 75px;
-}
-.card__title__i {
-  max-width: 100%;
-  font-size: 30px;
-  color: black;
-}
-
-.checkbox-heart-container {
-  position: absolute;
-  left: 285px;
-  bottom: 25px;
-}
-
-.heart-anim i {
-  width: 100%;
-  font-size: 25px;
-  color: black;
-}
-
-input[type=checkbox]:checked + .heart-anim {
-  color: black;
-}
-
+/* MISES EN PAGES : LAYOUT : SASS */
 .nav {
   margin-left: 10px;
 }
@@ -297,6 +208,162 @@ input[type=checkbox]:checked + .heart-anim {
 }
 .footer-box__txt-color {
   margin: 12px;
+}
+
+.main-home {
+  background-color: #f7f7f7;
+}
+.main-home h2 {
+  margin-bottom: 20px;
+}
+
+.main-menus {
+  background-color: #f2f2f2;
+}
+.main-menus__bg-top {
+  position: absolute;
+  width: 375px;
+  padding-top: 30px;
+  margin-bottom: 70px;
+  border-radius: 30px 30px 0px 0px;
+  background-color: #f2f2f2;
+}
+.main-menus h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+}
+.main-menus.btn {
+  max-width: 100%;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 20px auto 50px auto;
+  padding: 0px 40px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 5px 5px 5px #cccccc;
+}
+
+.first-part-food {
+  padding: 0px 10px;
+}
+.first-part-food h2 {
+  font-size: 20px;
+  font-weight: 300;
+  width: 14%;
+  height: 38px;
+  border-bottom: solid 4px #99e2d0;
+  padding-top: 5px;
+  margin: 30px 0px 20px 10px;
+}
+.first-part-food h3 {
+  font-size: 17px;
+  margin-bottom: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.first-part-food__box {
+  box-shadow: 4px 4px 4px #cccccc;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+}
+.first-part-food__box__price {
+  font-weight: 500;
+}
+
+.mb-menu {
+  margin-bottom: 15px;
+}
+
+.box-logo {
+  width: 50%;
+}
+.box-logo__location {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  box-shadow: inset 0px 5px 5px -2px #b3b3b3;
+  background-color: #e6e6e6;
+}
+.box-logo__location__icon {
+  margin-right: 20px;
+}
+
+.box-title {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding-top: 50px;
+}
+.box-title p {
+  margin: 10px auto;
+  font-size: 16px;
+  font-weight: 100;
+  color: gray;
+}
+.box-title.btn {
+  max-width: 100%;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 20px auto 50px auto;
+  padding: 0px 25px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 5px 5px 5px #cccccc;
+}
+
+.box-function {
+  padding-bottom: 30px;
+  padding-top: 40px;
+}
+
+.header-menu {
+  height: 65px;
+  margin: auto 20px;
+}
+.header-menu i {
+  font-size: 25px;
+  margin-right: 65px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 5px 5px 5px #cccccc;
+  border-radius: 20px;
+  position: relative;
+}
+.card__mb {
+  margin-bottom: 30px;
+}
+.card img {
+  height: 174px;
+  border-radius: 20px 20px 0px 0px;
+}
+.card__new {
+  box-shadow: 3px 3px 3px #4d4d4d;
+  position: absolute;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  top: 20px;
+  right: 20px;
+  background-color: #99e2d0;
+  color: #2c9c81;
+}
+.card__title {
+  padding: 20px;
+  height: 75px;
+}
+.card__title h3 {
+  margin-bottom: 5px;
+}
+.card__title__i {
+  max-width: 100%;
+  font-size: 30px;
+  color: black;
 }
 
 /* LES PAGES QUI COMPOSENT LE SITE : SASS */
