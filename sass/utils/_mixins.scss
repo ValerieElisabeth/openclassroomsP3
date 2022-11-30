@@ -4,4 +4,9 @@
 /////////////////////////////////////////////////////////
 */
 
+$pourcentage: (0%);
+$size: (0px); // Les 3 valeurs necessaires à la propriété box-shadow
 
+@mixin shadow-box-size($size, $pourcentage) {
+  box-shadow: $size $size $size lighten($color-black, $pourcentage);
+}

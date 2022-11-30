@@ -34,8 +34,8 @@
     font-size: 16px;
     color: $color-white;
     background: linear-gradient($color-02, $color-01);
-    box-shadow: 5px 2px 5px lighten($color-black, 55%);
-  }
+    @include shadow-box-size(5px, 80%);
+}
 }
 
 .box-function,

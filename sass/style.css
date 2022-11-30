@@ -174,7 +174,7 @@ img {
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
-  box-shadow: 5px 2px 5px #8c8c8c;
+  box-shadow: 5px 5px 5px #cccccc;
 }
 
 .box-function,
@@ -193,6 +193,7 @@ main {
 
 .card {
   background-color: white;
+  box-shadow: 5px 5px 5px #cccccc;
   border-radius: 20px;
   position: relative;
 }
@@ -204,6 +205,7 @@ main {
   border-radius: 20px 20px 0px 0px;
 }
 .card__new {
+  box-shadow: 3px 3px 3px #4d4d4d;
   position: absolute;
   height: 30px;
   padding: 0px 10px 0px 10px;
