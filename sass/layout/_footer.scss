@@ -1,14 +1,29 @@
-footer {
+.footer-box {
   background: lighten($color-black, 20%);
+
   & a,
   i {
+    // Couleur des icônes et des liens
     color: $color-white;
   }
-  // footer__logo
+
+  & i {
+    // Marges à droite des icônes
+    margin-right: 5px;
+  }
+
   & svg {
+    // logo SVG
+  margin-bottom: 15px;
     width: 40%;
     & path {
       fill: $color-white;
     }
+  }
+
+  &__txt-color {
+    // les 4 lignes de textes
+    margin: 12px;
+    // border: solid 0.2px rgb(82, 80, 80); // TEST
   }
 }

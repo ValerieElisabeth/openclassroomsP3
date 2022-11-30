@@ -278,18 +278,25 @@ input[type=checkbox]:checked + .heart-anim {
   color: #9356dc;
 }
 
-footer {
+.footer-box {
   background: #333333;
 }
-footer a,
-footer i {
+.footer-box a,
+.footer-box i {
   color: white;
 }
-footer svg {
+.footer-box i {
+  margin-right: 5px;
+}
+.footer-box svg {
+  margin-bottom: 15px;
   width: 40%;
 }
-footer svg path {
+.footer-box svg path {
   fill: white;
+}
+.footer-box__txt-color {
+  margin: 12px;
 }
 
 /* LES PAGES QUI COMPOSENT LE SITE : SASS */
