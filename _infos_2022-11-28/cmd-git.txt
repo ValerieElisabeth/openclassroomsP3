@@ -76,6 +76,9 @@ LISTE DES COMMANDES GIT détaillées :
         d) COLLER cette ligne de CDM dans le terminal de VS CODE.
         ELLE RESSEMBLE à la ligne, ci-dessous :
             | git remote add origin https://github.com/ValerieElisabeth/adepa.git
+            | git remote add origin https://github.com/ValerieElisabeth/openclassroomsP3.git
+
+
 
 ----------------------------------------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°

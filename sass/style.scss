@@ -2,27 +2,30 @@
 LES UTILITAIRES :
 Ils doivent être à placer en premier dans le code
 pour le bon fonctionnement de SASS
+*/
 
-UTILS */
-@import "./utils/variables";
-@import "./utils/functions";
-@import "./utils/mixins";
+/* 1 - UTILS */
+@import "./1-utils/variables";
+@import "./1-utils/functions";
+@import "./1-utils/mixins";
 
-/* GLOBAL CSS */
-@import "./base/global";
+/* 2 - GLOBAL CSS */
+@import "./2-global/global";
 
 /* CONPONENTS */
-@import "./components/buttons";
+@import "./3-components/_buttons";
 
 /* MISES EN PAGES : LAYOUT : SASS */
-@import "./layout/nav";
-@import "./layout/footer";
-@import "./layout/main-home";
-@import "./layout/main-menu";
-@import "./layout/header-home";
-@import "./layout/header-menu";
-@import "./layout/cards-home";
+@import "./4-layout/footer";
 
-/* LES PAGES QUI COMPOSENT LE SITE : SASS */
-@import "./pages/home";
-@import "./pages/menu";
+
+// STYLES UNIQUEMENT LIÉS À LA PAGE MENU
+@import "./4-layout/a-header-home";
+@import "./4-layout/a-nav-home";
+@import "./4-layout/a-main-home";
+@import "./4-layout/a-cards-home";
+
+
+// STYLES UNIQUEMENT LIÉS À LA PAGE MENU
+@import "./4-layout/b-main-menu";
+@import "./4-layout/b-header-menu";

@@ -6,6 +6,7 @@
   "scripts": {
     "sass": "sass --watch sass/style.scss:css/style.css compressed",
     "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed"
+    
   },
   "author": "",
   "license": "ISC",
