@@ -162,7 +162,7 @@ img {
   box-shadow: 5px 3px 5px #999999;
 }
 
-/* MISES EN PAGES : LAYOUT : SASS */
+/* MISES EN PAGES COMMUNES : LAYOUT : SASS */
 .footer-box {
   background: #333333;
 }
@@ -173,15 +173,15 @@ img {
 .footer-box i {
   margin-right: 5px;
 }
-.footer-box svg {
+.footer-box__logo {
+  font-size: 20px;
+  color: white;
+  font-family: "Shrikhand", cursive;
   margin-bottom: 15px;
-  width: 40%;
-}
-.footer-box svg path {
-  fill: white;
+  letter-spacing: 1px;
 }
 .footer-box__txt-color {
-  margin: 12px;
+  margin: 12px auto;
 }
 
 .main-menus {
@@ -289,7 +289,6 @@ img {
 .header-menu i {
   font-size: 25px;
   margin-right: 65px;
-  border: solid 2px rgb(217, 255, 0);
 }
 
 /*# sourceMappingURL=b-menu-01.css.map */

@@ -13,8 +13,11 @@ pour le bon fonctionnement de SASS
 @import "./2-global/global";
 
 /* CONPONENTS */
-@import "./3-components/_buttons";
+@import "./3-components/buttons";
 
-/* MISES EN PAGES : LAYOUT : SASS */
+
+/* MISES EN PAGES COMMUNES : LAYOUT : SASS */
 @import "./4-layout/footer";
+@import "./4-layout/logo";
+
 

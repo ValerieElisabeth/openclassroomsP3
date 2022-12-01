@@ -12,18 +12,18 @@
     margin-right: 5px;
   }
 
-  & svg {
-    // logo SVG
-  margin-bottom: 15px;
-    width: 40%;
-    & path {
-      fill: $color-white;
-    }
+  &__logo {
+    // logo
+    font-size: 20px;
+    color: $color-white;
+    font-family: "Shrikhand", cursive;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
   }
 
   &__txt-color {
     // les 4 lignes de textes
-    margin: 12px;
+    margin: 12px auto;
     // border: solid 0.2px rgb(82, 80, 80); // TEST
   }
 }

@@ -1,6 +1,5 @@
-.box-logo {
-  width: 50%;
-
+.box-logo-home {
+    // SECTION : localisation & Ville
   &__location {
     margin-top: 10px;
     width: 100%;
@@ -24,15 +23,12 @@
     margin: 10px auto;
     font-size: 16px;
     font-weight: 100;
-
     color: lighten($color-black, 50%);
   }
 
   &.btn {
-    
     @include btn-shadow(25px);
-      // border: solid 1px rgb(0, 213, 255); //TEST
-
+    // border: solid 1px rgb(0, 213, 255); //TEST
   }
 }
 
