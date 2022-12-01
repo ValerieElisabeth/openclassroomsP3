@@ -1,7 +1,7 @@
 @import "../style.scss"; // Lien qui récupère le fichiers qui regroupe de tous les styles généraux.
 
 // STYLES UNIQUEMENT LIÉS À LA PAGE MENU
-@import "./4-layout/a-header-home";
-@import "./4-layout/a-nav-home";
-@import "./4-layout/a-main-home";
-@import "./4-layout/a-cards-home";
+@import "../4-layout/a-header-home";
+@import "../4-layout/a-nav-home";
+@import "../4-layout/a-main-home";
+@import "../4-layout/a-cards-home";

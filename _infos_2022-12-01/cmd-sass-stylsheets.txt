@@ -1,0 +1,81 @@
+JEUDI 01 DÉCEMBRE 2022
+///////////////////////////////////////////////////////////////////////////////////////
+
+                    OPTIMISER LE TEMPS DE CHARGEMENT DU SITE
+                EN SÉPARANT & CRÉANT DIFFÉRENTES FEUILLES DE STYLE
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+A) Aller dans le fichier : "package.json"
+Et sous la ligne "sass" ajouter une nouvelle demande de génération de feuilles de styles "sass-stylsheets"
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+{
+  "name": "elisabeth_valerie_3_ohmyfood_141122",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/style.scss: css/style.css compressed",
+    "sass-stylsheets": "sass --watch sass/5-pages/_a-home.scss:./css/a-home.css sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css",
+    "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+B) ATTENION ! ! ! de bien faire attention à la syntaxe et à l'ORTH de nos fichiers et dossiers.
+Sinon, le terminal renverra systématiquement une erreur.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+C) LANCER SASS avec le commande suivante : (avec le nom de la FEUILLE DE STYLE tout juste créee)
+            |npm run (nom_de_la_feuille de style)
+            |npm run sass-stylsheets
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+D) Ne pas oublier de modifier, dans nos fichiers HTML les liens qui pointaients vers "style.css"
+afin qu'ils pointent désormais vers les nouvelles feuilles de styles.
+
+Avant       |<link rel="stylesheet" href="/css/style.css" />
+Après       |<link rel="stylesheet" href="/css/b-menu-01.css" />
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+------------------------------------------------------------------------------------
+            VOIR TOUTES CES NOUVELLES FEUILLE DE STYLE EN DIRECT
+------------------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////////
+Exemple à 1 feuille de style : "style.css"
+
+           (1) |sass sass/style.scss:css/style.css
+           (2) |sass --watch sass/style.scss:css/style.css
+           
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+FEUILLE DE STYLE (seule) : "a-home.css"
+
+
+       (1) |sass sass/5-pages/_a-home.scss:./css/a-home.css
+       (2) |sass --watch sass/5-pages/_a-home.scss:./css/a-home.css
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+FEUILLE DE STYLE (seule) : "b-menu-01.css"
+
+       (1) |sass sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css
+       (2) |sass --watch sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+CMD à inscrire dans le terminal, afin de demander à SASS de rendre la compitation
+de ces 3 feuilles de styles visibles en direct.
+
+       (1) |sass sass/style.scss:css/style.css sass/5-pages/_a-home.scss:./css/a-home.css sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css
+       (2) |sass --watch sass/style.scss:css/style.css sass/5-pages/_a-home.scss:./css/a-home.css sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+

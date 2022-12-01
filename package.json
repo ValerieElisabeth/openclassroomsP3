@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch sass/style.scss:css/style.css compressed",
+    "sass": "sass --watch sass/style.scss: css/style.css compressed",
+    "sass-stylsheets": "sass --watch sass/5-pages/_a-home.scss:./css/a-home.css sass/5-pages/_b-menu-01.scss:./css/b-menu-01.css",
     "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed"
-    
   },
   "author": "",
   "license": "ISC",

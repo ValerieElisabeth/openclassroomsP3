@@ -184,4 +184,112 @@ img {
   margin: 12px;
 }
 
-/*# sourceMappingURL=style.css.map */
+.main-menus {
+  background-color: #f2f2f2;
+}
+.main-menus__bg-top {
+  position: absolute;
+  width: 375px;
+  padding-top: 30px;
+  margin-bottom: 70px;
+  border-radius: 30px 30px 0px 0px;
+  background-color: #f2f2f2;
+}
+.main-menus h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 28px;
+}
+.main-menus.btn {
+  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  Il permet d'ajuster la largeur des boutons, en fonction
+  de la charte graphique grâce à la variable : ($padding)  */
+  padding: 0px 40px;
+  max-width: 100%;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 20px auto 40px auto;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 5px 3px 5px #999999;
+}
+
+.section-food {
+  padding: 0px 10px;
+}
+.section-food__h2 {
+  font-size: 20px;
+  font-weight: 300;
+  width: 14%;
+  height: 38px;
+  border-bottom: solid 4px #99e2d0;
+  padding-top: 5px;
+  margin: 30px 0px 20px 10px;
+  color: gray;
+}
+.section-food__h3 {
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+.section-food__p {
+  color: #737373;
+}
+.section-food__simple-box {
+  box-shadow: 5px 3px 5px #999999;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+}
+.section-food__simple-box__price {
+  font-weight: 800;
+}
+
+.mb-menu {
+  margin-bottom: 15px;
+}
+
+.test2 {
+  border: solid 2px rgb(255, 0, 255);
+}
+
+.test3 {
+  border: solid 1px rgb(0, 217, 255);
+}
+
+.test4 {
+  border: solid 2px rgb(255, 196, 0);
+}
+
+.check-box-card {
+  position: absolute;
+  width: 290px;
+  border-radius: 20px 0px 0px 20px;
+}
+.check-box-card__click-box {
+  position: relative;
+  width: 60px;
+  height: 70px;
+  border-radius: 0px 20px 20px 0px;
+  left: 290px;
+  box-shadow: 5px 3px 5px #999999;
+  background-color: #99e2d0;
+}
+.check-box-card__click-box i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+.header-menu {
+  height: 65px;
+  margin: auto 20px;
+}
+.header-menu i {
+  font-size: 25px;
+  margin-right: 65px;
+  border: solid 2px rgb(217, 255, 0);
+}
+
+/*# sourceMappingURL=b-menu-01.css.map */

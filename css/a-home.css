@@ -184,4 +184,131 @@ img {
   margin: 12px;
 }
 
-/*# sourceMappingURL=style.css.map */
+.box-logo {
+  width: 50%;
+}
+.box-logo__location {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  box-shadow: inset 0px 5px 5px -2px #b3b3b3;
+  background-color: #e6e6e6;
+}
+.box-logo__location__icon {
+  margin-right: 20px;
+}
+
+.box-title {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding-top: 50px;
+}
+.box-title p {
+  margin: 10px auto;
+  font-size: 16px;
+  font-weight: 100;
+  color: gray;
+}
+.box-title.btn {
+  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  Il permet d'ajuster la largeur des boutons, en fonction
+  de la charte graphique grâce à la variable : ($padding)  */
+  padding: 0px 25px;
+  max-width: 100%;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 20px auto 40px auto;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+  box-shadow: 5px 3px 5px #999999;
+}
+
+.box-function {
+  padding-bottom: 30px;
+  padding-top: 40px;
+}
+
+.nav {
+  margin-left: 10px;
+}
+.nav__btn {
+  position: relative;
+  max-width: 100%;
+  height: 70px;
+  margin: 20px auto;
+  padding: 0px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #f2f2f2;
+  box-shadow: 5px 3px 5px #999999;
+}
+.nav__btn__number {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-weight: 300;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 20px;
+  left: -15px;
+}
+.nav__btn__icon {
+  margin-right: 20px;
+  margin-left: 15px;
+  font-size: 20px;
+  color: gray;
+}
+.nav__btn:hover {
+  background-color: #e4d5f6;
+}
+.nav__btn:hover .nav__btn__icon {
+  color: #9356dc;
+}
+
+.main-home {
+  background-color: #f7f7f7;
+}
+.main-home h2 {
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 5px 3px 5px #cccccc;
+  border-radius: 20px;
+  position: relative;
+}
+.card__mb {
+  margin-bottom: 30px;
+}
+.card img {
+  height: 174px;
+  border-radius: 20px 20px 0px 0px;
+}
+.card__new {
+  box-shadow: 2px 2px 5px #1a1a1a;
+  position: absolute;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  top: 20px;
+  right: 20px;
+  background-color: #99e2d0;
+  color: #2c9c81;
+}
+.card__title {
+  padding: 20px;
+  height: 75px;
+}
+.card__title h3 {
+  margin-bottom: 5px;
+}
+.card__title__i {
+  max-width: 100%;
+  font-size: 30px;
+  color: black;
+}
+
+/*# sourceMappingURL=a-home.css.map */
