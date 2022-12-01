@@ -20,31 +20,36 @@
   }
 }
 
-.first-part-food {
+.section-food {
   padding: 0px 10px;
 
-  & h2 {
+  &__h2 {
     // TITRE : ENTRÉES / PLATS / DESSERTS
     font-size: 20px;
     font-weight: 300;
-    width: 14%;
-    height: 38px; // espace entre le titre et le trait.
+    width: 14%; // Largeur du trait sous le titre
+    height: 38px; // espace entre le titre et le trait
     border-bottom: solid 4px $color-03;
     padding-top: 5px;
     margin: 30px 0px 20px 10px;
+    color: lighten($color-black, 50%);
   }
 
-  & h3 {
+  &__h3 {
     // TITRE DES PLATS
     font-size: 17px;
     margin-bottom: 2px;
-    text-overflow: ellipsis; // Le texte se termine avec 3 petits points
-    overflow: hidden;
 
-    // border: solid 0.1px rgb(255, 162, 0); // TEST
+    // text-overflow: ellipsis; // Le texte se termine avec 3 petits points
+    // overflow: hidden;
   }
 
-  &__box {
+  &__p {
+    color: lighten($color-black, 45%);
+  }
+
+  // BASE CARTE SIMPLE
+  &__simple-box {
     // Card-menu__box"
     @include shadow-box-size(4px, 80%);
     height: 70px;
@@ -53,7 +58,7 @@
     background-color: $color-white;
 
     &__price {
-      font-weight: 500;
+      font-weight: 800;
     }
   }
 }
@@ -61,4 +66,43 @@
 .mb-menu {
   // Espace sous les cartes
   margin-bottom: 15px;
+}
+// ===========================================================
+.test2 {
+  // width: 10%;
+  border: solid 2px rgb(255, 0, 255); // TEST
+}
+
+.test3 {
+  border: solid 1px rgb(0, 217, 255); // TEST
+}
+
+.test4 {
+  border: solid 2px rgb(255, 196, 0); // TEST
+}
+
+// BASE CARTE ANIMATION
+.check-box-card {
+  position: absolute;
+  width: 290px;
+  border-radius: 20px 0px 0px 20px;
+
+  &__click-box {
+    // Card-menu__check-box"
+
+    position: relative;
+    width: 60px;
+    height: 70px;
+    border-radius: 0px 20px 20px 0px;
+    left: 290px;
+    @include shadow-box-size(4px, 80%);
+    background-color: $color-03;
+
+    & i {
+      border-radius: 50px;
+      color: $color-white;
+
+      font-size: 25px;
+    }
+  }
 }

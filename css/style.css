@@ -142,7 +142,7 @@ img {
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 20px auto 50px auto;
+  margin: 20px auto 40px auto;
   padding: 0px 0px;
   font-size: 16px;
   color: white;
@@ -237,7 +237,7 @@ img {
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 20px auto 50px auto;
+  margin: 20px auto 40px auto;
   padding: 0px 40px;
   font-size: 16px;
   color: white;
@@ -245,10 +245,10 @@ img {
   box-shadow: 5px 5px 5px #cccccc;
 }
 
-.first-part-food {
+.section-food {
   padding: 0px 10px;
 }
-.first-part-food h2 {
+.section-food__h2 {
   font-size: 20px;
   font-weight: 300;
   width: 14%;
@@ -256,26 +256,60 @@ img {
   border-bottom: solid 4px #99e2d0;
   padding-top: 5px;
   margin: 30px 0px 20px 10px;
+  color: gray;
 }
-.first-part-food h3 {
+.section-food__h3 {
   font-size: 17px;
   margin-bottom: 2px;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
-.first-part-food__box {
+.section-food__p {
+  color: #737373;
+}
+.section-food__simple-box {
   box-shadow: 4px 4px 4px #cccccc;
   height: 70px;
   padding: 10px 15px;
   border-radius: 15px;
   background-color: white;
 }
-.first-part-food__box__price {
-  font-weight: 500;
+.section-food__simple-box__price {
+  font-weight: 800;
 }
 
 .mb-menu {
   margin-bottom: 15px;
+}
+
+.test2 {
+  border: solid 2px rgb(255, 0, 255);
+}
+
+.test3 {
+  border: solid 1px rgb(0, 217, 255);
+}
+
+.test4 {
+  border: solid 2px rgb(255, 196, 0);
+}
+
+.check-box-card {
+  position: absolute;
+  width: 290px;
+  border-radius: 20px 0px 0px 20px;
+}
+.check-box-card__click-box {
+  position: relative;
+  width: 60px;
+  height: 70px;
+  border-radius: 0px 20px 20px 0px;
+  left: 290px;
+  box-shadow: 4px 4px 4px #cccccc;
+  background-color: #99e2d0;
+}
+.check-box-card__click-box i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
 }
 
 .box-logo {
@@ -308,7 +342,7 @@ img {
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 20px auto 50px auto;
+  margin: 20px auto 40px auto;
   padding: 0px 25px;
   font-size: 16px;
   color: white;
