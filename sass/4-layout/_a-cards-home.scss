@@ -1,7 +1,9 @@
 .card {
   // border: solid 0.5px rgb(255, 4, 4); //TEST
   background-color: $color-white;
-  @include shadow-box-size(5px, 80%);
+  // surcharge
+  @include shadow-box-size(5px, 3px, 5px, 80%);
+
   border-radius: 20px;
   position: relative;
 
@@ -15,7 +17,8 @@
   }
 
   &__new {
-    @include shadow-box-size(3px, 30%);
+    @include shadow-box-size(2px, 2px, 5px, 10%);
+
     position: absolute;
     height: 30px;
     padding: 0px 10px 0px 10px;

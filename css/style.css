@@ -10,6 +10,11 @@ pour le bon fonctionnement de SASS
 /////////////////////// VARIABLES ///////////////////////
 /////////////////////////////////////////////////////////
 */
+/*
+/////////////////////////////////////////////////////////
+//////////////////////// MIXINS /////////////////////////
+/////////////////////////////////////////////////////////
+*/
 /* 2 - GLOBAL CSS */
 /*
 /////////////////////////////////////////////////////////
@@ -137,17 +142,24 @@ img {
 }
 
 /* CONPONENTS */
+/* Les arguments sont vides, afin de me permettre d'y passer les 4 valeurs,
+  attendues pour gérer la prorpiété CSS : (box-shadow: 2px, 5px, 5px, 80%)
+  $x:5px, $y:3px, $blur:5px, $pourcentage: 60%
+  */
 .btn {
+  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  Il permet d'ajuster la largeur des boutons, en fonction
+  de la charte graphique grâce à la variable : ($padding)  */
+  padding: 0px 0px;
   max-width: 100%;
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
   margin: 20px auto 40px auto;
-  padding: 0px 0px;
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
-  box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
 }
 
 /* MISES EN PAGES : LAYOUT : SASS */
@@ -198,16 +210,19 @@ img {
   color: gray;
 }
 .box-title.btn {
+  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  Il permet d'ajuster la largeur des boutons, en fonction
+  de la charte graphique grâce à la variable : ($padding)  */
+  padding: 0px 25px;
   max-width: 100%;
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
   margin: 20px auto 40px auto;
-  padding: 0px 25px;
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
-  box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
 }
 
 .box-function {
@@ -228,7 +243,7 @@ img {
   font-size: 16px;
   font-weight: 500;
   background-color: #f2f2f2;
-  box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
 }
 .nav__btn__number {
   position: absolute;
@@ -262,7 +277,7 @@ img {
 
 .card {
   background-color: white;
-  box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 3px 5px #cccccc;
   border-radius: 20px;
   position: relative;
 }
@@ -274,7 +289,7 @@ img {
   border-radius: 20px 20px 0px 0px;
 }
 .card__new {
-  box-shadow: 3px 3px 3px #4d4d4d;
+  box-shadow: 2px 2px 5px #1a1a1a;
   position: absolute;
   height: 30px;
   padding: 0px 10px 0px 10px;
@@ -312,16 +327,19 @@ img {
   font-size: 28px;
 }
 .main-menus.btn {
+  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  Il permet d'ajuster la largeur des boutons, en fonction
+  de la charte graphique grâce à la variable : ($padding)  */
+  padding: 0px 40px;
   max-width: 100%;
   height: 50px;
   cursor: pointer;
   border-radius: 50px;
   margin: 20px auto 40px auto;
-  padding: 0px 40px;
   font-size: 16px;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
-  box-shadow: 5px 5px 5px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
 }
 
 .section-food {
@@ -345,7 +363,7 @@ img {
   color: #737373;
 }
 .section-food__simple-box {
-  box-shadow: 4px 4px 4px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
   height: 70px;
   padding: 10px 15px;
   border-radius: 15px;
@@ -382,7 +400,7 @@ img {
   height: 70px;
   border-radius: 0px 20px 20px 0px;
   left: 290px;
-  box-shadow: 4px 4px 4px #cccccc;
+  box-shadow: 5px 3px 5px #999999;
   background-color: #99e2d0;
 }
 .check-box-card__click-box i {

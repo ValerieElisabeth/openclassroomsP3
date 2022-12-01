@@ -1,3 +1,8 @@
+/* Les arguments sont vides, afin de me permettre d'y passer les 4 valeurs,
+  attendues pour gérer la prorpiété CSS : (box-shadow: 2px, 5px, 5px, 80%)
+  $x:5px, $y:3px, $blur:5px, $pourcentage: 60%
+  */
+
 .btn {
-  @include btn-shadow($padding);
+  @include btn-shadow();
 }

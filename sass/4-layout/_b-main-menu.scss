@@ -51,7 +51,9 @@
   // BASE CARTE SIMPLE
   &__simple-box {
     // Card-menu__box"
-    @include shadow-box-size(4px, 80%);
+    // @include shadow-box-size(4px, 80%);
+    @include shadow-box-size();
+
     height: 70px;
     padding: 10px 15px;
     border-radius: 15px;
@@ -95,7 +97,9 @@
     height: 70px;
     border-radius: 0px 20px 20px 0px;
     left: 290px;
-    @include shadow-box-size(4px, 80%);
+    // @include shadow-box-size(4px, 80%);
+    @include shadow-box-size();
+
     background-color: $color-03;
 
     & i {
