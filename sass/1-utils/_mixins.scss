@@ -3,19 +3,25 @@
 //////////////////////// MIXINS /////////////////////////
 /////////////////////////////////////////////////////////
 */
-//////// OMBRÉS SOUS LES BOITES /////////////////////////
+
+//
+//
+//==== OMBRE PORTÉE SOUS LES CONTAINERS ================//
 
 @mixin shadow-box-size($x: 5px, $y: 3px, $blur: 5px, $pourcentage: 60%) {
   box-shadow: $x $y $blur lighten($color-black, $pourcentage);
 }
-//////// GROS BOUTONS DÉGRADÉ DU ROSE AU VIOLET /////////
+
+//
+//
+//==== GROS BOUTONS DÉGRADÉ DU ROSE AU VIOLET ========//
 
 @mixin btn-shadow($padding: 0px) {
   /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
   Il permet d'ajuster la largeur des boutons, en fonction
   de la charte graphique grâce à la variable : ($padding)  */
   padding: 0px ($padding);
-
+  // =====
   max-width: 100%;
   height: 50px;
   cursor: pointer;
@@ -26,4 +32,22 @@
   color: $color-white;
   background: linear-gradient($color-02, $color-01);
   @include shadow-box-size();
+}
+
+//
+//
+//==== AJOUTER 3 POINTS APRÈS UN TEXTE TROP LONG =====//
+
+@mixin three-points-afer-txt($width: 100px) {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  // -----------------------------------------------------------------------------------------//
+  width: $width; // (1) Définir une largeur.
+  white-space: nowrap; // (2) Empêcher le retour à la ligne.
+  text-overflow: ellipsis; // (3) Propritée qui affecte les 3 petits points.
+  overflow: hidden; // (4) Cacher le texte qui dépasse de la largeur imposée par le bloc parent.
+  // border: 1px solid red; // TEST
+
+  // -----------------------------------------------------------------------------------------//
 }

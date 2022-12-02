@@ -1,7 +1,11 @@
+// ==== MAIN ======================================//
+
 .main-menus {
+  // MAIN-menu
   background-color: lighten($color-black, 95%);
 
   &__bg-top {
+    // BLOC : aux bords arrondis, au dessus du nom du restaurant //
     position: absolute;
     width: 375px;
     padding-top: 30px;
@@ -11,20 +15,27 @@
   }
 
   & h1 {
+    // TITRE : Nom du restaurant //
     font-family: "Shrikhand", cursive;
     font-size: 28px;
   }
 
   &.btn {
+    // BOUTON : Commander //
     @include btn-shadow(40px);
   }
 }
 
 .section-food {
+  /*
+  SETION Commprenant : 
+  (1) Les titres (Plats, Entrées, Desserts)
+  (2) Et une série de 3 cards
+  */
   padding: 0px 10px;
 
   &__h2 {
-    // TITRE : ENTRÉES / PLATS / DESSERTS
+    // TITRE : Plats, Entrées, Desserts.
     font-size: 20px;
     font-weight: 300;
     width: 14%; // Largeur du trait sous le titre
@@ -35,24 +46,14 @@
     color: lighten($color-black, 50%);
   }
 
-  &__h3 {
-    // TITRE DES PLATS
-    font-size: 17px;
-    margin-bottom: 2px;
 
-    // text-overflow: ellipsis; // Le texte se termine avec 3 petits points
-    // overflow: hidden;
-  }
 
-  &__p {
-    color: lighten($color-black, 45%);
-  }
 
-  // BASE CARTE SIMPLE
   &__simple-box {
-    // Card-menu__box"
-    // @include shadow-box-size(4px, 80%);
+    // BASE CARTE SIMPLE
     @include shadow-box-size();
+    // border: solid 1px red;
+
 
     height: 70px;
     padding: 10px 15px;
@@ -63,6 +64,21 @@
       font-weight: 800;
     }
   }
+
+
+  &__h3 {
+    // TITRE DES PLATS
+    // border: solid 1px red;
+    @include three-points-afer-txt(270px);
+    font-size: 17px;
+    margin-bottom: 2px;
+    margin: 0;
+  }
+
+  &__p {
+    color: lighten($color-black, 45%);
+  }
+
 }
 
 .mb-menu {
@@ -70,24 +86,16 @@
   margin-bottom: 15px;
 }
 // ===========================================================
-.test2 {
-  // width: 10%;
-  border: solid 2px rgb(255, 0, 255); // TEST
-}
 
-.test3 {
-  border: solid 1px rgb(0, 217, 255); // TEST
-}
-
-.test4 {
-  border: solid 2px rgb(255, 196, 0); // TEST
-}
-
-// BASE CARTE ANIMATION
+// MISE EN PAGE "TYPE" DE LA CARTE ANIMATION
 .check-box-card {
   position: absolute;
   width: 290px;
   border-radius: 20px 0px 0px 20px;
+
+  & h3 {
+    @include three-points-afer-txt(230px);
+  }
 
   &__click-box {
     // Card-menu__check-box"

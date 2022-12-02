@@ -216,6 +216,11 @@ img {
 }
 
 .section-food {
+  /*
+  SETION Commprenant : 
+  (1) Les titres (Plats, Entrées, Desserts)
+  (2) Et une série de 3 cards
+  */
   padding: 0px 10px;
 }
 .section-food__h2 {
@@ -228,13 +233,6 @@ img {
   margin: 30px 0px 20px 10px;
   color: gray;
 }
-.section-food__h3 {
-  font-size: 17px;
-  margin-bottom: 2px;
-}
-.section-food__p {
-  color: #737373;
-}
 .section-food__simple-box {
   box-shadow: 5px 3px 5px #999999;
   height: 70px;
@@ -245,27 +243,39 @@ img {
 .section-food__simple-box__price {
   font-weight: 800;
 }
+.section-food__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 2px;
+  margin: 0;
+}
+.section-food__p {
+  color: #737373;
+}
 
 .mb-menu {
   margin-bottom: 15px;
-}
-
-.test2 {
-  border: solid 2px rgb(255, 0, 255);
-}
-
-.test3 {
-  border: solid 1px rgb(0, 217, 255);
-}
-
-.test4 {
-  border: solid 2px rgb(255, 196, 0);
 }
 
 .check-box-card {
   position: absolute;
   width: 290px;
   border-radius: 20px 0px 0px 20px;
+}
+.check-box-card h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 230px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .check-box-card__click-box {
   position: relative;
