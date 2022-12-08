@@ -46,14 +46,18 @@
     <!--HEADER ==================================================-->
 
     <header>
-      <div class="header-menu d-flex d-flex-ai-c">
-        <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
-        <a class="box-logo-menu" href="#">
+      <div class="nav-return-home d-flex d-flex-ai-c">
+        <!-- Flèche de retour sur la page d'accueil -->
+
+        <a class="ml-30 mr-30" href="/a-home.html"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+        <a class="logo d-flex d-flex-ai-c d-flex-jc-c" href="#">
           <img src="/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood" />
         </a>
       </div>
 
-      <div class="header-menu__img">
+      <div>
         <img
           src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
           alt=""
@@ -62,42 +66,44 @@
     </header>
 
     <!--MAIN ======================================================-->
-    <main class="main-menus d-flex d-flex-fd-c">
+    <main class="container__04 main-menu-page d-flex d-flex-fd-c">
       <!-- Titre du menu de la page -->
       <section class="d-flex d-flex-ai-c d-flex-jc-sa">
-        <div class="main-menus__bg-top"></div>
+        <div class="main-menu-page__bg-top"></div>
         <h1>Le délice des sens</h1>
         <i class="card__title__i fa-regular fa-heart"></i>
       </section>
 
-      <!-- Titre des cartes -->
-      <section class="section-food section-food-bis">
+      <!-- TITRE : ENTRÉES -->
+      <section>
         <section>
-          <h2 class="section-food__h2">ENTRÉES</h2>
+          <h2 class="lunches-time-title">ENTRÉES</h2>
 
           <!-- Carte 1 -->
           <!-- Titre des menus -->
           <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
+            class="card mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe"
           >
             <div>
-              <h3 class="section-food__h3">Tartare de thon</h3>
-              <p class="section-food__p">Assaisonné au yuzu</p>
+              <h3 class="card-layout-menu__h3">Tartare de thon</h3>
+              <p class="card-layout-menu__p">Assaisonné au yuzu</p>
             </div>
-            <p class="section-food__simple-box__price">25€</p>
+            <p class="card-layout-menu__price">25€</p>
           </div>
           <!-- fin carte 1 -->
 
           <!-- Carte 2 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Bouchée de homard croustillant</h3>
-              <p class="section-food__p">Et sa farandole de petits légumes</p>
+              <h3 class="card-layout-menu__h3">
+                Bouchée de homard croustillant
+              </h3>
+              <p class="card-layout-menu__p">
+                Et sa farandole de petits légumes
+              </p>
             </div>
-            <p class="section-food__simple-box__price">35€</p>
+            <p class="card-layout-menu__price">35€</p>
           </div>
           <!-- fin carte 2 -->
 
@@ -105,17 +111,19 @@
           <!-- Titre des menus -->
 
           <div
-            class="check-box-card mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
+            class="check-box card-layout-menu d-flex d-flex-ai-c d-flex-jc-sb d-flex-ai-fe"
           >
             <div>
-              <h3 class="section-food__h3">Velouté de cèpes</h3>
-              <p class="section-food__p">Aux truffes</p>
+              <h3 class="card-layout-menu__h3 check-box__h3">
+                Velouté de cèpes
+              </h3>
+              <p class="card-layout-menu__p">Aux truffes</p>
             </div>
-            <p class="section-food__simple-box__price">20€</p>
-          </div>
 
-          <div class="d-flex d-flex-ai-c d-flex-jc-c check-box-card__click-box">
-            <i class="fa-sharp fa-solid fa-circle-check"></i>
+            <p class="d-flex d-flex-ai-fe card-layout-menu__price">20€</p>
+            <div class="d-flex d-flex-ai-c d-flex-jc-c check-box__click-box">
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+            </div>
           </div>
 
           <!-- fin carte 3 -->
@@ -124,101 +132,92 @@
 
       <!-- A ======================================================-->
 
-      <!-- Titre des cartes -->
-      <section class="section-food">
+      <!-- TITRE : PLATS -->
+      <section>
         <section>
-          <h2 class="section-food__h2">PLATS</h2>
+          <h2 class="lunches-time-title">PLATS</h2>
 
           <!-- Carte 1 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
-            <div class="test">
-              <h3 class="section-food__h3">
+          <div class="mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
+            <div>
+              <h3 class="card-layout-menu__h3">
                 Poulet rôti aux herbes de Provences
               </h3>
-              <p class="section-food__p">Et sa crème de truffe</p>
+              <p class="card-layout-menu__p">Et sa crème de truffe</p>
             </div>
-            <p class="section-food__simple-box__price">40€</p>
+            <p class="card-layout-menu__price">40€</p>
           </div>
           <!-- fin carte 1 -->
 
           <!-- Carte 2 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Langouste rôtie</h3>
-              <p class="section-food__p">Et ses légumes de saison</p>
+              <h3 class="card-layout-menu__h3">Langouste rôtie</h3>
+              <p class="card-layout-menu__p">Et ses légumes de saison</p>
             </div>
-            <p class="section-food__simple-box__price">35€</p>
+            <p class="card-layout-menu__price">35€</p>
           </div>
           <!-- fin carte 2 -->
 
           <!-- Carte 3 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Côte de bœuf Angus</h3>
-              <p class="section-food__p">Et sa purée de panais</p>
+              <h3 class="card-layout-menu__h3">Côte de bœuf Angus</h3>
+              <p class="card-layout-menu__p">Et sa purée de panais</p>
             </div>
-            <p class="section-food__simple-box__price">44€</p>
+            <p class="card-layout-menu__price">44€</p>
           </div>
           <!-- fin carte 3 -->
         </section>
       </section>
+
       <!-- B ======================================================-->
-      <!-- Titre des cartes -->
-      <section class="section-food">
+
+      <!-- TITRE : DESSERTS -->
+
+      <section>
         <section>
-          <h2 class="section-food__h2">DESSERTS</h2>
+          <h2 class="lunches-time-title">DESSERTS</h2>
 
           <!-- Carte 1 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Farandole de desserts</h3>
-              <p class="section-food__p">Du chef</p>
+              <h3 class="card-layout-menu__h3">Farandole de desserts</h3>
+              <p class="card-layout-menu__p">Du chef</p>
             </div>
-            <p class="section-food__simple-box__price">18€</p>
+            <p class="card-layout-menu__price">18€</p>
           </div>
           <!-- fin carte 1 -->
 
           <!-- Carte 2 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="mb-15 card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Crème brûlée</h3>
-              <p class="section-food__p">Revisité</p>
+              <h3 class="card-layout-menu__h3">Crème brûlée</h3>
+              <p class="card-layout-menu__p">Revisité</p>
             </div>
-            <p class="section-food__simple-box__price">22€</p>
+            <p class="card-layout-menu__price">22€</p>
           </div>
           <!-- fin carte 2 -->
 
           <!-- Carte 3 -->
           <!-- Titre des menus -->
-          <div
-            class="mb-menu section-food__simple-box d-flex d-flex-jc-sb d-flex-ai-fe"
-          >
+          <div class="card-layout-menu d-flex d-flex-jc-sb d-flex-ai-fe">
             <div>
-              <h3 class="section-food__h3">Tiramisu</h3>
-              <p class="section-food__p">À la noisette</p>
+              <h3 class="card-layout-menu__h3">Tiramisu</h3>
+              <p class="card-layout-menu__p">À la noisette</p>
             </div>
-            <p class="section-food__simple-box__price">23€</p>
+            <p class="card-layout-menu__price">23€</p>
           </div>
           <!-- fin carte 3 -->
         </section>
       </section>
       <!-- C ======================================================-->
-      <button class="main-menus btn">Commander</button>
+      <button class="main-menu-page btn">Commander</button>
     </main>
 
     <!--FOOTER ====================================++==============-->
@@ -242,7 +241,9 @@
           <li class="footer-box__txt-color">
             <a href="#">Mentions légales</a>
           </li>
-          <li class="footer-box__txt-color"><a href="#">Contact</a></li>
+          <li class="footer-box__txt-color">
+            <a href="mailto:contact@ohmyfood.com">Contact</a>
+          </li>
         </ul>
       </div>
     </footer>

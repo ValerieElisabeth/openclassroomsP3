@@ -1,0 +1,61 @@
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+/*
+Classe qui gère l'animation des cœurs
+*/
+
+.heart-animation {
+  /*
+    icone du coeur de la carte.
+    passe au premier plan avec "z-index-1",
+    pour être accessible au clique
+    */
+  z-index: 1;
+
+  // icone du coeur
+  max-width: 100%;
+  font-size: 30px;
+}
+
+/* 
+(1) On masque le bouton : checkbox par default
+ainsi que l'icone "coeur" du second-plan */
+.heart-animation input[type="checkbox"],
+.heart-animation .second-plan {
+  display: none;
+}
+
+// :checked : Permet de cibler les boutons cochés.
+
+/* (2) Quand l'icone du premier-plan est coché,
+elle disparait */
+.heart-animation input[type="checkbox"]:checked ~ .premier-plan {
+  display: none;
+  border: solid 1px red;
+}
+
+/* (3) Quand l'icone du premier-plan est coché,
+l'icone du second-plan apparait */
+.heart-animation input[type="checkbox"]:checked ~ .second-plan {
+  display: block;
+  background-image: linear-gradient(45deg, $color-02 20%, $color-01 100%);
+  background-size: 100%;
+  /* Utiliser le texte comme masque pour l'arrière-plan. */
+  /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

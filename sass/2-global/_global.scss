@@ -95,7 +95,7 @@ img {
   // MARGES : HautBas = 0px / DroiteGauche = auto.
 
   &__01 {
-    //container--01
+    //container__01
     margin: 20px auto;
     padding: 0px 20px;
     // border: solid 1px rgb(0, 255, 0); //TEST
@@ -105,18 +105,25 @@ img {
   }
 
   &__02 {
-    //container--02
+    //container__02
     padding: 40px 20px;
-    // MARGES : container__01.
+    // MARGES : container__02.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
   }
 
   &__03 {
-    //container--03
+    //container__03
     padding: 30px 20px;
     // border: solid 1px rgb(11, 198, 255); //TEST
     // MARGES : container__01.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
+  }
+
+  &__04 {
+    // Est utilisé pour les pages menu
+    //container__04
+    padding: 0px 15px;
+    // border: solid 1px rgb(11, 198, 255); //TEST
   }
 }
 
@@ -173,5 +180,81 @@ img {
   &-jc-sb {
     //flex d-flex-jc-sb
     justify-content: space-between;
+  }
+}
+
+/*
+/////////////////////////////////////////////////////////
+/////////////////////// MARGES //////////////////////////
+/////////////////////////////////////////////////////////
+*/
+
+.m {
+  // TOP
+  &t-10 {
+    margin-top: 10px;
+  }
+
+  &t-15 {
+    margin-top: 15px;
+  }
+
+  &t-20 {
+    margin-top: 20px;
+  }
+
+  &t-30 {
+    margin-top: 30px;
+  }
+
+  // RIGHT
+  &r-10 {
+    margin-right: 10px;
+  }
+
+  &r-15 {
+    margin-right: 15px;
+  }
+
+  &r-20 {
+    margin-right: 20px;
+  }
+
+  &r-30 {
+    margin-right: 30px;
+  }
+
+  // BOTTOM
+  &r-10 {
+    margin-bottom: 10px;
+  }
+
+  &b-15 {
+    margin-bottom: 15px;
+  }
+
+  &b-20 {
+    margin-bottom: 20px;
+  }
+
+  &b-30 {
+    margin-bottom: 30px;
+  }
+
+  // LEFT
+  &l-10 {
+    margin-left: 10px;
+  }
+
+  &l-15 {
+    margin-left: 15px;
+  }
+
+  &l-20 {
+    margin-left: 20px;
+  }
+
+  &l-30 {
+    margin-left: 30px;
   }
 }

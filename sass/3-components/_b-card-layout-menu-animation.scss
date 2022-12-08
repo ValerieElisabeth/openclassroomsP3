@@ -1,0 +1,34 @@
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENU
+                    (avec animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+// MISE EN PAGE "TYPE ou de BASE" DE LA CARTE ANIMATION page menu
+.check-box {
+  @include card-layout-menu;
+  padding-right: 0px;
+
+  &__h3 {
+    // TITRE DES PLATS dans la carte animation
+    @include three-points-afer-txt(200px);
+  }
+
+  &__click-box {
+    width: 60px;
+    height: 70px;
+    border-radius: 0px 15px 15px 0px;
+    @include shadow-box-size(5px, 3px, 5px, 80%);
+    background-color: $color-03;
+    margin-bottom: -10px;
+
+    & i {
+      border-radius: 50px;
+      color: $color-white;
+      font-size: 25px;
+    }
+  }
+}

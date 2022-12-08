@@ -1,23 +1,24 @@
 /*
-LES UTILITAIRES :
-Ils doivent être à placer en premier dans le code
-pour le bon fonctionnement de SASS
+Les utilitaires (UTILS), doivent être placés en premier
+dans le code de cette page, pour le bon onctionnement de SASS
 */
 
-/* 1 - UTILS */
+//////////// 1 - UTILS /////////////////////////////
 @import "./1-utils/variables";
 @import "./1-utils/functions";
 @import "./1-utils/mixins";
 
-/* 2 - GLOBAL CSS */
+//////////// 2 - GLOBAL CSS ////////////////////////////
 @import "./2-global/global";
 
-/* CONPONENTS */
+//////////// 3 - CONPONENTS ////////////////////////////
 @import "./3-components/buttons";
 
+/* CSS des cartes qui composent les pages menus */
+@import "./3-components/b-card-layout-menu";
+@import "./3-components/b-card-layout-menu-animation";
 
-/* MISES EN PAGES COMMUNES : LAYOUT : SASS */
+//////////// 4 - LAYOUT ///////////////////////////////
+/* Règles CSS communes à tous le site */
 @import "./4-layout/footer";
 @import "./4-layout/logo";
-
-

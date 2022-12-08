@@ -47,12 +47,12 @@
 
     <header>
       <section class="container d-flex d-flex-fd-c d-flex-ai-c">
-        <a class="box-logo-home" href="#">
+        <a class="ml-20 logo d-flex d-flex-ai-c d-flex-jc-c" href="#">
           <img src="/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood" />
         </a>
 
-        <div class="box-logo-home__location d-flex d-flex-ai-c d-flex-jc-c">
-          <div class="box-logo-home__location__icon">
+        <div class="box-home-logo__location d-flex d-flex-ai-c d-flex-jc-c">
+          <div class="box-home-logo__location__icon">
             <i class="fa-sharp fa-solid fa-location-dot"></i>
           </div>
           <p>Paris, Belleville</p>
@@ -73,25 +73,31 @@
       <section class="box-function container__01">
         <h2>Fonctionnement</h2>
 
-        <nav class="nav">
+        <nav class="nav-home">
           <!-- btn 1 -->
-          <div class="nav__btn d-flex d-flex-ai-c">
-            <p class="nav__btn__number d-flex d-flex-ai-c d-flex-jc-c">1</p>
-            <i class="nav__btn__icon fa-solid fa-mobile-screen-button"></i>
+          <div class="nav-home__btn d-flex d-flex-ai-c">
+            <p class="nav-home__btn__number d-flex d-flex-ai-c d-flex-jc-c">
+              1
+            </p>
+            <i class="nav-home__btn__icon fa-solid fa-mobile-screen-button"></i>
             <a href="#">Choisissez votre restaurant</a>
           </div>
 
           <!-- btn 2 -->
-          <div class="nav__btn d-flex d-flex-ai-c">
-            <p class="nav__btn__number d-flex d-flex-ai-c d-flex-jc-c">2</p>
-            <i class="nav__btn__icon fa-sharp fa-solid fa-list-ul"></i>
+          <div class="nav-home__btn d-flex d-flex-ai-c">
+            <p class="nav-home__btn__number d-flex d-flex-ai-c d-flex-jc-c">
+              2
+            </p>
+            <i class="nav-home__btn__icon fa-sharp fa-solid fa-list-ul"></i>
             <a href="#">Composez votre menu</a>
           </div>
 
           <!-- btn 3 -->
-          <div class="nav__btn d-flex d-flex-ai-c">
-            <p class="nav__btn__number d-flex d-flex-ai-c d-flex-jc-c">3</p>
-            <i class="nav__btn__icon fa-sharp fa-solid fa-store"></i>
+          <div class="nav-home__btn d-flex d-flex-ai-c">
+            <p class="nav-home__btn__number d-flex d-flex-ai-c d-flex-jc-c">
+              3
+            </p>
+            <i class="nav-home__btn__icon fa-sharp fa-solid fa-store"></i>
             <a href="#">Dégustez au restaurant</a>
           </div>
 
@@ -105,106 +111,125 @@
       <h2>Restaurants</h2>
       <section>
         <!-- carte 1 -->
-        <div class="card card__mb">
+
+        <div class="card-home-layout mb-30">
           <div>
             <div>
               <img
+                class="card-home-layout__img"
                 src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                alt="Photographie d'une belle table à l'ambiance chaleureuse, et une assiette gastronomique au restaurant : la palette du goût"
+                alt="Photographie, vue du dessus d'un plat en sauce rouge, accompagnée d'un verre de rosé, au restaurant : la note enchantée"
               />
-              <p class="card__new d-flex d-flex-ai-c">Nouveau</p>
+
+              <p class="box-text-new d-flex d-flex-ai-c">Nouveau</p>
             </div>
 
-            <div class="card__title d-flex d-flex-ai-c d-flex-jc-sb">
-              <div>
-                <h3>
-                  <a href="#"> La palette du goût</a>
-                </h3>
+            <div
+              class="card-home-layout__box-title d-flex d-flex-ai-c d-flex-jc-sb"
+            >
+              <a class="card-home-layout__principal-link" href="#">
+                <h3 class="card-home-layout__h3">La palette du goût</h3>
                 <p>Ménilmontant</p>
-              </div>
-              <i class="card__title__i fa-regular fa-heart"></i>
-              <!-- essai -->
-              <!-- <div class="checkbox-heart-container">
-                <input type="checkbox" id="check-click" />
-                <label for="check-click" class="toggle-content">
-                  <i class="fa-regular fa-heart"></i>
-                </label>
-              </div> -->
+              </a>
 
-              <!-- fin essai -->
+              <label class="heart-animation">
+                <input type="checkbox" />
+                <i class="fa-regular fa-heart premier-plan"></i>
+                <i class="fa-solid fa-heart second-plan"></i>
+              </label>
             </div>
           </div>
         </div>
 
         <!-- carte 2 -->
 
-        <div class="card card__mb">
+        <div class="card-home-layout mb-30">
           <div>
             <div>
               <img
+                class="card-home-layout__img"
                 src="/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
                 alt="Photographie, vue du dessus d'un plat en sauce rouge, accompagnée d'un verre de rosé, au restaurant : la note enchantée"
               />
 
-              <p class="card__new d-flex d-flex-ai-c">Nouveau</p>
+              <p class="box-text-new d-flex d-flex-ai-c">Nouveau</p>
             </div>
 
-            <div class="card__title d-flex d-flex-ai-c d-flex-jc-sb">
-              <div>
-                <h3>
-                  <a href="#">La note enchantée</a>
-                </h3>
+            <div
+              class="card-home-layout__box-title d-flex d-flex-ai-c d-flex-jc-sb"
+            >
+              <a class="card-home-layout__principal-link" href="#">
+                <h3 class="card-home-layout__h3">La note enchantée</h3>
                 <p>Charonne</p>
-              </div>
-              <i class="card__title__i fa-regular fa-heart"></i>
+              </a>
+
+              <label class="heart-animation">
+                <input type="checkbox" />
+                <i class="fa-regular fa-heart premier-plan"></i>
+                <i class="fa-solid fa-heart second-plan"></i>
+              </label>
             </div>
           </div>
         </div>
 
         <!-- carte 3 -->
 
-        <div class="card card__mb">
+        <!-- carte 3 -->
+
+        <div class="mb-30 card-home-layout">
           <div>
-            <div>
-              <img
-                src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                alt="Photographie d'un plat joliment dressé du restaurant : à la Française"
-              />
-            </div>
+            <img
+              class="card-home-layout__img"
+              src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+              alt="Photographie d'un plat joliment dressé du restaurant : à la Française"
+            />
           </div>
-          <div class="card__title d-flex d-flex-ai-c d-flex-jc-sb">
-            <div>
-              <h3>
-                <a href="#">À la française</a>
-              </h3>
+          <div
+            class="card-home-layout__box-title d-flex d-flex-ai-c d-flex-jc-sb"
+          >
+            <a class="card-home-layout__principal-link" href="#">
+              <h3 class="card-home-layout__h3">À la française</h3>
               <p>Cité Rouge</p>
-            </div>
-            <i class="card__title__i fa-regular fa-heart"></i>
+            </a>
+
+            <label class="heart-animation">
+              <input type="checkbox" />
+              <i class="fa-regular fa-heart premier-plan"></i>
+              <i class="fa-solid fa-heart second-plan"></i>
+            </label>
           </div>
         </div>
+
+        <!-- fin carte 3 -->
         <!-- carte 4 -->
 
-        <div class="card">
+        <div class="card-home-layout">
           <div>
-            <div>
-              <img
-                src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                alt="Photographie d'une ambiance chaleureuse donnant vue sur une assiette rectangulaire d'un poisson en sauce, au restaurant : Le délice des sens"
-              />
-            </div>
+            <img
+              class="card-home-layout__img"
+              src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+              alt="Photographie d'une ambiance chaleureuse donnant vue sur une assiette rectangulaire d'un poisson en sauce, au restaurant : Le délice des sens"
+            />
           </div>
-          <div class="card__title d-flex d-flex-ai-c d-flex-jc-sb">
-            <div>
-              <h3>
-                <a href="#">Le délice des sens</a>
-              </h3>
+          <div
+            class="card-home-layout__box-title d-flex d-flex-ai-c d-flex-jc-sb"
+          >
+            <a class="card-home-layout__principal-link" href="/b-menu-01.html">
+              <h3 class="card-home-layout__h3">Le délice des sens</h3>
               <p>Folie-Méricourt</p>
-            </div>
-            <i class="card__title__i fa-regular fa-heart"></i>
+            </a>
+
+            <label class="heart-animation">
+              <input type="checkbox" />
+              <i class="fa-regular fa-heart premier-plan"></i>
+              <i class="fa-solid fa-heart second-plan"></i>
+            </label>
           </div>
         </div>
+        <!-- fin carte 4 -->
       </section>
     </main>
+
     <!--FOOTER ====================================++==============-->
 
     <footer class="container__03 footer-box">
@@ -226,7 +251,9 @@
           <li class="footer-box__txt-color">
             <a href="#">Mentions légales</a>
           </li>
-          <li class="footer-box__txt-color"><a href="#">Contact</a></li>
+          <li class="footer-box__txt-color">
+            <a href="mailto:contact@ohmyfood.com">Contact</a>
+          </li>
         </ul>
       </div>
     </footer>

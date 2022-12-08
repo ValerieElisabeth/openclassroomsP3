@@ -1,21 +1,69 @@
 @charset "UTF-8";
 /*
-LES UTILITAIRES :
-Ils doivent être à placer en premier dans le code
-pour le bon fonctionnement de SASS
+Les utilitaires (UTILS), doivent être placés en premier
+dans le code de cette page, pour le bon onctionnement de SASS
 */
-/* 1 - UTILS */
 /*
 /////////////////////////////////////////////////////////
 /////////////////////// VARIABLES ///////////////////////
 /////////////////////////////////////////////////////////
 */
 /*
-/////////////////////////////////////////////////////////
-//////////////////////// MIXINS /////////////////////////
-/////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+                        MIXINS
+///////////////////////////////////////////////////////////////
 */
-/* 2 - GLOBAL CSS */
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+          OMBRE PORTÉE SOUS LES CONTAINERS
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        GROS BOUTONS DÉGRADÉ DU ROSE AU VIOLET
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DE LA PAGE D'ACCUEIL
+                     (css layout global)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENUS
+                    (css layout global)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            CARTES DES PAGES MENUS avec ANIMATION
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      3 PETITS POINTS APRÈS UN TEXTE TROP LONG
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                              MARGES
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 /*
 /////////////////////////////////////////////////////////
 ///////////////////// GLOBAL CSS ////////////////////////
@@ -104,6 +152,9 @@ img {
 .container__03 {
   padding: 30px 20px;
 }
+.container__04 {
+  padding: 0px 15px;
+}
 
 /*
 /////////////////////////////////////////////////////////
@@ -141,7 +192,60 @@ img {
   justify-content: space-between;
 }
 
-/* CONPONENTS */
+/*
+/////////////////////////////////////////////////////////
+/////////////////////// MARGES //////////////////////////
+/////////////////////////////////////////////////////////
+*/
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mr-10 {
+  margin-bottom: 10px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.ml-15 {
+  margin-left: 15px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+
 /* Les arguments sont vides, afin de me permettre d'y passer les 4 valeurs,
   attendues pour gérer la prorpiété CSS : (box-shadow: 2px, 5px, 5px, 80%)
   $x:5px, $y:3px, $blur:5px, $pourcentage: 60%
@@ -162,7 +266,99 @@ img {
   box-shadow: 5px 3px 5px #999999;
 }
 
-/* MISES EN PAGES COMMUNES : LAYOUT : SASS */
+/* CSS des cartes qui composent les pages menus */
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENU
+                    (sans animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.card-layout-menu {
+  box-shadow: 5px 3px 5px #cccccc;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+}
+.card-layout-menu__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 2px;
+  margin: 0;
+}
+.card-layout-menu__p {
+  color: #737373;
+}
+.card-layout-menu__price {
+  font-weight: 500;
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENU
+                    (avec animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.check-box {
+  box-shadow: 5px 3px 5px #cccccc;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+  padding-right: 0px;
+}
+.check-box__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 2px;
+  margin: 0;
+}
+.check-box__p {
+  color: #737373;
+}
+.check-box__price {
+  font-weight: 500;
+}
+.check-box__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.check-box__click-box {
+  width: 60px;
+  height: 70px;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 5px 3px 5px #cccccc;
+  background-color: #99e2d0;
+  margin-bottom: -10px;
+}
+.check-box__click-box i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+/* Règles CSS communes à tous le site */
 .footer-box {
   background: #333333;
 }
@@ -184,10 +380,21 @@ img {
   margin: 12px auto;
 }
 
-.main-menus {
+/*
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        LOGO DU SITE
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.logo img {
+  max-width: 80%;
+}
+
+.main-menu-page {
   background-color: #f2f2f2;
 }
-.main-menus__bg-top {
+.main-menu-page__bg-top {
   position: absolute;
   width: 375px;
   padding-top: 30px;
@@ -195,11 +402,11 @@ img {
   border-radius: 30px 30px 0px 0px;
   background-color: #f2f2f2;
 }
-.main-menus h1 {
+.main-menu-page h1 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
 }
-.main-menus.btn {
+.main-menu-page.btn {
   /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
   Il permet d'ajuster la largeur des boutons, en fonction
   de la charte graphique grâce à la variable : ($padding)  */
@@ -215,15 +422,24 @@ img {
   box-shadow: 5px 3px 5px #999999;
 }
 
-.section-food {
-  /*
-  SETION Commprenant : 
-  (1) Les titres (Plats, Entrées, Desserts)
-  (2) Et une série de 3 cards
-  */
-  padding: 0px 10px;
+/*
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      FLÈCHE DE NAVIGATION (de retour à la page d'accueil)
+            présent sur l'entête des pages "menu"
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.nav-return-home {
+  height: 65px;
+  display: flex;
+  justify-content: stretch;
 }
-.section-food__h2 {
+.nav-return-home i {
+  font-size: 25px;
+}
+
+.lunches-time-title {
   font-size: 20px;
   font-weight: 300;
   width: 14%;
@@ -232,73 +448,6 @@ img {
   padding-top: 5px;
   margin: 30px 0px 20px 10px;
   color: gray;
-}
-.section-food__simple-box {
-  box-shadow: 5px 3px 5px #999999;
-  height: 70px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: white;
-}
-.section-food__simple-box__price {
-  font-weight: 800;
-}
-.section-food__h3 {
-  /* 
-  Effet de texte se terminant par 3 petits points
-   */
-  width: 270px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-size: 17px;
-  margin-bottom: 2px;
-  margin: 0;
-}
-.section-food__p {
-  color: #737373;
-}
-
-.mb-menu {
-  margin-bottom: 15px;
-}
-
-.check-box-card {
-  position: absolute;
-  width: 290px;
-  border-radius: 20px 0px 0px 20px;
-}
-.check-box-card h3 {
-  /* 
-  Effet de texte se terminant par 3 petits points
-   */
-  width: 230px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.check-box-card__click-box {
-  position: relative;
-  width: 60px;
-  height: 70px;
-  border-radius: 0px 20px 20px 0px;
-  left: 290px;
-  box-shadow: 5px 3px 5px #999999;
-  background-color: #99e2d0;
-}
-.check-box-card__click-box i {
-  border-radius: 50px;
-  color: white;
-  font-size: 25px;
-}
-
-.header-menu {
-  height: 65px;
-  margin: auto 20px;
-}
-.header-menu i {
-  font-size: 25px;
-  margin-right: 65px;
 }
 
 /*# sourceMappingURL=b-menu-01.css.map */

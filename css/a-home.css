@@ -1,21 +1,69 @@
 @charset "UTF-8";
 /*
-LES UTILITAIRES :
-Ils doivent être à placer en premier dans le code
-pour le bon fonctionnement de SASS
+Les utilitaires (UTILS), doivent être placés en premier
+dans le code de cette page, pour le bon onctionnement de SASS
 */
-/* 1 - UTILS */
 /*
 /////////////////////////////////////////////////////////
 /////////////////////// VARIABLES ///////////////////////
 /////////////////////////////////////////////////////////
 */
 /*
-/////////////////////////////////////////////////////////
-//////////////////////// MIXINS /////////////////////////
-/////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+                        MIXINS
+///////////////////////////////////////////////////////////////
 */
-/* 2 - GLOBAL CSS */
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+          OMBRE PORTÉE SOUS LES CONTAINERS
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        GROS BOUTONS DÉGRADÉ DU ROSE AU VIOLET
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DE LA PAGE D'ACCUEIL
+                     (css layout global)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENUS
+                    (css layout global)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            CARTES DES PAGES MENUS avec ANIMATION
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      3 PETITS POINTS APRÈS UN TEXTE TROP LONG
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                              MARGES
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 /*
 /////////////////////////////////////////////////////////
 ///////////////////// GLOBAL CSS ////////////////////////
@@ -104,6 +152,9 @@ img {
 .container__03 {
   padding: 30px 20px;
 }
+.container__04 {
+  padding: 0px 15px;
+}
 
 /*
 /////////////////////////////////////////////////////////
@@ -141,7 +192,60 @@ img {
   justify-content: space-between;
 }
 
-/* CONPONENTS */
+/*
+/////////////////////////////////////////////////////////
+/////////////////////// MARGES //////////////////////////
+/////////////////////////////////////////////////////////
+*/
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mr-10 {
+  margin-bottom: 10px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.ml-15 {
+  margin-left: 15px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+
 /* Les arguments sont vides, afin de me permettre d'y passer les 4 valeurs,
   attendues pour gérer la prorpiété CSS : (box-shadow: 2px, 5px, 5px, 80%)
   $x:5px, $y:3px, $blur:5px, $pourcentage: 60%
@@ -162,7 +266,99 @@ img {
   box-shadow: 5px 3px 5px #999999;
 }
 
-/* MISES EN PAGES COMMUNES : LAYOUT : SASS */
+/* CSS des cartes qui composent les pages menus */
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENU
+                    (sans animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.card-layout-menu {
+  box-shadow: 5px 3px 5px #cccccc;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+}
+.card-layout-menu__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 2px;
+  margin: 0;
+}
+.card-layout-menu__p {
+  color: #737373;
+}
+.card-layout-menu__price {
+  font-weight: 500;
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DES PAGES MENU
+                    (avec animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.check-box {
+  box-shadow: 5px 3px 5px #cccccc;
+  height: 70px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: white;
+  padding-right: 0px;
+}
+.check-box__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 270px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 2px;
+  margin: 0;
+}
+.check-box__p {
+  color: #737373;
+}
+.check-box__price {
+  font-weight: 500;
+}
+.check-box__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.check-box__click-box {
+  width: 60px;
+  height: 70px;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 5px 3px 5px #cccccc;
+  background-color: #99e2d0;
+  margin-bottom: -10px;
+}
+.check-box__click-box i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+/* Règles CSS communes à tous le site */
 .footer-box {
   background: #333333;
 }
@@ -184,14 +380,28 @@ img {
   margin: 12px auto;
 }
 
-.box-logo-home__location {
+/*
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        LOGO DU SITE
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.logo img {
+  max-width: 80%;
+}
+
+.box-home-logo {
+  border: solid 2px rgb(255, 0, 225);
+}
+.box-home-logo__location {
   margin-top: 10px;
   width: 100%;
   height: 50px;
   box-shadow: inset 0px 5px 5px -2px #b3b3b3;
   background-color: #e6e6e6;
 }
-.box-logo-home__location__icon {
+.box-home-logo__location__icon {
   margin-right: 20px;
 }
 
@@ -227,10 +437,10 @@ img {
   padding-top: 40px;
 }
 
-.nav {
+.nav-home {
   margin-left: 10px;
 }
-.nav__btn {
+.nav-home__btn {
   position: relative;
   max-width: 100%;
   height: 70px;
@@ -242,7 +452,7 @@ img {
   background-color: #f2f2f2;
   box-shadow: 5px 3px 5px #999999;
 }
-.nav__btn__number {
+.nav-home__btn__number {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -252,16 +462,16 @@ img {
   border-radius: 20px;
   left: -15px;
 }
-.nav__btn__icon {
+.nav-home__btn__icon {
   margin-right: 20px;
   margin-left: 15px;
   font-size: 20px;
   color: gray;
 }
-.nav__btn:hover {
+.nav-home__btn:hover {
   background-color: #e4d5f6;
 }
-.nav__btn:hover .nav__btn__icon {
+.nav-home__btn:hover .nav-home__btn__icon {
   color: #9356dc;
 }
 
@@ -272,20 +482,80 @@ img {
   margin-bottom: 20px;
 }
 
-.card {
+/* CONPONENTS */
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                  CARTES DE LA PAGE D'ACCUEIL
+                      (sans animation)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.card-home-layout {
+  /*
+  CLASSE :
+  .card-home-layout
+  */
   background-color: white;
   box-shadow: 5px 3px 5px #cccccc;
   border-radius: 20px;
   position: relative;
+  /*
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
 }
-.card__mb {
-  margin-bottom: 30px;
-}
-.card img {
+.card-home-layout__img {
+  /*
+  CLASSE :
+  .card-home-layout__img
+  */
   height: 174px;
   border-radius: 20px 20px 0px 0px;
 }
-.card__new {
+.card-home-layout__box-title {
+  /*
+  Position intérieure des textes,
+  dans la DIV qui contient :
+  (1) Le nom de restaurant
+  (2) Le lieu
+  */
+  /*
+  CLASSE :
+  .card-home-layout__box-title
+  */
+  padding: 20px;
+  height: 75px;
+}
+.card-home-layout__h3 {
+  /*
+  CLASSE :
+  .card-home-layout__h3
+  */
+  margin-bottom: 3px;
+}
+.card-home-layout__principal-link::before {
+  /* Cette classe est placée sur le lien qui est considéré
+  comme le plus important. Le lien prioritaire de la carte.
+  Lapropriété "inset : 0" rend toute la carte cliquable depuis ce lien */
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  inset: 0;
+}
+
+/*
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    ENCADRÉ DU MOT "NOUVEAU" SITUÉ SUR LES IMGAGES DES CARTES
+           en haut à droite de la page d'accueil
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.box-text-new {
   box-shadow: 2px 2px 5px #1a1a1a;
   position: absolute;
   height: 30px;
@@ -295,17 +565,60 @@ img {
   background-color: #99e2d0;
   color: #2c9c81;
 }
-.card__title {
-  padding: 20px;
-  height: 75px;
-}
-.card__title h3 {
-  margin-bottom: 5px;
-}
-.card__title__i {
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+Classe qui gère l'animation des cœurs
+*/
+.heart-animation {
+  /*
+    icone du coeur de la carte.
+    passe au premier plan avec "z-index-1",
+    pour être accessible au clique
+    */
+  z-index: 1;
   max-width: 100%;
   font-size: 30px;
-  color: black;
+}
+
+/* 
+(1) On masque le bouton : checkbox par default
+ainsi que l'icone "coeur" du second-plan */
+.heart-animation input[type=checkbox],
+.heart-animation .second-plan {
+  display: none;
+}
+
+/* (2) Quand l'icone du premier-plan est coché,
+elle disparait */
+.heart-animation input[type=checkbox]:checked ~ .premier-plan {
+  display: none;
+  border: solid 1px red;
+}
+
+/* (3) Quand l'icone du premier-plan est coché,
+l'icone du second-plan apparait */
+.heart-animation input[type=checkbox]:checked ~ .second-plan {
+  display: block;
+  background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
+  background-size: 100%;
+  /* Utiliser le texte comme masque pour l'arrière-plan. */
+  /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=a-home.css.map */

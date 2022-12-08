@@ -1,7 +1,7 @@
 // ==== MAIN ======================================//
 
-.main-menus {
-  // MAIN-menu
+.main-menu-page {
+  // MAIN-menu : global css
   background-color: lighten($color-black, 95%);
 
   &__bg-top {
@@ -21,100 +21,7 @@
   }
 
   &.btn {
-    // BOUTON : Commander //
+    // BOUTON : Commander en bas de page //
     @include btn-shadow(40px);
-  }
-}
-
-.section-food {
-  /*
-  SETION Commprenant : 
-  (1) Les titres (Plats, Entrées, Desserts)
-  (2) Et une série de 3 cards
-  */
-  padding: 0px 10px;
-
-  &__h2 {
-    // TITRE : Plats, Entrées, Desserts.
-    font-size: 20px;
-    font-weight: 300;
-    width: 14%; // Largeur du trait sous le titre
-    height: 38px; // espace entre le titre et le trait
-    border-bottom: solid 4px $color-03;
-    padding-top: 5px;
-    margin: 30px 0px 20px 10px;
-    color: lighten($color-black, 50%);
-  }
-
-
-
-
-  &__simple-box {
-    // BASE CARTE SIMPLE
-    @include shadow-box-size();
-    // border: solid 1px red;
-
-
-    height: 70px;
-    padding: 10px 15px;
-    border-radius: 15px;
-    background-color: $color-white;
-
-    &__price {
-      font-weight: 800;
-    }
-  }
-
-
-  &__h3 {
-    // TITRE DES PLATS
-    // border: solid 1px red;
-    @include three-points-afer-txt(270px);
-    font-size: 17px;
-    margin-bottom: 2px;
-    margin: 0;
-  }
-
-  &__p {
-    color: lighten($color-black, 45%);
-  }
-
-}
-
-.mb-menu {
-  // Espace sous les cartes
-  margin-bottom: 15px;
-}
-// ===========================================================
-
-// MISE EN PAGE "TYPE" DE LA CARTE ANIMATION
-.check-box-card {
-  position: absolute;
-  width: 290px;
-  border-radius: 20px 0px 0px 20px;
-
-  & h3 {
-    @include three-points-afer-txt(230px);
-  }
-
-  &__click-box {
-    // Card-menu__check-box"
-
-    position: relative;
-    width: 60px;
-    height: 70px;
-    border-radius: 0px 20px 20px 0px;
-    left: 290px;
-    // @include shadow-box-size(4px, 80%);
-    @include shadow-box-size();
-
-    background-color: $color-03;
-
-    & i {
-      border-radius: 50px;
-      color: $color-white;
-
-      font-size: 25px;
-    }
   }
 }

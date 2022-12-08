@@ -1,15 +1,19 @@
-.header-menu {
+/*
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      FLÈCHE DE NAVIGATION (de retour à la page d'accueil)
+            présent sur l'entête des pages "menu"
+------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+.nav-return-home {
   height: 65px;
-  margin: auto 20px;
+  display: flex;
+  justify-content: stretch;
 
   & i {
     font-size: 25px;
-    margin-right: 65px;
-    // border: solid 2px rgb(217, 255, 0); //TEST
+    // border: solid 2px rgb(0, 255, 55); //TEST
   }
-
-}
-
-.box-logo{
-
 }
