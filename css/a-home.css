@@ -391,9 +391,6 @@ img {
   max-width: 80%;
 }
 
-.box-home-logo {
-  border: solid 2px rgb(255, 0, 225);
-}
 .box-home-logo__location {
   margin-top: 10px;
   width: 100%;
@@ -402,7 +399,19 @@ img {
   background-color: #e6e6e6;
 }
 .box-home-logo__location__icon {
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.box-home-logo__location input {
+  font-size: 16px;
+  font-weight: 500;
+  width: 50%;
+  background-color: transparent;
+  border: solid transparent;
+}
+.box-home-logo__location input::placeholder {
+  /* Permet de cibler le pseudo-element placeholder dans l'input texte */
+  color: black;
+  opacity: 1;
 }
 
 .box-title {

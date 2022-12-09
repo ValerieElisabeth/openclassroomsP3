@@ -1,6 +1,5 @@
 .box-home-logo {
   // SECTION : localisation & Ville
-  border: solid 2px rgb(255, 0, 225); //TEST
 
   &__location {
     margin-top: 10px;
@@ -10,7 +9,21 @@
     background-color: lighten($color-black, 90%);
 
     &__icon {
-      margin-right: 20px;
+      margin-right: 10px;
+    }
+
+    & input {
+      font-size: 16px;
+      font-weight: 500;
+      width: 50%;
+      background-color: transparent;
+      border: solid transparent;
+    }
+
+    & input::placeholder {
+      /* Permet de cibler le pseudo-element placeholder dans l'input texte */
+      color: $color-black;
+      opacity: 1;
     }
   }
 }
