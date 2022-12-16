@@ -304,6 +304,60 @@ img {
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+Classe qui gère l'animation des cœurs
+*/
+.heart-animation {
+  /*
+    icone du coeur de la carte.
+    passe au premier plan avec "z-index-1",
+    pour être accessible au clique
+    */
+  z-index: 1;
+  max-width: 100%;
+  font-size: 30px;
+}
+
+/* 
+(1) On masque le bouton : checkbox par default
+ainsi que l'icone "coeur" du second-plan */
+.heart-animation input[type=checkbox],
+.heart-animation .second-plan {
+  display: none;
+}
+
+/* (2) Quand l'icone du premier-plan est coché,
+elle disparait */
+.heart-animation input[type=checkbox]:checked ~ .premier-plan {
+  display: none;
+}
+
+/* (3) Quand l'icone du premier-plan est coché,
+l'icone du second-plan apparait */
+.heart-animation input[type=checkbox]:checked ~ .second-plan {
+  display: block;
+  background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
+  background-size: 100%;
+  /* Utiliser le texte comme masque pour l'arrière-plan. */
+  /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                   CARTES DES PAGES MENU
                     (avec animation)
 ---------------------------------------------------------------
@@ -406,10 +460,9 @@ img {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
 }
-.main-menu-page.btn {
-  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
-  Il permet d'ajuster la largeur des boutons, en fonction
-  de la charte graphique grâce à la variable : ($padding)  */
+.main-menu-page.btn { /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+Il permet d'ajuster la largeur des boutons, en fonction
+de la charte graphique grâce à la variable : ($padding)  */
   padding: 0px 40px;
   max-width: 100%;
   height: 50px;

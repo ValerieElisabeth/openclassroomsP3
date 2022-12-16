@@ -45,7 +45,6 @@ ainsi que l'icone "coeur" du second-plan */
 elle disparait */
 .heart-animation input[type="checkbox"]:checked ~ .premier-plan {
   display: none;
-  border: solid 1px red;
 }
 
 /* (3) Quand l'icone du premier-plan est coché,
