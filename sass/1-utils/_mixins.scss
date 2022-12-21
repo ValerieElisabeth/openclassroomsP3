@@ -25,9 +25,12 @@
 */
 
 @mixin btn-shadow($padding: 0px) {
-  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  /*
+  BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
   Il permet d'ajuster la largeur des boutons, en fonction
-  de la charte graphique grâce à la variable : ($padding)  */
+  de la charte graphique grâce à la variable : ($padding)
+  */
+
   padding: 0px ($padding);
   // =====
   max-width: 100%;
@@ -99,61 +102,48 @@
     margin-bottom: 3px;
     // border: solid 1px rgb(30, 0, 255); //TEST
   }
+
   /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-    ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
+
   &__principal-link::before {
-    /* Cette classe est placée sur le lien qui est considéré
-    comme le plus important. Le lien prioritaire de la carte.
-    Lapropriété "inset : 0" rend toute la carte cliquable depuis ce lien */
+    /*
+    Cette classe est placée sur le lien qui est considéré comme le plus
+    important. Le lien prioritaire de la carte. La propriété "inset : 0"
+    rend toute la carte cliquable depuis ce lien
+    */
     content: "";
     position: absolute;
     border-radius: 20px;
-    // border: solid 6px rgb(89, 255, 56);
-    // background-color: rgb(0, 89, 255);
     inset: 0;
   }
-
-  // &__heart-animation {
-  // }
 } // find mixin : card-home-globals
 
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                   CARTES DES PAGES MENUS
-                    (css layout global)
+      (Mixin de l'effet d'opacité progressive des cartes)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-@mixin card-layout-menu {
-  //CARD PAGE MENU sans animation
-  @include shadow-box-size(5px, 3px, 5px, 80%);
 
-  height: 70px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: $color-white;
-
-  &__h3 {
-    // TITRE DES PLATS
-    @include three-points-afer-txt(270px);
-    font-size: 17px;
-    margin-bottom: 2px;
-    margin: 0;
-  }
-
-  &__p {
-    color: lighten($color-black, 45%);
-  }
-
-  &__price {
-    font-weight: 500;
-  }
+@mixin effet-revelation-carte {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(
+    0,
+    0.63,
+    0.34,
+    0.97
+  ); // Fluidité de l'animation.
+  animation-duration: 1.5s; // Durée animation d'1 cycle.
+  animation-delay: 1700ms; // Délais début démarrage animation.
+  animation-fill-mode: backwards; // Applique la premier règle du Keyframes
 }
 
 /*
@@ -172,7 +162,7 @@
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin three-points-afer-txt($width: 100px) {
+@mixin three-points-afer-txt($width: 98%) {
   /* 
   Effet de texte se terminant par 3 petits points
    */

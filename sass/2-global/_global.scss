@@ -166,6 +166,11 @@ img {
     align-items: flex-end;
   }
 
+  &-jc-fe {
+    //flex d-flex-jc-fe
+    justify-content: flex-end;
+  }
+
   &-jc-c {
     //flex d-flex-jc-c
     justify-content: center;
@@ -191,6 +196,7 @@ img {
 
 .m {
   // TOP
+
   &t-10 {
     margin-top: 10px;
   }
@@ -208,6 +214,7 @@ img {
   }
 
   // RIGHT
+
   &r-10 {
     margin-right: 10px;
   }
@@ -225,7 +232,8 @@ img {
   }
 
   // BOTTOM
-  &r-10 {
+
+  &b-10 {
     margin-bottom: 10px;
   }
 
@@ -241,7 +249,16 @@ img {
     margin-bottom: 30px;
   }
 
+  &b-40 {
+    margin-bottom: 40px;
+  }
+
+  &b-50 {
+    margin-bottom: 50px;
+  }
+
   // LEFT
+
   &l-10 {
     margin-left: 10px;
   }

@@ -1,13 +1,167 @@
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                  CARTES DES PAGES MENU
-                    (sans animation)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    @Keyframes des boites "menu"
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-.card-layout-menu {
-  //CARD PAGE MENU sans animation
-  @include card-layout-menu;
+/*
+---------------------------------------------------------------
+ @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
+---------------------------------------------------------------
+ */
+@keyframes revelation-menu-cards {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 15px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+---------------------------------------------------------------
+ @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
+---------------------------------------------------------------
+ */
+@keyframes over-circle {
+  0% {
+    transform: rotate(-190deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
+  }
+}
+
+/*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CARTES DES PAGES MENU
+        Ces 2 containers imbriqués sont necessaires pour accuiellir
+      les cartes menus et l'effet du bouton qui arrive par la droite.
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+.container-principal {
+  @include shadow-box-size(5px, 3px, 5px, 60%);
+  border-radius: 15px;
+  position: relative;
+  height: 70px; // Hauteur des cartes mernu.
+  overflow: hidden; // Permet de cacher, tout ce qui dépasse du conteneur secondaire.
+}
+
+.container-secondaire {
+  position: absolute;
+  right: -71px;
+}
+
+/* -------------------------------------------------------- */
+.carte-1 {
+  @include effet-revelation-carte();
+  animation-delay: 500ms; // Délais début démarrage animation.
+}
+
+.carte-2 {
+  @include effet-revelation-carte();
+  animation-delay: 800ms; // Délais début démarrage animation.
+  top: 14px;
+}
+
+.carte-3 {
+  @include effet-revelation-carte();
+  top: 28px;
+  animation-delay: 1100ms; // Délais début démarrage animation.
+}
+
+.carte-4 {
+  @include effet-revelation-carte();
+  top: 42px;
+  animation-delay: 1400ms; // Délais début démarrage animation.
+}
+
+/* -------------------------------------------------------- */
+
+.container-box-menu {
+  // Ce container contient tout le layout de la carte animée des pages menu.
+  height: 70px;
+  width: 92%; //Important!!
+
+  &__left {
+    // Ce container contient toute la partie GAUCHE de la carte animée des pages menu.
+    padding: 18px 5px 4px 15px;
+    background-color: $color-white;
+    width: 83%; //Important!!
+
+    &:hover {
+      width: 66%; //Important!!
+      cursor: pointer;
+      transition: 700ms; // Ralentis le :hover
+    }
+  }
+
+  &:hover {
+    & i {
+      /* -------------------------------------------------------- */
+      /* APPEL ANIMATION ---------------------------------------- */
+      /* -------------------------------------------------------- */
+      animation-name: over-circle;
+      animation-delay: 0s; // elle démarre après 2 secondes.
+      animation-duration: 800ms; // Durée animation d'1 cycle.
+      animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+    }
+  }
+
+  .card-menu-box {
+    width: 329px; // (1) Important!!
+    max-width: 86%; // (2) Important!!
+
+    /*
+    (1) Positionne la carte des menus en largeur dans son container.
+    (2) Donne une limita maximale en largeur du container qui englobe le h3 et le p.
+    */
+
+    &__h3 {
+      // TITRE DES PLATS
+      @include three-points-afer-txt();
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    &__p {
+      @include three-points-afer-txt();
+      color: lighten($color-black, 45%);
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &__price {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 7.7px;
+      background-color: $color-white;
+    }
+
+    // Bouton animé de la card "menu"
+    &--click {
+      width: 70px;
+      height: 100%;
+      left: 100%;
+      border-radius: 0px 15px 15px 0px;
+      @include shadow-box-size(5px, 3px, 5px, 80%);
+      background-color: $color-03;
+
+      & i {
+        border-radius: 50px;
+        color: $color-white;
+        font-size: 25px;
+      }
+    }
+  }
 }

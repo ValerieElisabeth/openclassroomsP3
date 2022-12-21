@@ -39,7 +39,7 @@ dans le code de cette page, pour le bon onctionnement de SASS
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                   CARTES DES PAGES MENUS
-                    (css layout global)
+      (Mixin de l'effet d'opacité progressive des cartes)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
@@ -182,6 +182,9 @@ img {
 .d-flex-ai-fe {
   align-items: flex-end;
 }
+.d-flex-jc-fe {
+  justify-content: flex-end;
+}
 .d-flex-jc-c {
   justify-content: center;
 }
@@ -221,7 +224,7 @@ img {
 .mr-30 {
   margin-right: 30px;
 }
-.mr-10 {
+.mb-10 {
   margin-bottom: 10px;
 }
 .mb-15 {
@@ -232,6 +235,12 @@ img {
 }
 .mb-30 {
   margin-bottom: 30px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-50 {
+  margin-bottom: 50px;
 }
 .ml-10 {
   margin-left: 10px;
@@ -251,9 +260,11 @@ img {
   $x:5px, $y:3px, $blur:5px, $pourcentage: 60%
   */
 .btn {
-  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  /*
+  BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
   Il permet d'ajuster la largeur des boutons, en fonction
-  de la charte graphique grâce à la variable : ($padding)  */
+  de la charte graphique grâce à la variable : ($padding)
+  */
   padding: 0px 0px;
   max-width: 100%;
   height: 50px;
@@ -268,37 +279,176 @@ img {
 
 /* CSS des cartes qui composent les pages menus */
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                  CARTES DES PAGES MENU
-                    (sans animation)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    @Keyframes des boites "menu"
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-.card-layout-menu {
-  box-shadow: 5px 3px 5px #cccccc;
-  height: 70px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: white;
+/*
+---------------------------------------------------------------
+ @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
+---------------------------------------------------------------
+ */
+@keyframes revelation-menu-cards {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 15px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.card-layout-menu__h3 {
+/*
+---------------------------------------------------------------
+ @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
+---------------------------------------------------------------
+ */
+@keyframes over-circle {
+  0% {
+    transform: rotate(-190deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
+  }
+}
+/*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CARTES DES PAGES MENU
+        Ces 2 containers imbriqués sont necessaires pour accuiellir
+      les cartes menus et l'effet du bouton qui arrive par la droite.
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.container-principal {
+  box-shadow: 5px 3px 5px #999999;
+  border-radius: 15px;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+}
+
+.container-secondaire {
+  position: absolute;
+  right: -71px;
+}
+
+/* -------------------------------------------------------- */
+.carte-1 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  animation-delay: 500ms;
+}
+
+.carte-2 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  animation-delay: 800ms;
+  top: 14px;
+}
+
+.carte-3 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  top: 28px;
+  animation-delay: 1100ms;
+}
+
+.carte-4 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  top: 42px;
+  animation-delay: 1400ms;
+}
+
+/* -------------------------------------------------------- */
+.container-box-menu {
+  height: 70px;
+  width: 92%;
+}
+.container-box-menu__left {
+  padding: 18px 5px 4px 15px;
+  background-color: white;
+  width: 83%;
+}
+.container-box-menu__left:hover {
+  width: 66%;
+  cursor: pointer;
+  transition: 700ms;
+}
+.container-box-menu:hover i {
+  /* -------------------------------------------------------- */
+  /* APPEL ANIMATION ---------------------------------------- */
+  /* -------------------------------------------------------- */
+  animation-name: over-circle;
+  animation-delay: 0s;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+}
+.container-box-menu .card-menu-box {
+  width: 329px;
+  max-width: 86%;
+  /*
+  (1) Positionne la carte des menus en largeur dans son container.
+  (2) Donne une limita maximale en largeur du container qui englobe le h3 et le p.
+  */
+}
+.container-box-menu .card-menu-box__h3 {
   /* 
   Effet de texte se terminant par 3 petits points
    */
-  width: 270px;
+  width: 98%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 17px;
-  margin-bottom: 2px;
-  margin: 0;
+  margin-bottom: 4px;
 }
-.card-layout-menu__p {
+.container-box-menu .card-menu-box__p {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 98%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   color: #737373;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
-.card-layout-menu__price {
-  font-weight: 500;
+.container-box-menu .card-menu-box__price {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 7.7px;
+  background-color: white;
+}
+.container-box-menu .card-menu-box--click {
+  width: 70px;
+  height: 100%;
+  left: 100%;
+  border-radius: 0px 15px 15px 0px;
+  box-shadow: 5px 3px 5px #cccccc;
+  background-color: #99e2d0;
+}
+.container-box-menu .card-menu-box--click i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
 }
 
 /*
@@ -353,63 +503,6 @@ l'icone du second-plan apparait */
   /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                  CARTES DES PAGES MENU
-                    (avec animation)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-.check-box {
-  box-shadow: 5px 3px 5px #cccccc;
-  height: 70px;
-  padding: 10px 15px;
-  border-radius: 15px;
-  background-color: white;
-  padding-right: 0px;
-}
-.check-box__h3 {
-  /* 
-  Effet de texte se terminant par 3 petits points
-   */
-  width: 270px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-size: 17px;
-  margin-bottom: 2px;
-  margin: 0;
-}
-.check-box__p {
-  color: #737373;
-}
-.check-box__price {
-  font-weight: 500;
-}
-.check-box__h3 {
-  /* 
-  Effet de texte se terminant par 3 petits points
-   */
-  width: 200px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.check-box__click-box {
-  width: 60px;
-  height: 70px;
-  border-radius: 0px 15px 15px 0px;
-  box-shadow: 5px 3px 5px #cccccc;
-  background-color: #99e2d0;
-  margin-bottom: -10px;
-}
-.check-box__click-box i {
-  border-radius: 50px;
-  color: white;
-  font-size: 25px;
 }
 
 /* Règles CSS communes à tous le site */
@@ -480,9 +573,11 @@ l'icone du second-plan apparait */
   color: gray;
 }
 .box-title.btn {
-  /* BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
+  /*
+  BOUTONS DÉGRADÉ DU ROSE AU VIOLET :
   Il permet d'ajuster la largeur des boutons, en fonction
-  de la charte graphique grâce à la variable : ($padding)  */
+  de la charte graphique grâce à la variable : ($padding)
+  */
   padding: 0px 25px;
   max-width: 100%;
   height: 50px;
@@ -566,7 +661,7 @@ l'icone du second-plan apparait */
   /*
   ---------------------------------------------------------------
   °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-      ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+        ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
   ---------------------------------------------------------------
   °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
   */
@@ -601,9 +696,11 @@ l'icone du second-plan apparait */
   margin-bottom: 3px;
 }
 .card-home-layout__principal-link::before {
-  /* Cette classe est placée sur le lien qui est considéré
-  comme le plus important. Le lien prioritaire de la carte.
-  Lapropriété "inset : 0" rend toute la carte cliquable depuis ce lien */
+  /*
+  Cette classe est placée sur le lien qui est considéré comme le plus
+  important. Le lien prioritaire de la carte. La propriété "inset : 0"
+  rend toute la carte cliquable depuis ce lien
+  */
   content: "";
   position: absolute;
   border-radius: 20px;
