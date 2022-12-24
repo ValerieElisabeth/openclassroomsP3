@@ -91,17 +91,27 @@ img {
   padding-top: 20px;
   margin: auto;
   // border: solid 1px rgb(255, 5, 138); //TEST
-
   // MARGES : HautBas = 0px / DroiteGauche = auto.
+
+  @include tab-med {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-right: 0px;
+    border: solid 2px rgb(34, 255, 0); //TEST
+  }
 
   &__01 {
     //container__01
     margin: 20px auto;
     padding: 0px 20px;
-    // border: solid 1px rgb(0, 255, 0); //TEST
 
     // MARGES : HautBas = 20px / DroiteGauche = auto.
     // PADDING : HautBas = 0px / DroiteGauche = 20px.
+
+    @include tab-med {
+      margin: 40px;
+      padding-right: 0px;
+    }
   }
 
   &__02 {
@@ -109,21 +119,33 @@ img {
     padding: 40px 20px;
     // MARGES : container__02.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
+
+    @include desk-sm-med-lg {
+      border: solid 3px rgb(255, 213, 0);
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
 
   &__03 {
     //container__03
     padding: 30px 20px;
-    // border: solid 1px rgb(11, 198, 255); //TEST
     // MARGES : container__01.
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
+    @include tab-med {
+      padding: 30px 50px;
+      border: solid 2px rgb(255, 21, 0); //TEST
+    }
   }
 
   &__04 {
     // Est utilisé pour les pages menu
     //container__04
     padding: 0px 15px;
-    // border: solid 1px rgb(11, 198, 255); //TEST
+    @include tab-med {
+      padding: 30px 50px;
+      border: solid 10px rgb(255, 204, 0); //TEST
+    }
   }
 }
 

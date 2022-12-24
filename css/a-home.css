@@ -68,6 +68,16 @@ La fonction : map-get(), permet de retourner une valeur associée
 $size : correspond à un ensemble "clé/valeur" attendu comme argument.
 
 */
+/*
+---------------------------------------------------------------
+MIXIN : DESKTOP Abrégées
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+MIXIN : DESKTOP Abrégées par 3
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 /* TABLETTE
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
             Si l'écran est supérieur ou égal à : 768px
@@ -159,18 +169,65 @@ img {
   padding-top: 20px;
   margin: auto;
 }
+@media (min-width: 768px) {
+  .container {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-right: 0px;
+    border: solid 2px rgb(34, 255, 0);
+  }
+}
 .container__01 {
   margin: 20px auto;
   padding: 0px 20px;
 }
+@media (min-width: 768px) {
+  .container__01 {
+    margin: 40px;
+    padding-right: 0px;
+  }
+}
 .container__02 {
   padding: 40px 20px;
+}
+@media (min-width: 850px) {
+  .container__02 {
+    border: solid 3px rgb(255, 213, 0);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width: ) {
+  .container__02 {
+    border: solid 3px rgb(255, 213, 0);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .container__02 {
+    border: solid 3px rgb(255, 213, 0);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 .container__03 {
   padding: 30px 20px;
 }
+@media (min-width: 768px) {
+  .container__03 {
+    padding: 30px 50px;
+    border: solid 2px rgb(255, 21, 0);
+  }
+}
 .container__04 {
   padding: 0px 15px;
+}
+@media (min-width: 768px) {
+  .container__04 {
+    padding: 30px 50px;
+    border: solid 10px rgb(255, 204, 0);
+  }
 }
 
 /*
@@ -610,10 +667,10 @@ l'icone du second-plan apparait */
 @media (min-width: 768px) {
   .box-title p,
   .box-title h1 {
+    margin-left: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: left;
-    margin-left: 50px;
   }
   .box-title br {
     display: none;
@@ -623,9 +680,8 @@ l'icone du second-plan apparait */
     DIV qui englobe le bouton :
     Explorer nos restaurants
     */
-    border: solid 2px rgb(106, 255, 0);
-    margin-right: 20px;
     align-self: flex-end;
+    padding-right: 20px;
   }
 }
 
@@ -669,7 +725,7 @@ l'icone du second-plan apparait */
 }
 .nav-home-function__btn {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   height: 70px;
   margin: 20px auto;
   padding: 0px 20px;
@@ -678,7 +734,6 @@ l'icone du second-plan apparait */
   font-weight: 500;
   background-color: #f2f2f2;
   box-shadow: 5px 3px 5px #999999;
-  border: solid 2px rgb(0, 128, 255);
 }
 .nav-home-function__btn__number {
   position: absolute;
@@ -704,18 +759,20 @@ l'icone du second-plan apparait */
 }
 @media (min-width: 768px) {
   .nav-home-function {
-    border: solid 1px rgb(0, 247, 255);
-    margin-left: -5px;
     display: flex;
     justify-content: left;
   }
   .nav-home-function__btn {
-    border: solid 2px rgb(255, 55, 0);
     margin-left: 0px;
-    margin-right: 50px;
+    margin-right: 40px;
+    font-size: 15px;
   }
   .nav-home-function__btn.mr-30 {
-    margin-right: 0px;
+    /*
+    Marge à Droite
+    de la 3ème carte
+    */
+    margin-right: 20px;
   }
   .nav-home-function__btn__icon {
     margin-right: 10px;
@@ -724,16 +781,8 @@ l'icone du second-plan apparait */
 }
 @media (min-width: 850px) {
   .nav-home-function {
-    border: solid 3px rgb(102, 255, 0);
-    margin-left: -5px;
     display: flex;
-    justify-content: left;
-  }
-  .nav-home-function__btn {
-    border: solid 2px rgb(255, 55, 0);
-  }
-  .nav-home-function__btn.mr-30 {
-    margin-right: 0px;
+    justify-content: space-between;
   }
 }
 

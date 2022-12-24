@@ -45,7 +45,7 @@
 */
 
 .box-title {
-  // TITRE : RÉSERVEZ LE MENU QUI VOUS CONVIENT
+  // TITRE : "Réservez le menu qui vous convient"
   background-color: lighten($color-black, 97%);
   text-align: center;
   padding-top: 50px;
@@ -69,16 +69,17 @@
   ---------------------------------------------------------------
   */
 
-  @include tablet-screens(tablet-med) {
+  @include tab-med {
     //CLASSE => .box-title
     // TITRE : RÉSERVEZ LE MENU QUI VOUS CONVIENT
 
     p,
     h1 {
+      margin-left: 20px;
+
       display: flex;
       justify-content: flex-start;
       align-items: left;
-      margin-left: 50px;
     }
 
     br {
@@ -90,9 +91,8 @@
       DIV qui englobe le bouton :
       Explorer nos restaurants
       */
-      border: solid 2px rgb(106, 255, 0);
-      margin-right: 20px;
       align-self: flex-end;
+      padding-right: 20px;
     }
   }
 }
