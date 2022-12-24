@@ -1,4 +1,33 @@
-.nav-home {
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        CONTENEUR   >  SECTION   >   FONCTIONNEMENT
+                (.box-function-container)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+.box-function-container {
+  // SECTION : FONCTIONNEMENT
+  padding-bottom: 30px;
+  padding-top: 40px;
+
+  @include tablet-screens(tablet-med) {
+    margin-left: 40px;
+  }
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+              SECTION   >   FONCTIONNEMENT
+      (Boutons : 1/2/3 de la partie Fonctionnement)
+                  (.nav-home-function)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+.nav-home-function {
   margin-left: 10px;
 
   &__btn {
@@ -12,6 +41,7 @@
     font-weight: 500;
     background-color: lighten($color-black, 95%);
     @include shadow-box-size();
+    border: solid 2px rgb(0, 128, 255);
 
     &__number {
       position: absolute;
@@ -33,8 +63,59 @@
 
     &:hover {
       background-color: lighten($color-01, 30%);
-      & .nav-home__btn__icon {
+      & .nav-home-function__btn__icon {
         color: $color-01;
+      }
+    }
+  }
+
+  /* TABLETTE
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  ---------------------------------------------------------------
+  */
+
+  @include tablet-screens(tablet-med) {
+    //  (.nav-home-function)
+
+    border: solid 1px rgb(0, 247, 255);
+    margin-left: -5px;
+    display: flex;
+    justify-content: left;
+
+    &__btn {
+      border: solid 2px rgb(255, 55, 0);
+      margin-left: 0px;
+      margin-right: 50px;
+
+      &.mr-30 {
+        margin-right: 0px;
+      }
+
+      &__icon {
+        margin-right: 10px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  /* DESKTOP
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  ---------------------------------------------------------------
+  */
+
+  @include desktop-screens(desktop-sm) {
+    //  (.nav-home-function)
+
+    border: solid 3px rgb(102, 255, 0);
+    margin-left: -5px;
+    display: flex;
+    justify-content: left;
+
+    &__btn {
+      border: solid 2px rgb(255, 55, 0);
+
+      &.mr-30 {
+        margin-right: 0px;
       }
     }
   }

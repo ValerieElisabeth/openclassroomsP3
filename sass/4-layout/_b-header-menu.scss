@@ -14,6 +14,13 @@
 
   & i {
     font-size: 25px;
-    // border: solid 2px rgb(0, 255, 55); //TEST
   }
+}
+
+.portrait-img {
+  // object-position: 50% 50%; // positionne l'image dans son container.
+  // overflow: hidden; // Permet de cacher, tout ce qui dépasse du conteneur secondaire.
+  // object-fit: cover;
+  // border: solid 2px rgb(0, 157, 255); //TEST
+  height: 260px;
 }

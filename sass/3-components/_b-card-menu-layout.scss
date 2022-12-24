@@ -98,14 +98,14 @@
     background-color: $color-white;
     width: 83%; //Important!!
 
-    &:hover {
+    &:active {
       width: 66%; //Important!!
       cursor: pointer;
-      transition: 700ms; // Ralentis le :hover
+      transition: 700ms; // Ralentis le :hover ou :active
     }
   }
 
-  &:hover {
+  &:active {
     & i {
       /* -------------------------------------------------------- */
       /* APPEL ANIMATION ---------------------------------------- */

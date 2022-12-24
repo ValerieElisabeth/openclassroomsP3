@@ -46,13 +46,6 @@ dans le code de cette page, pour le bon onctionnement de SASS
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-            CARTES DES PAGES MENUS avec ANIMATION
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-/*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
       3 PETITS POINTS APRÈS UN TEXTE TROP LONG
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -60,7 +53,31 @@ dans le code de cette page, pour le bon onctionnement de SASS
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                              MARGES
+                     MEDIAS QUERIES
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/* DESKTOP
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            Si l'écran est supérieur ou égal à : 992px
+                L'affichage adapté aux : "DESKTOP"
+---------------------------------------------------------------
+DEFINITION :
+La fonction : map-get(), permet de retourner une valeur associée
+à une clé:valeur, définie dans une map.
+$size : correspond à un ensemble "clé/valeur" attendu comme argument.
+
+*/
+/* TABLETTE
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            Si l'écran est supérieur ou égal à : 768px
+               L'affichage adapté aux : "TABLETTES"
+---------------------------------------------------------------
+*/
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
@@ -78,7 +95,7 @@ dans le code de cette page, pour le bon onctionnement de SASS
 html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
-  max-width: 375px; /* Largeur max du site pour du mobile first */
+  max-width: 1440px; /* Largeur max du site */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -211,18 +228,6 @@ img {
 }
 .mt-30 {
   margin-top: 30px;
-}
-.mr-10 {
-  margin-right: 10px;
-}
-.mr-15 {
-  margin-right: 15px;
-}
-.mr-20 {
-  margin-right: 20px;
-}
-.mr-30 {
-  margin-right: 30px;
 }
 .mb-10 {
   margin-bottom: 10px;
@@ -385,12 +390,12 @@ img {
   background-color: white;
   width: 83%;
 }
-.container-box-menu__left:hover {
+.container-box-menu__left:active {
   width: 66%;
   cursor: pointer;
   transition: 700ms;
 }
-.container-box-menu:hover i {
+.container-box-menu:active i {
   /* -------------------------------------------------------- */
   /* APPEL ANIMATION ---------------------------------------- */
   /* -------------------------------------------------------- */
@@ -455,13 +460,6 @@ img {
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-/*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
@@ -585,6 +583,10 @@ de la charte graphique grâce à la variable : ($padding)
 }
 .nav-return-home i {
   font-size: 25px;
+}
+
+.portrait-img {
+  height: 260px;
 }
 
 .lunches-time-title {

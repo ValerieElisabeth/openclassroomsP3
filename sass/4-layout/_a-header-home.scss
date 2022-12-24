@@ -1,3 +1,11 @@
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      SECTION     >     LOGO      >     LOCALISATION
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
 .box-home-logo {
   // SECTION : localisation & Ville
 
@@ -28,6 +36,14 @@
   }
 }
 
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      TITRE PAGE (h1)+ BOUTON : Explorez nos restaurants
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
 .box-title {
   // TITRE : RÉSERVEZ LE MENU QUI VOUS CONVIENT
   background-color: lighten($color-black, 97%);
@@ -45,10 +61,38 @@
     @include btn-shadow(25px);
     // border: solid 1px rgb(0, 213, 255); //TEST
   }
-}
 
-.box-function {
-  // SECTION : FONCTIONNEMENT
-  padding-bottom: 30px;
-  padding-top: 40px;
+  /* TABLETTE
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            Si l'écran est supérieur ou égal à : 768px
+               L'affichage adapté aux : "TABLETTES"
+  ---------------------------------------------------------------
+  */
+
+  @include tablet-screens(tablet-med) {
+    //CLASSE => .box-title
+    // TITRE : RÉSERVEZ LE MENU QUI VOUS CONVIENT
+
+    p,
+    h1 {
+      display: flex;
+      justify-content: flex-start;
+      align-items: left;
+      margin-left: 50px;
+    }
+
+    br {
+      display: none;
+    }
+
+    & div {
+      /*
+      DIV qui englobe le bouton :
+      Explorer nos restaurants
+      */
+      border: solid 2px rgb(106, 255, 0);
+      margin-right: 20px;
+      align-self: flex-end;
+    }
+  }
 }

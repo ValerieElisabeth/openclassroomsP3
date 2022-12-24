@@ -13,7 +13,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
-  max-width: 375px; /* Largeur max du site pour du mobile first */
+  max-width: 1440px; /* Largeur max du site */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -215,21 +215,21 @@ img {
 
   // RIGHT
 
-  &r-10 {
-    margin-right: 10px;
-  }
+  // &r-10 {
+  //   margin-right: 10px;
+  // }
 
-  &r-15 {
-    margin-right: 15px;
-  }
+  // &r-15 {
+  //   margin-right: 15px;
+  // }
 
-  &r-20 {
-    margin-right: 20px;
-  }
+  // &r-20 {
+  //   margin-right: 20px;
+  // }
 
-  &r-30 {
-    margin-right: 30px;
-  }
+  // &r-30 {
+  //   margin-right: 30px;
+  // }
 
   // BOTTOM
 
