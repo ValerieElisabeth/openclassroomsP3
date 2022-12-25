@@ -34,6 +34,19 @@
       opacity: 1;
     }
   }
+
+  @include tab-med {
+    &__location {
+      display: flex;
+      justify-content: flex-end;
+
+      & input {
+        margin-right: 20px;
+        width: 100%;
+        border: solid 1px lighten($color-black, 70%);
+      }
+    }
+  }
 }
 
 /*

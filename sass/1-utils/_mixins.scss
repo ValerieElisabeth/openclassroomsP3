@@ -64,6 +64,7 @@
   background-color: $color-white;
   @include shadow-box-size(5px, 3px, 5px, 80%);
   border-radius: 20px;
+  width: 100%;
   position: relative;
 
   &__img {
@@ -180,13 +181,14 @@
 
 $breakpoints: (
   // MAP : tablettes
-  tablet-sm: 600px,
   tablet-med: 768px,
 
   // MAP : desktop
   desktop-sm: 850px,
   desk-med: 992px,
-  desktop-lg: 1200px
+  desktop-lg1: 1100px,
+  desktop-lg2: 1200px,
+  desktop-lg3: 1300px
 );
 
 /* DESKTOP
@@ -225,8 +227,20 @@ MIXIN : DESKTOP Abrégées
   }
 }
 
-@mixin desk-lg {
-  @include desktop-screens(desktop-lg) {
+@mixin desk-lg1 {
+  @include desktop-screens(desktop-lg1) {
+    @content;
+  }
+}
+
+@mixin desk-lg2 {
+  @include desktop-screens(desktop-lg2) {
+    @content;
+  }
+}
+
+@mixin desk-lg3 {
+  @include desktop-screens(desktop-lg3) {
     @content;
   }
 }
@@ -237,14 +251,23 @@ MIXIN : DESKTOP Abrégées par 3
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin desk-sm-med-lg {
+@mixin desk-med-lg1 {
+  @include desk-med {
+    @content;
+  }
+  @include desk-lg1 {
+    @content;
+  }
+}
+
+@mixin desk-sm-med-lg1 {
   @include desk-sm {
     @content;
   }
   @include desk-med {
     @content;
   }
-  @include desk-lg {
+  @include desk-lg1 {
     @content;
   }
 }
@@ -282,31 +305,3 @@ MIXIN : DESKTOP Abrégées par 3
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-
-$tab-sm: 600px;
-$tab-med: 768px;
-
-$desk-sm: 850px;
-$desk-med: 992px;
-$desk-lg: 1200px;
-
-$breakpoints-test: (
-  // MAP : tablettes
-  tablet:
-    (
-      sm: $tab-sm,
-      med: $tab-med,
-    ),
-  // MAP : desktop
-  desktop:
-    (
-      sm: $desk-sm,
-      med: $desk-med,
-      lg: $desk-lg,
-    )
-);
-
-@mixin breakpoints-test($screen) {
-  @media (min-width: map-get($breakpoints-test, $screen)) {
-  }
-}

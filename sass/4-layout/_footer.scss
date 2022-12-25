@@ -26,4 +26,14 @@
     margin: 12px auto;
     // border: solid 0.2px rgb(82, 80, 80); // TEST
   }
-}
+
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  VERSION TABLETTE
+  —---------------------------------------------------------------
+  */
+  @include tablet-screens(tablet-med) {
+    display: flex;
+    justify-content: space-around;
+  }
+} // FIN CLASSE .footer-box

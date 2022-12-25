@@ -174,7 +174,6 @@ img {
     margin-left: 40px;
     margin-right: 40px;
     padding-right: 0px;
-    border: solid 2px rgb(34, 255, 0);
   }
 }
 .container__01 {
@@ -190,23 +189,26 @@ img {
 .container__02 {
   padding: 40px 20px;
 }
+@media (min-width: 768px) {
+  .container__02 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 @media (min-width: 850px) {
   .container__02 {
-    border: solid 3px rgb(255, 213, 0);
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 @media (min-width: ) {
   .container__02 {
-    border: solid 3px rgb(255, 213, 0);
     padding-left: 50px;
     padding-right: 50px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .container__02 {
-    border: solid 3px rgb(255, 213, 0);
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -217,7 +219,6 @@ img {
 @media (min-width: 768px) {
   .container__03 {
     padding: 30px 50px;
-    border: solid 2px rgb(255, 21, 0);
   }
 }
 .container__04 {
@@ -226,7 +227,6 @@ img {
 @media (min-width: 768px) {
   .container__04 {
     padding: 30px 50px;
-    border: solid 10px rgb(255, 204, 0);
   }
 }
 
@@ -285,6 +285,18 @@ img {
 }
 .mt-30 {
   margin-top: 30px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-30 {
+  margin-right: 30px;
 }
 .mb-10 {
   margin-bottom: 10px;
@@ -563,6 +575,11 @@ l'icone du second-plan apparait */
 /* Règles CSS communes à tous le site */
 .footer-box {
   background: #333333;
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  VERSION TABLETTE
+  —---------------------------------------------------------------
+  */
 }
 .footer-box a,
 .footer-box i {
@@ -581,6 +598,12 @@ l'icone du second-plan apparait */
 .footer-box__txt-color {
   margin: 12px auto;
 }
+@media (min-width: 768px) {
+  .footer-box {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 
 /*
 ------------------------------------------------------------------
@@ -589,8 +612,20 @@ l'icone du second-plan apparait */
 ------------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
+.logo {
+  /* TABLETTE
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  ---------------------------------------------------------------
+  */
+}
 .logo img {
   max-width: 80%;
+}
+@media (min-width: 768px) {
+  .logo {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 /*
@@ -621,6 +656,17 @@ l'icone du second-plan apparait */
   /* Permet de cibler le pseudo-element placeholder dans l'input texte */
   color: black;
   opacity: 1;
+}
+@media (min-width: 768px) {
+  .box-home-logo__location {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .box-home-logo__location input {
+    margin-right: 20px;
+    width: 100%;
+    border: solid 1px #b3b3b3;
+  }
 }
 
 /*
@@ -696,6 +742,10 @@ l'icone du second-plan apparait */
 .box-function-container {
   padding-bottom: 30px;
   padding-top: 40px;
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  TABLETTE
+  —--------------------------------------------------------------- */
 }
 @media (min-width: 768px) {
   .box-function-container {
@@ -786,23 +836,20 @@ l'icone du second-plan apparait */
   }
 }
 
-.main-home {
-  background-color: #f7f7f7;
-}
-.main-home h2 {
-  margin-bottom: 20px;
-}
-
 /* CONPONENTS */
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                   CARTES DE LA PAGE D'ACCUEIL
-               (Div, qui englobe toute la carte)
+               (Div, qui englobe chaque carte)
+                        (ou une carte)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 .card-home-layout {
+  /*
+  DIV : qui englobe chaque carte.
+  */
   /*
   CLASSE :
   .card-home-layout
@@ -810,6 +857,7 @@ l'icone du second-plan apparait */
   background-color: white;
   box-shadow: 5px 3px 5px #cccccc;
   border-radius: 20px;
+  width: 100%;
   position: relative;
   /*
   ---------------------------------------------------------------
@@ -817,6 +865,14 @@ l'icone du second-plan apparait */
         ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
   ---------------------------------------------------------------
   °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  VERSION : TABLETTE
+  --------------------------------------------------------------- */
+  /*
+  DIV : qui englobe chaque carte version tablette et qui,
+  (1) Supprime l'espace en dessous de la dernière carte.
   */
 }
 .card-home-layout__img {
@@ -858,6 +914,86 @@ l'icone du second-plan apparait */
   position: absolute;
   border-radius: 20px;
   inset: 0;
+}
+@media (min-width: 768px) {
+  .card-home-layout {
+    margin-bottom: 0;
+  }
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+              CONTAINER : (qui englobe les 4 cartes)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.card-home-box {
+  /*
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                CONTAINER : (qui englobe 2 cartes)
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+   VERSION : DESKTOP
+  ---------------------------------------------------------------
+  */
+}
+.card-home-box__boxes {
+  /*
+  CSS par défaut
+  (1) Supprime les marges à droites sur la version mobile.
+  */
+  margin-right: 0px;
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  VERSION : TABLETTE
+  --------------------------------------------------------------- */
+  /*
+  CONTAINER : qui englobe 2 cartes
+  (1) Ajoute une marge en dessous du container supérieur qui englobe 2 cartes.
+  */
+}
+@media (min-width: 768px) {
+  .card-home-box__boxes {
+    display: flex;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: ) {
+  .card-home-box {
+    /*
+    (1) Aligne les 2 containers qui englobent chacun 2 cartes.
+    (2) Les cartes s'adaptent en largeur dans leurs conteneur.
+    (3) Espace entre les cartes.
+    */
+    display: flex;
+  }
+  .card-home-box__boxes {
+    width: 100%;
+  }
+  .card-home-box .mr-20 {
+    margin-right: 20px;
+  }
+}
+@media (min-width: 1100px) {
+  .card-home-box {
+    /*
+    (1) Aligne les 2 containers qui englobent chacun 2 cartes.
+    (2) Les cartes s'adaptent en largeur dans leurs conteneur.
+    (3) Espace entre les cartes.
+    */
+    display: flex;
+  }
+  .card-home-box__boxes {
+    width: 100%;
+  }
+  .card-home-box .mr-20 {
+    margin-right: 20px;
+  }
 }
 
 /*

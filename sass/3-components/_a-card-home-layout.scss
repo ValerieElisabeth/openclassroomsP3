@@ -2,15 +2,89 @@
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                   CARTES DE LA PAGE D'ACCUEIL
-               (Div, qui englobe toute la carte)
+               (Div, qui englobe chaque carte)
+                        (ou une carte)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
 .card-home-layout {
-  // DIV : qui englobe toute la carte
+  /*
+  DIV : qui englobe chaque carte.
+  */
   @include card-home-globals();
+
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  VERSION : TABLETTE
+  --------------------------------------------------------------- */
+  /*
+  DIV : qui englobe chaque carte version tablette et qui,
+  (1) Supprime l'espace en dessous de la dernière carte.
+  */
+  @include tab-med {
+    margin-bottom: 0; // (1)
+  }
 } // fin card
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+              CONTAINER : (qui englobe les 4 cartes)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.card-home-box {
+  // border: solid 5px rgb(0, 174, 255); //TEST
+  /*
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                CONTAINER : (qui englobe 2 cartes)
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
+  &__boxes {
+    /*
+    CSS par défaut
+    (1) Supprime les marges à droites sur la version mobile.
+    */
+    margin-right: 0px; //(1)
+
+    /* 
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    VERSION : TABLETTE
+    --------------------------------------------------------------- */
+    /*
+    CONTAINER : qui englobe 2 cartes
+    (1) Ajoute une marge en dessous du container supérieur qui englobe 2 cartes.
+    */
+    @include tab-med {
+      display: flex;
+      margin-bottom: 20px; // (1)
+    }
+  }
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+   VERSION : DESKTOP
+  ---------------------------------------------------------------
+  */
+  @include desk-med-lg1 {
+    /*
+    (1) Aligne les 2 containers qui englobent chacun 2 cartes.
+    (2) Les cartes s'adaptent en largeur dans leurs conteneur.
+    (3) Espace entre les cartes.
+    */
+    display: flex; // (1)
+
+    &__boxes {
+      width: 100%; // (2)
+    }
+
+    & .mr-20 {
+      margin-right: 20px; // (3)
+    }
+  }
+}
 
 /*
 ------------------------------------------------------------------

@@ -8,7 +8,19 @@
 
 .logo {
   & img {
-    // border: solid 1px red; // TEST
+    // border: solid 1px rgb(0, 242, 255); // TEST
     max-width: 80%;
+  }
+
+  /* TABLETTE
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  ---------------------------------------------------------------
+  */
+
+  @include tab-med {
+    // Container qui englobe le logo
+    // border: solid 6px rgb(255, 123, 0); // TEST
+    display: flex;
+    align-items: flex-start;
   }
 }
