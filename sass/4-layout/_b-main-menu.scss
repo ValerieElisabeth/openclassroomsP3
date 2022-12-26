@@ -6,10 +6,9 @@
 
   &__bg-top {
     // BLOC : aux bords arrondis, au dessus du nom du restaurant //
-    position: absolute;
-    width: 375px;
-    padding-top: 30px;
-    margin-bottom: 70px;
+    width: 100%;
+    padding: 30px 25px 0px 25px;
+    margin-top: -50px;
     border-radius: 30px 30px 0px 0px;
     background-color: lighten($color-black, 95%);
   }
@@ -17,13 +16,17 @@
   & h1 {
     // TITRE : Nom du restaurant //
     font-family: "Shrikhand", cursive;
-    font-size: 28px;
+    font-size: 25px;
   }
 
   // ==== MAIN (bas de page)=======================//
-
   &.btn {
     // BOUTON : Commander en bas de page //
     @include btn-shadow(40px);
   }
+}
+
+.main-cards-container {
+  // Permet que les cartes du "menu" s'adaptent à la largeur de leur container //
+  width: 100%;
 }

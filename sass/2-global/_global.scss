@@ -146,6 +146,7 @@ img {
     // Est utilisé pour les pages menu
     //container__04
     padding: 0px 15px;
+
     @include tab-med {
       padding: 30px 50px;
     }

@@ -61,6 +61,7 @@
 
       <div>
         <img
+          class="portrait-img img-03"
           src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
           alt=""
         />
@@ -68,10 +69,10 @@
     </header>
 
     <!--MAIN ======================================================-->
-    <main class="container__04 main-menu-page d-flex d-flex-fd-c">
+    <main class="main-menu-page d-flex-ai-c d-flex d-flex-fd-c">
       <!-- Titre du menu de la page -->
-      <section class="d-flex d-flex-ai-c d-flex-jc-sa">
-        <div class="main-menu-page__bg-top"></div>
+
+      <section class="main-menu-page__bg-top d-flex d-flex-ai-c d-flex-jc-sa">
         <h1>À la française</h1>
 
         <label class="heart-animation">
@@ -81,231 +82,235 @@
         </label>
       </section>
 
-      <!-- TITRE : ENTRÉES -->
-      <section>
+      <!-- CONTAINER DES CARTES et du BOUTON -->
+
+      <section class="container__04 main-cards-container d-flex d-flex-fd-c d-flex-jc-c">
+        <!-- TITRE : ENTRÉES -->
         <section>
-          <h2 class="lunches-time-title">ENTRÉES</h2>
+          <section>
+            <h2 class="lunches-time-title">ENTRÉES</h2>
 
-          <!-- Carte 1 -->
-          <section class="carte-1 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Tartare de thon</h3>
-                    <p class="card-menu-box__p">Assaisonné au yuzu</p>
+            <!-- Carte 1 -->
+            <section class="carte-1 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Tartare de thon</h3>
+                      <p class="card-menu-box__p">Assaisonné au yuzu</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">25€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">25€</p>
-                </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </section>
-          </section>
-          <!-- fin carte 1 -->
-          <!-- Carte 2 -->
-          <section class="carte-2 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">
-                      Bouchée de homard croustillant
-                    </h3>
-                    <p class="card-menu-box__p">
-                      Et sa farandole de petits légumes
-                    </p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">35€</p>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
-          </section>
-          <!-- fin carte 2 -->
-          <!-- Carte 3 -->
-          <section class="mb-30 carte-3 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Velouté de cèpes</h3>
-                    <p class="card-menu-box__p">Aux truffes</p>
+            <!-- fin carte 1 -->
+            <!-- Carte 2 -->
+            <section class="carte-2 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">
+                        Bouchée de homard croustillant
+                      </h3>
+                      <p class="card-menu-box__p">
+                        Et sa farandole de petits légumes
+                      </p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">35€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">20€</p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
+            <!-- fin carte 2 -->
+            <!-- Carte 3 -->
+            <section class="mb-30 carte-3 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Velouté de cèpes</h3>
+                      <p class="card-menu-box__p">Aux truffes</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">20€</p>
+                  </div>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <!-- fin carte 3 -->
           </section>
-          <!-- fin carte 3 -->
         </section>
-      </section>
 
-      <!-- A ======================================================-->
+        <!-- A ======================================================-->
 
-      <!-- TITRE : PLATS -->
-      <section>
+        <!-- TITRE : PLATS -->
         <section>
-          <h2 class="lunches-time-title">PLATS</h2>
+          <section>
+            <h2 class="lunches-time-title">PLATS</h2>
 
-          <!-- Carte 1 -->
-          <section class="carte-1 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class=" container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">
-                      Poulet rôti aux herbes de Provence
-                    </h3>
-                    <p class="card-menu-box__p">Et sa crème de truffe</p>
+            <!-- Carte 1 -->
+            <section class="carte-1 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">
+                        Poulet rôti aux herbes de Provence
+                      </h3>
+                      <p class="card-menu-box__p">Et sa crème de truffe</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">40€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">40€</p>
-                </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </section>
-          </section>
-          <!-- fin carte 1 -->
-          <!-- Carte 2 -->
-          <section class="carte-2 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Langouste rôtie</h3>
-                    <p class="card-menu-box__p">Et ses légumes de saison</p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">35€</p>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
-          </section>
-          <!-- fin carte 2 -->
-          <!-- Carte 3 -->
-          <section class="mb-30 carte-3 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Côte de bœuf Angus</h3>
-                    <p class="card-menu-box__p">Et sa purée de panais</p>
+            <!-- fin carte 1 -->
+            <!-- Carte 2 -->
+            <section class="carte-2 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Langouste rôtie</h3>
+                      <p class="card-menu-box__p">Et ses légumes de saison</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">35€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">44€</p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
+            <!-- fin carte 2 -->
+            <!-- Carte 3 -->
+            <section class="mb-30 carte-3 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Côte de bœuf Angus</h3>
+                      <p class="card-menu-box__p">Et sa purée de panais</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">44€</p>
+                  </div>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <!-- fin carte 3 -->
           </section>
-          <!-- fin carte 3 -->
         </section>
-      </section>
 
-      <!-- B ======================================================-->
+        <!-- B ======================================================-->
 
-      <!-- TITRE : DESSERTS -->
+        <!-- TITRE : DESSERTS -->
 
-      <section>
         <section>
-          <h2 class="lunches-time-title">DESSERTS</h2>
+          <section>
+            <h2 class="lunches-time-title">DESSERTS</h2>
 
-          <!-- Carte 1 -->
-          <section class="carte-1 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Farandole de desserts</h3>
-                    <p class="card-menu-box__p">Du chef</p>
+            <!-- Carte 1 -->
+            <section class="carte-1 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Farandole de desserts</h3>
+                      <p class="card-menu-box__p">Du chef</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">18€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">18€</p>
-                </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
-            </section>
-          </section>
-          <!-- fin carte 1 -->
-          <!-- Carte 2 -->
-          <section class="carte-2 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Crème brûlée</h3>
-                    <p class="card-menu-box__p">Revisitéé</p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">22€</p>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
-          </section>
-          <!-- fin carte 2 -->
-          <!-- Carte 3 -->
-          <section class="mb-50 carte-3 container-principal">
-            <section class="container-secondaire d-flex d-flex-jc-fe">
-              <div class="container-box-menu d-flex">
-                <div class="container-box-menu__left d-flex">
-                  <div class="card-menu-box">
-                    <h3 class="card-menu-box__h3">Tiramisu</h3>
-                    <p class="card-menu-box__p">A la noisette</p>
+            <!-- fin carte 1 -->
+            <!-- Carte 2 -->
+            <section class="carte-2 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Crème brûlée</h3>
+                      <p class="card-menu-box__p">Revisitéé</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">22€</p>
                   </div>
-                  <p class="card-menu-box__price d-flex d-flex-ai-fe">23€</p>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
                 </div>
-                <!-- bouton animation -->
-                <div
-                  class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
-                >
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                </div>
-              </div>
+              </section>
             </section>
+            <!-- fin carte 2 -->
+            <!-- Carte 3 -->
+            <section class="mb-50 carte-3 container-principal">
+              <section class="container-secondaire d-flex d-flex-jc-fe">
+                <div class="container-box-menu d-flex">
+                  <div class="container-box-menu__left d-flex">
+                    <div class="card-menu-box">
+                      <h3 class="card-menu-box__h3">Tiramisu</h3>
+                      <p class="card-menu-box__p">A la noisette</p>
+                    </div>
+                    <p class="card-menu-box__price d-flex d-flex-ai-fe">23€</p>
+                  </div>
+                  <!-- bouton animation -->
+                  <div
+                    class="card-menu-box--click d-flex d-flex-ai-c d-flex-jc-c"
+                  >
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <!-- fin carte 3 -->
           </section>
-          <!-- fin carte 3 -->
         </section>
+        <!-- C ======================================================-->
+        <button class="main-menu-page btn">Commander</button>
       </section>
-      <!-- C ======================================================-->
-      <button class="main-menu-page btn">Commander</button>
     </main>
 
     <!--FOOTER ====================================++==============-->
