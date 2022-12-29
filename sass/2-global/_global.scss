@@ -138,7 +138,6 @@ img {
     // PADDING : HautBas = 40px / DroiteGauche = 20px.
     @include tab-med {
       padding: 30px 50px;
-      // border: solid 2px rgb(255, 21, 0); //TEST
     }
   }
 
@@ -146,6 +145,7 @@ img {
     // Est utilisé pour les pages menu
     //container__04
     padding: 0px 15px;
+    // border: solid 2px rgb(255, 21, 0); //TEST
 
     @include tab-med {
       padding: 30px 50px;

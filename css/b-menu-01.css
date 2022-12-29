@@ -38,11 +38,100 @@ dans le code de cette page, pour le bon onctionnement de SASS
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                  CARTES DES PAGES MENUS
+        MIXIN DES ANIMATIONS : "CARTES PAGES MENUS"
       (Mixin de l'effet d'opacité progressive des cartes)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
+/*
+---------------------------------------------------------------
+CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
+@keyframes (name): revelation-menu-cards
+=> appelée par la @mixin (ci-dessus) : "effet-revelation-carte-mix"
+au niveau de : animation-name: revelation-menu-cards;
+---------------------------------------------------------------
+ */
+@keyframes revelation-menu-cards {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 15px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE
+      (Mixin de l'effet d'opacité progressive des cartes)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.carte-1 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  animation-delay: 500ms;
+}
+
+.carte-2 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  animation-delay: 800ms;
+  top: 14px;
+}
+
+.carte-3 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  top: 28px;
+  animation-delay: 1100ms;
+}
+
+.carte-4 {
+  animation-name: revelation-menu-cards;
+  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
+  animation-duration: 1.5s;
+  animation-delay: 1700ms;
+  animation-fill-mode: backwards;
+  top: 42px;
+  animation-delay: 1400ms;
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        ANIMATION : DU BOUTON CIRCULAIRE DES PAGES MENU
+  (Effet de l'icone tournante du bouton vert, des cartes menu)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+CRÉATION DE L'ANIMATION : de rotation de l'icône du bouton vert.
+@keyframes (name) : over-circle
+=> appelée par la @mixin (ci-dessus) : "over-circle-mix"
+au niveau de : animation-name: over-circle;
+---------------------------------------------------------------
+ */
+@keyframes over-circle {
+  0% {
+    transform: rotate(-190deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
+  }
+}
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -57,10 +146,12 @@ dans le code de cette page, pour le bon onctionnement de SASS
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-/* DESKTOP
+/*
+---------------------------------------------------------------
+ AFFICHAGE : TABLETTE
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-            Si l'écran est supérieur ou égal à : 992px
-                L'affichage adapté aux : "DESKTOP"
+            Si l'écran est supérieur ou égal à : 768px
+               L'affichage adapté aux : "TABLETTES"
 ---------------------------------------------------------------
 DEFINITION :
 La fonction : map-get(), permet de retourner une valeur associée
@@ -70,25 +161,30 @@ $size : correspond à un ensemble "clé/valeur" attendu comme argument.
 */
 /*
 ---------------------------------------------------------------
+MIXIN : TABLETTE Abrégées
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+MIXIN : TABLETTE Abrégées par groupes
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+/*
+---------------------------------------------------------------
+/* AFFICHAGE : DESKTOP
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            Si l'écran est supérieur ou égal à : 992px
+                L'affichage adapté aux : "DESKTOP"
+---------------------------------------------------------------
+*/
+/*
+---------------------------------------------------------------
 MIXIN : DESKTOP Abrégées
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 /*
 ---------------------------------------------------------------
-MIXIN : DESKTOP Abrégées par 3
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-/* TABLETTE
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-            Si l'écran est supérieur ou égal à : 768px
-               L'affichage adapté aux : "TABLETTES"
----------------------------------------------------------------
-*/
-/*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-
----------------------------------------------------------------
+MIXIN : DESKTOP Abrégées par groupes
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 /*
@@ -201,7 +297,7 @@ img {
     padding-right: 50px;
   }
 }
-@media (min-width: ) {
+@media (min-width: 992px) {
   .container__02 {
     padding-left: 50px;
     padding-right: 50px;
@@ -355,41 +451,6 @@ img {
 /*
 --------------------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                    @Keyframes des boites "menu"
--------------------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-/*
----------------------------------------------------------------
- @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
----------------------------------------------------------------
- */
-@keyframes revelation-menu-cards {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 15px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/*
----------------------------------------------------------------
- @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
----------------------------------------------------------------
- */
-@keyframes over-circle {
-  0% {
-    transform: rotate(-190deg);
-  }
-  100% {
-    transform: rotate(0deg);
-    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
-  }
-}
-/*
---------------------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                         CARTES DES PAGES MENU
         Ces 2 containers imbriqués sont necessaires pour accuiellir
       les cartes menus et l'effet du bouton qui arrive par la droite.
@@ -402,6 +463,7 @@ img {
   position: relative;
   height: 70px;
   overflow: hidden;
+  background-color: white;
 }
 
 .container-secondaire {
@@ -409,57 +471,49 @@ img {
   right: -71px;
 }
 
-/* -------------------------------------------------------- */
-.carte-1 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
-  animation-delay: 500ms;
-}
-
-.carte-2 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
-  animation-delay: 800ms;
-  top: 14px;
-}
-
-.carte-3 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
-  top: 28px;
-  animation-delay: 1100ms;
-}
-
-.carte-4 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
-  top: 42px;
-  animation-delay: 1400ms;
-}
-
-/* -------------------------------------------------------- */
+/*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        AFFICHAGE MOBILE
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 .container-box-menu {
+  /*
+  Ce container contient toute la mise en page de la carte animée des pages menu.
+  */
   height: 70px;
-  width: 92%;
+  /*
+  --------------------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                      CLASSE QUI GÈRE LES STYLES CSS
+            DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+                (A : La boite qui englode le h3 et le p)
+                (B : Le prix)
+                (C : Le bouton vert coulissant animé de la carte menu)
+  -------------------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
 }
 .container-box-menu__left {
-  padding: 18px 5px 4px 15px;
+  /* 
+  Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+  => De la froite VERS la gauche.
+  (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+  le bouton "vert" en coulissant coulissant vers la gauche.
+  */
+  width: 84%;
+  padding: 15px 15px 4px 15px;
   background-color: white;
-  width: 83%;
+  /* °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    —--------------------------------------------------------------- */
 }
 .container-box-menu__left:active {
+  /*
+  (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK) afin de régler la distance que parcourera
+  le bouton "vert" en coulissant coulissant vers la gauche.
+  (2a) Ralentis le mouvement du :hover ou du :active
+  */
   width: 66%;
   cursor: pointer;
   transition: 700ms;
@@ -474,12 +528,14 @@ img {
   animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
 }
 .container-box-menu .card-menu-box {
-  width: 329px;
-  max-width: 86%;
-  /*
-  (1) Positionne la carte des menus en largeur dans son container.
-  (2) Donne une limita maximale en largeur du container qui englobe le h3 et le p.
+  width: 285px;
+  /* Important!!
+  (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+  ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+  le mouvement coulisssant vers la gauche du bouton vert.
   */
+  /* C) Le bouton vert coulissant animé de la carte menu. 
+  (1u) : Largeur du bouton vert coulissant. */
 }
 .container-box-menu .card-menu-box__h3 {
   /* 
@@ -490,7 +546,7 @@ img {
   text-overflow: ellipsis;
   overflow: hidden;
   font-size: 17px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .container-box-menu .card-menu-box__p {
   /* 
@@ -525,6 +581,251 @@ img {
   font-size: 25px;
 }
 
+@media (min-width: 600px) {
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+    /*
+    --------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CLASSE QUI GÈRE LES STYLES CSS
+              DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+    -------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    */
+  }
+  .container-box-menu__left {
+    width: 115%;
+    /* 
+    Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+    => De la froite VERS la gauche.
+    (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+    le bouton "vert" en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu__left:active {
+    width: 74%;
+    /*
+    (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+    afin de régler la distance que parcourera le bouton "vert"
+    en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu .card-menu-box {
+    width: 470px;
+    /* Important!!
+    (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+    ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+    le mouvement coulisssant vers la gauche du bouton vert.
+    */
+  }
+  .container-box-menu .card-menu-box--click {
+    width: 90px;
+    /* (1u) : Largeur du bouton vert coulissant. */
+  }
+}
+/*
+ATTENTION !!!
+Il à fallut jouer sur les paddings, les marges et les tailles de polices
+pour réussir à avoir une taille de carte fonctionnelle.
+*/
+@media (min-width: 768px) {
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+    /*
+    --------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CLASSE QUI GÈRE LES STYLES CSS
+              DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+    -------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    */
+  }
+  .container-box-menu__left {
+    width: 130%;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 10px;
+    margin-right: 30px;
+    /* 
+    Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+    => De la froite VERS la gauche.
+    (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+    le bouton "vert" en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu__left:active {
+    width: 50%;
+    /*
+    (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+    afin de régler la distance que parcourera le bouton "vert"
+    en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu .card-menu-box {
+    width: 150px;
+    /* Important!!
+    (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+    ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+    le mouvement coulisssant vers la gauche du bouton vert.
+    */
+  }
+  .container-box-menu .card-menu-box__h3 {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .container-box-menu .card-menu-box__p {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  .container-box-menu .card-menu-box__price {
+    font-size: 13px;
+  }
+  .container-box-menu .card-menu-box--click {
+    width: 50px;
+    /* (1u) : Largeur du bouton vert coulissant. */
+  }
+}
+@media (min-width: 850px) {
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+    /*
+    --------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CLASSE QUI GÈRE LES STYLES CSS
+              DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+    -------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    */
+  }
+  .container-box-menu__left {
+    width: 90%;
+    padding-right: 40px;
+    padding-left: 0px;
+    /* 
+    Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+    => De la froite VERS la gauche.
+    (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+    le bouton "vert" en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu__left:active {
+    width: 59%;
+    /*
+    (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+    afin de régler la distance que parcourera le bouton "vert"
+    en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu .card-menu-box {
+    width: 180px;
+    /* Important!!
+    (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+    ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+    le mouvement coulisssant vers la gauche du bouton vert.
+    */
+  }
+  .container-box-menu .card-menu-box__h3 {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 17px;
+  }
+  .container-box-menu .card-menu-box__p {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+  }
+  .container-box-menu .card-menu-box__price {
+    font-size: 15px;
+  }
+  .container-box-menu .card-menu-box--click {
+    width: 50px;
+    /* (1u) : Largeur du bouton vert coulissant. */
+  }
+}
+@media (min-width: 992px) {
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+    /*
+    --------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        CLASSE QUI GÈRE LES STYLES CSS
+              DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+    -------------------------------------------------------------------------
+    °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    */
+  }
+  .container-box-menu__left {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 8px;
+    /* 
+    Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+    => De la froite VERS la gauche.
+    (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+    le bouton "vert" en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu__left:active {
+    width: 60%;
+    /*
+    (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+    afin de régler la distance que parcourera le bouton "vert"
+    en coulissant coulissant vers la gauche.
+    */
+  }
+  .container-box-menu .card-menu-box {
+    width: 210px;
+    /* Important!!
+    (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+    ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+    le mouvement coulisssant vers la gauche du bouton vert.
+    */
+  }
+  .container-box-menu .card-menu-box__h3 {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .container-box-menu .card-menu-box__p {
+    /* 
+    Effet de texte se terminant par 3 petits points
+     */
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .container-box-menu .card-menu-box--click {
+    width: 50px;
+    /* (1u) : Largeur du bouton vert coulissant. */
+  }
+}
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -662,6 +963,29 @@ l'icone du second-plan apparait */
 
 .main-cards-container {
   width: 100%;
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  TABLETTE
+  —--------------------------------------------------------------- */
+}
+.main-cards-container__entrees {
+  width: 100%;
+  margin-right: 20px;
+}
+.main-cards-container__plats {
+  width: 100%;
+  margin-right: 20px;
+}
+.main-cards-container__desserts {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .main-cards-container {
+    padding: 0px 25px 0px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /*
@@ -718,7 +1042,7 @@ très bien de manière responsive en leur assignant une contrainte de hauteur.
     object-position: 0px 63%;
   }
 }
-@media (min-width: ) {
+@media (min-width: 992px) {
   .img-03 {
     object-position: 0px 63%;
   }
@@ -729,6 +1053,14 @@ très bien de manière responsive en leur assignant une contrainte de hauteur.
   }
 }
 
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            TITRAGES ENTRE LES CARTES MENU
+             (PLATS - ENTRÉES - DESSERTS)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 .lunches-time-title {
   font-size: 20px;
   font-weight: 300;

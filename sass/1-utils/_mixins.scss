@@ -128,13 +128,12 @@
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                  CARTES DES PAGES MENUS
+        MIXIN DES ANIMATIONS : "CARTES PAGES MENUS"
       (Mixin de l'effet d'opacité progressive des cartes)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-
-@mixin effet-revelation-carte {
+@mixin effet-revelation-carte-mix {
   animation-name: revelation-menu-cards;
   animation-timing-function: cubic-bezier(
     0,
@@ -142,11 +141,98 @@
     0.34,
     0.97
   ); // Fluidité de l'animation.
-  animation-duration: 1.5s; // Durée animation d'1 cycle.
+  animation-duration: 1.5s; // Durée animation d'1.5s pour 1 cycle.
   animation-delay: 1700ms; // Délais début démarrage animation.
   animation-fill-mode: backwards; // Applique la premier règle du Keyframes
 }
 
+/*
+---------------------------------------------------------------
+CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
+@keyframes (name): revelation-menu-cards
+=> appelée par la @mixin (ci-dessus) : "effet-revelation-carte-mix"
+au niveau de : animation-name: revelation-menu-cards;
+---------------------------------------------------------------
+ */
+@keyframes revelation-menu-cards {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 15px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE
+      (Mixin de l'effet d'opacité progressive des cartes)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+.carte-1 {
+  @include effet-revelation-carte-mix();
+  animation-delay: 500ms; // Délais début démarrage animation.
+}
+
+.carte-2 {
+  @include effet-revelation-carte-mix();
+  animation-delay: 800ms; // Délais début démarrage animation.
+  top: 14px;
+}
+
+.carte-3 {
+  @include effet-revelation-carte-mix();
+  top: 28px;
+  animation-delay: 1100ms; // Délais début démarrage animation.
+}
+
+.carte-4 {
+  @include effet-revelation-carte-mix();
+  top: 42px;
+  animation-delay: 1400ms; // Délais début démarrage animation.
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        ANIMATION : DU BOUTON CIRCULAIRE DES PAGES MENU
+  (Effet de l'icone tournante du bouton vert, des cartes menu)
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+@mixin over-circle-mix {
+  animation-name: over-circle;
+  animation-delay: 0s; // elle démarre tout de suite.
+  animation-duration: 800ms; // Durée animation d'1 cycle.
+  animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+}
+
+/*
+---------------------------------------------------------------
+CRÉATION DE L'ANIMATION : de rotation de l'icône du bouton vert.
+@keyframes (name) : over-circle
+=> appelée par la @mixin (ci-dessus) : "over-circle-mix"
+au niveau de : animation-name: over-circle;
+---------------------------------------------------------------
+ */
+
+@keyframes over-circle {
+  0% {
+    transform: rotate(-190deg);
+    // background-color: red; // TEST
+  }
+
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
+    // background-color: red; // TEST
+  }
+}
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -160,7 +246,7 @@
   Effet de texte se terminant par 3 petits points
    */
   // -----------------------------------------------------------------------------------------//
-  width: $width; // (1) Définir une largeur.
+  width: $width; // (1) Définir une largeur de bloc.
   white-space: nowrap; // (2) Empêcher le retour à la ligne.
   text-overflow: ellipsis; // (3) Propritée qui affecte les 3 petits points.
   overflow: hidden; // (4) Cacher le texte qui dépasse de la largeur imposée par le bloc parent.
@@ -186,22 +272,81 @@ $breakpoints: (
 
   // MAP : desktop
   desktop-sm: 850px,
-  desk-med: 992px,
+  desktop-med: 992px,
   desktop-lg1: 1100px,
   desktop-lg2: 1200px,
   desktop-lg3: 1300px
 );
-
-/* DESKTOP
+//
+//
+//
+/*
+---------------------------------------------------------------
+ AFFICHAGE : TABLETTE
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-            Si l'écran est supérieur ou égal à : 992px
-                L'affichage adapté aux : "DESKTOP"
+            Si l'écran est supérieur ou égal à : 768px
+               L'affichage adapté aux : "TABLETTES"
 ---------------------------------------------------------------
 DEFINITION :
 La fonction : map-get(), permet de retourner une valeur associée
 à une clé:valeur, définie dans une map.
 $size : correspond à un ensemble "clé/valeur" attendu comme argument.
 
+*/
+
+@mixin tablet-screens($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+} // @include tablette-screen{}
+
+/*
+---------------------------------------------------------------
+MIXIN : TABLETTE Abrégées
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+@mixin tab-sm {
+  // 600px
+  @include desktop-screens(tablet-sm) {
+    @content;
+  }
+}
+
+@mixin tab-med {
+  // 768px
+  @include desktop-screens(tablet-med) {
+    @content;
+  }
+}
+
+/*
+---------------------------------------------------------------
+MIXIN : TABLETTE Abrégées par groupes
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+@mixin tab-sm-med {
+  // 600px
+  @include desktop-screens(tablet-sm) {
+    @content;
+  }
+  // 768px
+  @include desktop-screens(tablet-med) {
+    @content;
+  }
+}
+//
+//
+//
+//
+/*
+---------------------------------------------------------------
+/* AFFICHAGE : DESKTOP
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+            Si l'écran est supérieur ou égal à : 992px
+                L'affichage adapté aux : "DESKTOP"
+---------------------------------------------------------------
 */
 
 @mixin desktop-screens($size) {
@@ -217,30 +362,35 @@ MIXIN : DESKTOP Abrégées
 */
 
 @mixin desk-sm {
+  // 850px
   @include desktop-screens(desktop-sm) {
     @content;
   }
 }
 
 @mixin desk-med {
+  // 992px
   @include desktop-screens(desktop-med) {
     @content;
   }
 }
 
 @mixin desk-lg1 {
+  // 1100px
   @include desktop-screens(desktop-lg1) {
     @content;
   }
 }
 
 @mixin desk-lg2 {
+  // 1200px
   @include desktop-screens(desktop-lg2) {
     @content;
   }
 }
 
 @mixin desk-lg3 {
+  // 1300px
   @include desktop-screens(desktop-lg3) {
     @content;
   }
@@ -248,61 +398,58 @@ MIXIN : DESKTOP Abrégées
 
 /*
 ---------------------------------------------------------------
-MIXIN : DESKTOP Abrégées par 3
+MIXIN : DESKTOP Abrégées par groupes
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin desk-med-lg1 {
+@mixin desk-sm-med {
+  // 850px
+  @include desk-sm {
+    @content;
+  }
+  // 992px
   @include desk-med {
     @content;
   }
+}
+
+@mixin desk-med-lg1 {
+  // 992px
+  @include desk-med {
+    @content;
+  }
+  // 1100px
   @include desk-lg1 {
     @content;
   }
 }
 
 @mixin desk-sm-med-lg1 {
+  // 850px
   @include desk-sm {
     @content;
   }
+  // 992px
   @include desk-med {
     @content;
   }
+  // 1100px
   @include desk-lg1 {
     @content;
   }
 }
 
-/* TABLETTE
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-            Si l'écran est supérieur ou égal à : 768px
-               L'affichage adapté aux : "TABLETTES"
----------------------------------------------------------------
-*/
-
-@mixin tablet-screens($size) {
-  @media (min-width: map-get($breakpoints, $size)) {
+@mixin desk-lg1-lg2-lg3 {
+  // 1100px
+  @include desk-lg1 {
     @content;
   }
-} // @include tablette-screen{}
-
-// MIXIN : Desktop Abrégées
-@mixin tab-med {
-  @include desktop-screens(tablet-med) {
+  // 1200px
+  @include desk-lg2 {
+    @content;
+  }
+  // 1300px
+  @include desk-lg2 {
     @content;
   }
 }
-
-@mixin tab-sm {
-  @include desktop-screens(tablet-sm) {
-    @content;
-  }
-}
-
-/*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                        
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/

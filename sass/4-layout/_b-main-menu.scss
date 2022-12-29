@@ -28,5 +28,31 @@
 
 .main-cards-container {
   // Permet que les cartes du "menu" s'adaptent à la largeur de leur container //
+  // border: solid 1px rgb(47, 220, 255);
   width: 100%;
+
+  &__entrees {
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  &__plats {
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  &__desserts {
+    width: 100%;
+  }
+  /* 
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  TABLETTE
+  —--------------------------------------------------------------- */
+  @include tab-med {
+    padding: 0px 25px 0px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // border: solid 1px greenyellow;
+  }
 }

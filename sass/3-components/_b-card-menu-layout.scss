@@ -1,46 +1,6 @@
 /*
 --------------------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-                    @Keyframes des boites "menu"
--------------------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
-
-/*
----------------------------------------------------------------
- @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
----------------------------------------------------------------
- */
-@keyframes revelation-menu-cards {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 15px);
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-/*
----------------------------------------------------------------
- @keyframes d'opacité => appelé par ma @mixin : "effet-revelation-carte"
----------------------------------------------------------------
- */
-@keyframes over-circle {
-  0% {
-    transform: rotate(-190deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-    animation-timing-function: cubic-bezier(0, 0.95, 0.38, 1.31);
-  }
-}
-
-/*
---------------------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                         CARTES DES PAGES MENU
         Ces 2 containers imbriqués sont necessaires pour accuiellir
       les cartes menus et l'effet du bouton qui arrive par la droite.
@@ -54,6 +14,7 @@
   position: relative;
   height: 70px; // Hauteur des cartes mernu.
   overflow: hidden; // Permet de cacher, tout ce qui dépasse du conteneur secondaire.
+  background-color: $color-white;
 }
 
 .container-secondaire {
@@ -61,48 +22,45 @@
   right: -71px;
 }
 
-/* -------------------------------------------------------- */
-.carte-1 {
-  @include effet-revelation-carte();
-  animation-delay: 500ms; // Délais début démarrage animation.
-}
-
-.carte-2 {
-  @include effet-revelation-carte();
-  animation-delay: 800ms; // Délais début démarrage animation.
-  top: 14px;
-}
-
-.carte-3 {
-  @include effet-revelation-carte();
-  top: 28px;
-  animation-delay: 1100ms; // Délais début démarrage animation.
-}
-
-.carte-4 {
-  @include effet-revelation-carte();
-  top: 42px;
-  animation-delay: 1400ms; // Délais début démarrage animation.
-}
-
-/* -------------------------------------------------------- */
-
+/*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                        AFFICHAGE MOBILE
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 .container-box-menu {
-  // Ce container contient tout le layout de la carte animée des pages menu.
+  /*
+  Ce container contient toute la mise en page de la carte animée des pages menu.
+  */
   height: 70px;
-  width: 92%; //Important!!
 
   &__left {
-    // Ce container contient toute la partie GAUCHE de la carte animée des pages menu.
-    padding: 18px 5px 4px 15px;
+    /* 
+    Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+    => De la froite VERS la gauche.
+    (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+    le bouton "vert" en coulissant coulissant vers la gauche.
+    */
+    width: 84%; //(1ya) Important!!
+    padding: 15px 15px 4px 15px;
     background-color: $color-white;
-    width: 83%; //Important!!
+    // border: solid 2px rgb(255, 60, 0);
 
     &:active {
-      width: 66%; //Important!!
+      /*
+      (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK) afin de régler la distance que parcourera
+      le bouton "vert" en coulissant coulissant vers la gauche.
+      (2a) Ralentis le mouvement du :hover ou du :active
+      */
+      width: 66%; // BASE // (1yb) Important!!
       cursor: pointer;
-      transition: 700ms; // Ralentis le :hover ou :active
-    }
+      transition: 700ms; // (2a)
+      // border: solid 2px rgb(9, 87, 120);
+    } // FIN __left
+
+    /* °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      —--------------------------------------------------------------- */
   }
 
   &:active {
@@ -110,27 +68,40 @@
       /* -------------------------------------------------------- */
       /* APPEL ANIMATION ---------------------------------------- */
       /* -------------------------------------------------------- */
-      animation-name: over-circle;
-      animation-delay: 0s; // elle démarre après 2 secondes.
-      animation-duration: 800ms; // Durée animation d'1 cycle.
-      animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+
+      @include over-circle-mix;
     }
   }
 
-  .card-menu-box {
-    width: 329px; // (1) Important!!
-    max-width: 86%; // (2) Important!!
+  /*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    CLASSE QUI GÈRE LES STYLES CSS
+          DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+              (A : La boite qui englode le h3 et le p)
+              (B : Le prix)
+              (C : Le bouton vert coulissant animé de la carte menu)
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
 
-    /*
-    (1) Positionne la carte des menus en largeur dans son container.
-    (2) Donne une limita maximale en largeur du container qui englobe le h3 et le p.
+  .card-menu-box {
+    // (A : La boite qui enblode le h3 et le p)
+    width: 285px; // (1r) Important!!
+    // border: solid 2px rgb(255, 255, 0);
+
+    /* Important!!
+    (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+    ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+    le mouvement coulisssant vers la gauche du bouton vert.
     */
 
     &__h3 {
       // TITRE DES PLATS
       @include three-points-afer-txt();
       font-size: 17px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
+      // border: solid 2px rgb(47, 255, 64);
     }
 
     &__p {
@@ -141,6 +112,7 @@
       font-weight: 400;
     }
 
+    // (B : Le prix)
     &__price {
       font-weight: 600;
       font-size: 15px;
@@ -148,20 +120,350 @@
       background-color: $color-white;
     }
 
-    // Bouton animé de la card "menu"
+    /* C) Le bouton vert coulissant animé de la carte menu. 
+    (1u) : Largeur du bouton vert coulissant. */
+
     &--click {
-      width: 70px;
+      width: 70px; //  (1u) Important!!
       height: 100%;
       left: 100%;
       border-radius: 0px 15px 15px 0px;
       @include shadow-box-size(5px, 3px, 5px, 80%);
       background-color: $color-03;
+      // border: solid 2px rgb(47, 255, 64);
 
       & i {
         border-radius: 50px;
         color: $color-white;
         font-size: 25px;
+        // border: solid 2px rgb(47, 255, 64);
       }
     }
   }
 }
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////  AFFICHAGE TABLETTE  ///////////////////////////////
+////////////////////////////  Small 600px  //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+@include tab-sm {
+  //600px
+
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+
+    &__left {
+      width: 115%; //(1ya) Important!!
+
+      // border: solid 2px rgb(255, 60, 0);
+
+      /* 
+      Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+      => De la froite VERS la gauche.
+      (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+      le bouton "vert" en coulissant coulissant vers la gauche.
+      */
+
+      &:active {
+        width: 74%; // (1yb) Important!!
+        // border: solid 2px rgb(47, 172, 255);
+
+        /*
+        (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+        afin de régler la distance que parcourera le bouton "vert"
+        en coulissant coulissant vers la gauche.
+        */
+      }
+    }
+
+    /*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    CLASSE QUI GÈRE LES STYLES CSS
+          DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+    .card-menu-box {
+      // (A : La boite qui enblode le h3 et le p)
+      width: 470px; // (1r) Important!!
+      // border: solid 2px rgb(255, 224, 47);
+
+      /* Important!!
+      (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+      ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+      le mouvement coulisssant vers la gauche du bouton vert.
+      */
+
+      &--click {
+        width: 90px; // (1u) Important!!
+        // border: solid 2px rgb(47, 255, 64);
+        /* (1u) : Largeur du bouton vert coulissant. */
+      }
+    }
+  }
+} // FIN tab-sm
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////  AFFICHAGE TABLETTE  ///////////////////////////////
+///////////////////////////  Medium 768px ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/*
+ATTENTION !!!
+Il à fallut jouer sur les paddings, les marges et les tailles de polices
+pour réussir à avoir une taille de carte fonctionnelle.
+*/
+
+@include tab-med {
+  //768px
+
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+
+    &__left {
+      width: 130%; //(1ya) Important!!
+      padding-top: 20px;
+      padding-right: 15px;
+      padding-left: 10px;
+      margin-right: 30px;
+      // border: solid 0.5px rgb(255, 60, 0);
+
+      /* 
+      Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+      => De la froite VERS la gauche.
+      (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+      le bouton "vert" en coulissant coulissant vers la gauche.
+      */
+
+      &:active {
+        width: 50%; // (1yb) Important!!
+        // border: solid 1px rgb(47, 172, 255);
+
+        /*
+        (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+        afin de régler la distance que parcourera le bouton "vert"
+        en coulissant coulissant vers la gauche.
+        */
+      }
+    }
+
+    /*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    CLASSE QUI GÈRE LES STYLES CSS
+          DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+    .card-menu-box {
+      // (A : La boite qui enblode le h3 et le p)
+      width: 150px; // (1r) Important!!
+      // border: solid 0.5px rgb(255, 224, 47);
+
+      /* Important!!
+      (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+      ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+      le mouvement coulisssant vers la gauche du bouton vert.
+      */
+
+      &__h3 {
+        // TITRE DES PLATS
+        @include three-points-afer-txt(80%);
+        // font-size: 17px;
+        font-size: 15px;
+      }
+
+      &__p {
+        @include three-points-afer-txt(80%);
+        // font-size: 16px;
+        font-size: 14px;
+      }
+
+      // (B : Le prix)
+      &__price {
+        // font-size: 15px;
+        font-size: 13px;
+      }
+
+      &--click {
+        width: 50px; // (1u) Important!!
+        // border: solid 2px rgb(47, 255, 64);
+        /* (1u) : Largeur du bouton vert coulissant. */
+      }
+    }
+  }
+} // FIN tab-med
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////  AFFICHAGE DESKTOP  ///////////////////////////////
+//////////////////////////  desktop-sm 850px /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+@include desk-sm {
+  //850px
+
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+
+    &__left {
+      width: 90%; //(1ya) Important!!
+      padding-right: 40px;
+      padding-left: 0px;
+      // border: solid 0.5px rgb(255, 60, 0);
+
+      /* 
+      Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+      => De la froite VERS la gauche.
+      (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+      le bouton "vert" en coulissant coulissant vers la gauche.
+      */
+
+      &:active {
+        width: 59%; // (1yb) Important!!
+        // border: solid 2px rgb(47, 172, 255);
+
+        /*
+        (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+        afin de régler la distance que parcourera le bouton "vert"
+        en coulissant coulissant vers la gauche.
+        */
+      }
+    }
+
+    /*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    CLASSE QUI GÈRE LES STYLES CSS
+          DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+    .card-menu-box {
+      // (A : La boite qui enblode le h3 et le p)
+      width: 180px; // (1r) Important!!
+      // border: solid 0.5px rgb(255, 224, 47);
+
+      /* Important!!
+      (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+      ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+      le mouvement coulisssant vers la gauche du bouton vert.
+      */
+
+      &__h3 {
+        // TITRE DES PLATS
+        @include three-points-afer-txt(80%);
+        font-size: 17px;
+      }
+
+      &__p {
+        @include three-points-afer-txt(80%);
+        font-size: 16px;
+      }
+
+      // (B : Le prix)
+      &__price {
+        font-size: 15px;
+      }
+
+      &--click {
+        width: 50px; // (1u) Important!!
+        // border: solid 2px rgb(47, 255, 64);
+        /* (1u) : Largeur du bouton vert coulissant. */
+      }
+    }
+  }
+} // FIN desk-sm
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////  AFFICHAGE DESKTOP  ///////////////////////////////
+//////////////////////////  desktop-sm 992px ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+@include desk-med {
+  //992px
+
+  .container-box-menu {
+    /* Ce container contient toute la mise en page de la carte animée des pages menu. */
+
+    &__left {
+      width: 100%; //(1ya) Important!!
+      padding-right: 10px;
+      padding-left: 8px;
+      // border: solid 2px rgb(255, 60, 0);
+
+      /* 
+      Ce container contient toute la partie GAUCHE de la carte animée des pages menu :
+      => De la froite VERS la gauche.
+      (1ya) Gère la largeur de la partie GAUCHE, afin de régler la distance que parcourera
+      le bouton "vert" en coulissant coulissant vers la gauche.
+      */
+
+      &:active {
+        width: 60%; // (1yb) Important!!
+        // border: solid 2px rgb(47, 172, 255);
+
+        /*
+        (1yb) Gère la largeur de la partie GAUCHE, (AU CLICK)
+        afin de régler la distance que parcourera le bouton "vert"
+        en coulissant coulissant vers la gauche.
+        */
+      }
+    }
+
+    /*
+--------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+                    CLASSE QUI GÈRE LES STYLES CSS
+          DE TOUS LES ÉLÉMENTS INTÉRIEURS A LA CARTE MENU
+-------------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+    .card-menu-box {
+      // (A : La boite qui enblode le h3 et le p)
+      width: 210px; // (1r) Important!!
+      // border: solid 2px rgb(255, 224, 47);
+
+      /* Important!!
+      (1r) Donne une largeur limite maximale du container qui englobe le h3 et le p,
+      ce qui à pour effet de posser le tarif vers le bouton vert et de reduire,
+      le mouvement coulisssant vers la gauche du bouton vert.
+      */
+
+      &__h3 {
+        // TITRE DES PLATS
+        @include three-points-afer-txt(80%);
+      }
+
+      &__p {
+        @include three-points-afer-txt(80%);
+      }
+
+      &--click {
+        width: 50px; // (1u) Important!!
+        // border: solid 2px rgb(47, 255, 64);
+        /* (1u) : Largeur du bouton vert coulissant. */
+      }
+    }
+  }
+} // FIN desk-med
