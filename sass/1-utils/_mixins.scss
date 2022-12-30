@@ -438,18 +438,3 @@ MIXIN : DESKTOP Abrégées par groupes
     @content;
   }
 }
-
-@mixin desk-lg1-lg2-lg3 {
-  // 1100px
-  @include desk-lg1 {
-    @content;
-  }
-  // 1200px
-  @include desk-lg2 {
-    @content;
-  }
-  // 1300px
-  @include desk-lg2 {
-    @content;
-  }
-}

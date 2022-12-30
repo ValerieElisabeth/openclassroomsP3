@@ -1,0 +1,94 @@
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+          LOADING : PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+/*
+---------------------------------------------------------------
+CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
+@keyframes (name): revelation-menu-cards
+=> appelée par la @mixin (ci-dessus) : "effet-revelation-carte-mix"
+au niveau de : animation-name: revelation-menu-cards;
+---------------------------------------------------------------
+ */
+
+.loading-container {
+  z-index: 3;
+  position: fixed; // Un élément positionné passe au dessus de ceux qui ne le sont pas.
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+
+  //
+}
+
+.loading {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__border {
+    width: 40%;
+    height: auto;
+    display: flex;
+    padding: 2px;
+    border: 2px solid greenyellow;
+    border-radius: 20px;
+
+    &__progress {
+      height: 20px;
+      border-radius: 20px;
+      background-color: greenyellow;
+      animation-name: animation;
+      animation-delay: 2s; // Temps avant le démarage de l'animation.
+      animation-duration: 5s; // Durée de l'animation.
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes animation {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+          LOADING : PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+*/
+
+.loading-container {
+  animation-name: visibility;
+  animation-delay: 5s; // Temps avant le démarage de l'animation.
+  animation-duration: 5s; // Durée de l'animation.
+  animation-fill-mode: forwards;
+}
+
+@keyframes visibility {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 1%;
+  }
+}

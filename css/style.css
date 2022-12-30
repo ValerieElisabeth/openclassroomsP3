@@ -457,6 +457,8 @@ img {
   /*
    ------------------------------------------------------------------------
   .carte-container :classe qui enblobe toute la carte "menu".
+   (T) Les cartes s'adaptent en largeur à leur conteneur.
+   NE PAS MODIFIER CETTE VALEUR en responsive.
    ------------------------------------------------------------------------ */
   box-shadow: 5px 3px 5px #cccccc;
   width: 100%;
@@ -573,6 +575,10 @@ img {
 
 @media (min-width: 600px) {
   .carte-container {
+    /* 
+    (T) Les cartes s'adaptent en largeur à leur conteneur.
+    NE PAS MODIFIER CETTE VALEUR en responsive.
+    */
     /*
      ------------------------------------------------------------------------
     .carte-container__description :
@@ -610,20 +616,8 @@ img {
     width: 10%;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   .carte-container {
-    width: 80%;
-    /*
-     ------------------------------------------------------------------------
-    .carte-container__description :
-     classe qui enblobe : le h3:titre / <p> paragraphe / <p> tarif
-     (Bs-a) = Largeur de la DIV "title" du conteneur "descriptif"
-     (Bs-b) = Largeur de la DIV "tarif" du conteneur "descriptif"
-     ATTENTION !!!!
-     Il est très important de respceter les proportions de division au sein d'un même conteneur.
-     Ici le rapport est de : 90% et 10% l'ensemble reste une max-width de 100%.
-
-     ------------------------------------------------------------------------ */
     /*
     ------------------------------------------------------------------------
     ACTION UTILISATEUR
@@ -636,18 +630,69 @@ img {
     (2a) Ralentis le mouvement du :hover ou du :active
      */
   }
-  .carte-container__description__title {
-    width: 90%;
-  }
   .carte-container__description__tarif {
-    width: 10%;
-    padding: 13px 8px 8px 5px;
+    padding-left: 25px;
   }
   .carte-container:active .carte-container__description {
     width: 90%;
   }
   .carte-container:active .carte-container--check {
     width: 10%;
+  }
+}
+@media (min-width: 850px) {
+  .carte-container__description__title {
+    width: 80%;
+  }
+  .carte-container__description__tarif {
+    width: 20%;
+    padding: 13px 8px 8px 5px;
+  }
+  .carte-container:hover .carte-container__description {
+    width: 80%;
+    cursor: pointer;
+    transition: 600ms;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .carte-container:hover .carte-container__description__tarif {
+    border-radius: 0px;
+  }
+  .carte-container:hover .carte-container--check {
+    width: 20%;
+  }
+  .carte-container:hover .carte-container--check i {
+    /* ------------------------------------------ */
+    /* APPEL DE L'ANIMATION --------------------- */
+    /* ------------------------------------------ */
+    animation-name: over-circle;
+    animation-delay: 0s;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+  }
+}
+@media (min-width: 992px) {
+  .carte-container__description__tarif {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1100px) {
+  .carte-container__description__tarif {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .carte-container__description__tarif {
+    padding-left: 25px;
+  }
+}
+@media (min-width: 1300px) {
+  .carte-container__description__title {
+    width: 80%;
+  }
+  .carte-container__description__tarif {
+    width: 20%;
+    padding-left: 25px;
+    padding-right: 35px;
   }
 }
 /*
