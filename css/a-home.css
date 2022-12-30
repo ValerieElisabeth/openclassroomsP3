@@ -811,7 +811,6 @@ l'icone du second-plan apparait */
   height: 50px;
   box-shadow: inset 0px 5px 5px -2px #b3b3b3;
   background-color: #e6e6e6;
-  border: solid 1px rgb(0, 213, 255);
 }
 .box-home-logo__location__icon {
   margin-right: 10px;
@@ -1190,7 +1189,7 @@ l'icone du second-plan apparait */
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-          LOADING : PAGE D'ACCUEIL
+          ANIMATION LOADING : PAGE D'ACCUEIL
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
@@ -1208,10 +1207,9 @@ au niveau de : animation-name: revelation-menu-cards;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 300px;
   background-color: white;
 }
 
@@ -1219,11 +1217,11 @@ au niveau de : animation-name: revelation-menu-cards;
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .loading__border {
-  width: 40%;
+  width: 80%;
   height: auto;
   display: flex;
   padding: 2px;
@@ -1236,7 +1234,7 @@ au niveau de : animation-name: revelation-menu-cards;
   background-color: greenyellow;
   animation-name: animation;
   animation-delay: 2s;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-fill-mode: forwards;
 }
 
@@ -1251,14 +1249,14 @@ au niveau de : animation-name: revelation-menu-cards;
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-          LOADING : PAGE D'ACCUEIL
+        SUPPRESSION ANIMATION LOADING : PAGE D'ACCUEIL
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 .loading-container {
   animation-name: visibility;
-  animation-delay: 5s;
-  animation-duration: 5s;
+  animation-delay: 11s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 
@@ -1268,6 +1266,7 @@ au niveau de : animation-name: revelation-menu-cards;
   }
   100% {
     opacity: 1%;
+    visibility: hidden;
   }
 }
 
