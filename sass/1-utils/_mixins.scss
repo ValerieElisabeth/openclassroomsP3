@@ -181,19 +181,19 @@ au niveau de : animation-name: revelation-menu-cards;
 .carte-2 {
   @include effet-revelation-carte-mix();
   animation-delay: 800ms; // Délais début démarrage animation.
-  top: 14px;
+  // top: 64px;
 }
 
 .carte-3 {
   @include effet-revelation-carte-mix();
-  top: 28px;
   animation-delay: 1100ms; // Délais début démarrage animation.
+  // top: 28px;
 }
 
 .carte-4 {
   @include effet-revelation-carte-mix();
-  top: 42px;
   animation-delay: 1400ms; // Délais début démarrage animation.
+  // top: 42px;
 }
 
 /*
@@ -241,7 +241,7 @@ au niveau de : animation-name: over-circle;
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin three-points-afer-txt($width: 98%) {
+@mixin three-points-afer-txt($width: 95%) {
   /* 
   Effet de texte se terminant par 3 petits points
    */

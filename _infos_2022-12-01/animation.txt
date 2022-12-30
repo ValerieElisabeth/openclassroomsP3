@@ -1,0 +1,214 @@
+JEUDI 15 DÉCEMBRE 2022
+///////////////////////////////////////////////////////////////////////////////////////
+
+                        ANIMATIONS EN CSS
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+0) ANIMATION NAME
+------------------
+Propriété : animation-name;
+Elle parmet de déclarer le nom d'un ensemble de règles @keyframes CSS qui sera utilisé.
+
+EXEMPLE :
+- animation-name : keyframe-name;
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+1) ANIMATION DELAY
+------------------
+Propriété : animation-delay;
+Définit la durée d'attente avant de démarrer une animation.
+Elle peut etre exprimée en secondes ou millisecondes.
+
+EXEMPLE :
+- animation-delay: 0s; = elle dédamrre tout de suite.
+- animation-delay: 2s; = elle démarre après 2 secondes.
+- animation-delay: -1s; = elle démarre 1 seconde en avance.
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+2) ANIMATION DURATION
+---------------------
+Propriété : animation-duration;
+Définit la durée d'une animation pour parcourir un cycle.
+Elle peut etre exprimée en secondes ou millisecondes.
+Elle ne prends pas de valeurs négatives.
+
+EXEMPLE :
+- animation-duration: 0s; = indique qu'aucune animation ne doit avoir lieu.
+- animation-duration: 3s; = L'animation effectura son cycle en 3 secondes.
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+3) ANIMATION FILL-MODE
+----------------------
+Propriété : animation-fill-mode;
+Indique la façon dont une animation CSS doit appliquer les styles à un élément html
+(ou clible html), AVANT son exécution ou APRÈS son exécution.
+
+Elle prends 4 mots clés :
+-------------------------
+- NONE => none;
+  aucun style ne sera appliqué à la cible.
+
+- FORWARDS : forwards;
+  La cible html garde les styles calculés et définies lors de la dernière étape.
+  ce calcul dépends des propriétés : "animation-direction" et "animation-iteration-count".
+
+- BACKWARDS : backwards;
+  L'animation appliquera les styles CSS par la PREMIÈRE @Keyframe pertinente,
+  et les retiendras pendant la durée indiquée via : "animation-delay".
+  La première &Keyframe pertinece dépends de la proritété : "animation-direction".
+
+- both;
+  Les styles CSS s'apliquent au début et à la fin de la cible.
+  selon les contraintes appliquées à "forwards" et "backwards"
+
+EXEMPLE :
+animation-fill-mode: none;
+animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
+animation-fill-mode: backwards; /* "backwards" Applique les CSS de la première @Keyframe */
+animation-fill-mode: both;
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+4) ANIMATION DIRECTION
+----------------------
+Propriété : animation-direction;
+Inqique si les cycles html de l'animation doivent être joués dans le sens inverse
+et/ou de façon alternée.
+
+Elle prends 4 mots clés :
+-------------------------
+
+- NORMAL => normal;
+  Réglage par défaut. Le sens normal est joué.
+
+- REVERSE : reverse;
+  L'animation est jouée dans le sens inverse à chaque cycle.
+  Et redémarre depuis la fin.
+
+- ALTERNATE : alternate;
+  Elle commence normalement, et par alternance, par le sens inverse.
+  En sens inverse, toutes les propriétés son aussi inversées.
+
+- ALTERNATE-REVERSE : alternate-reverse;
+  L'animation se fait de manière altérnée en commençant par le sens inverse.
+
+EXEMPLE :
+animation-direction: normal;
+animation-direction: reverse;
+animation-direction: alternate;
+animation-direction: alternate-reverse;
+
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+5) ANIMATION-PLAY-STATE
+-----------------------
+Propriété : animation-play-state;
+Définit si une animation est en court d'exécution ou si elle est en pause.
+
+Elle prends 2 mots clés :
+-------------------------
+
+- PAUSED: paused;
+  L'animation en cours.
+
+- RUNNING : running;
+  L'animation en pause.
+
+EXEMPLE :
+- animation-play-state: paused;
+- animation-play-state: running;
+
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+6) ANIMATION-ITERATION-COUNT
+----------------------------
+Propriété : animation-iteration-count;
+Indique le nombre de fois qu'une animatioin devra être répétée, avant qu'elle ne s'arrête.
+
+Elle prend 1 mot clé et des "nombres" :
+-------------------------------------
+
+- INFINITE: infinite;
+  L'animation sera répétée à l'infinie.
+
+- NUMBER : (ex:number);
+  La valeur: 1 = L'animation sera exécutée 1 fois.
+  0.5 = indique la moitié du cycle de l'animation.
+
+EXEMPLE :
+- animation-iteration-count: infinite;
+- animation-iteration-count: 5;
+- animation-iteration-count: 2.3;
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+7) ANIMATION-TIMING-FUNCTION
+----------------------------
+Propriété : animation-timing-function;
+Définit comment une animation CSS, doit se dérouler au fur et à mesure de chaque cycle.
+C'est la FLUIDITÉ DE L'ANIMATION ÉTAPE PAR ÉTAPE.
+Cette propriété prendra comme valeurs, une ou plusieurs fonctions : "easing-function".
+
+Elle prend les valeurs suivantes :
+-----------------------------------
+
+PAR MOT CLÉS :
+- animation-timing-function: ease;
+- animation-timing-function: ease-in;
+- animation-timing-function: ease-out;
+- animation-timing-function: ease-in-out;
+- animation-timing-function: linear;
+- animation-timing-function: step-start;
+- animation-timing-function: step-end;
+
+PAR VALEURS FONCTIONNELLES :
+animation-timing-function: cubic-bezier(0,.62,.41,1.01);
+animation-timing-function: steps(4, end);
+
+
+VENDREDI 16 DÉCEMBRE 2022
+///////////////////////////////////////////////////////////////////////////////////////
+
+                        FONCTION CSS utiles aux ANIMATIONS
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+1) TRANSLATE
+------------
+Fonction : translate();
+Permet de déplacer un élément sur le plan représenté par le document.
+Cette transformation est définie à l'aide d'un vecteur, dont les coordonnées X ou Y,
+définissent sur quel axe s'effectura le déplacement.
+
+Elle prend des valeurs de longueur "lenght" et de pourcentage "%":
+------------------------------------------------------------------
+
+EXEMPLE :
+transform: translate(); = elle dédamrre tout de suite.
+animation-delay: 2s; = elle démarre après 2 secondes.
+animation-delay: -1s; = elle démarre 1 seconde en avance.
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------

@@ -84,7 +84,6 @@ au niveau de : animation-name: revelation-menu-cards;
   animation-delay: 1700ms;
   animation-fill-mode: backwards;
   animation-delay: 800ms;
-  top: 14px;
 }
 
 .carte-3 {
@@ -93,7 +92,6 @@ au niveau de : animation-name: revelation-menu-cards;
   animation-duration: 1.5s;
   animation-delay: 1700ms;
   animation-fill-mode: backwards;
-  top: 28px;
   animation-delay: 1100ms;
 }
 
@@ -103,7 +101,6 @@ au niveau de : animation-name: revelation-menu-cards;
   animation-duration: 1.5s;
   animation-delay: 1700ms;
   animation-fill-mode: backwards;
-  top: 42px;
   animation-delay: 1400ms;
 }
 
@@ -541,7 +538,7 @@ img {
   /* 
   Effet de texte se terminant par 3 petits points
    */
-  width: 98%;
+  width: 95%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -552,7 +549,7 @@ img {
   /* 
   Effet de texte se terminant par 3 petits points
    */
-  width: 98%;
+  width: 95%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -826,6 +823,88 @@ pour réussir à avoir une taille de carte fonctionnelle.
     /* (1u) : Largeur du bouton vert coulissant. */
   }
 }
+.carte-container {
+  /*
+  --------------------------------------------------------
+  ENGLOBE TOUTE lA CARTE
+  -------------------------------------------------------- */
+  box-shadow: 5px 3px 5px #cccccc;
+  width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  background-color: white;
+  /*
+  --------------------------------------------------------
+  ACTION UTILISATEUR
+  -------------------------------------------------------- */
+}
+.carte-container__description {
+  width: 100%;
+  border-radius: 15px;
+}
+.carte-container__description__title {
+  width: 80%;
+  height: auto;
+  border-radius: 15px 0px 0px 15px;
+  padding: 15px 10px 8px 10px;
+}
+.carte-container__description__title__h3 {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 95%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+.carte-container__description__title__p {
+  /* 
+  Effet de texte se terminant par 3 petits points
+   */
+  width: 95%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #737373;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.carte-container__description__tarif {
+  width: 20%;
+  height: auto;
+  border-radius: 0px 15px 15px 0px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0px 5px 9px 10px;
+  background-color: white;
+}
+.carte-container__check {
+  width: 0%;
+  overflow: hidden;
+  background-color: #99e2d0;
+  border-radius: 0px 15px 15px 0px;
+}
+.carte-container__check i {
+  border-radius: 50px;
+  color: white;
+  font-size: 25px;
+}
+.carte-container:hover .carte-container__description {
+  width: 80%;
+  cursor: pointer;
+  transition: 700ms;
+  border-radius: 15px 0px 0px 15px;
+}
+.carte-container:hover .carte-container__description__tarif {
+  border-radius: 0px;
+}
+.carte-container:hover .carte-container__check {
+  width: 20%;
+}
+
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
