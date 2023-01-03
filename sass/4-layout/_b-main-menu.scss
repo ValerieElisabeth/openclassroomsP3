@@ -11,9 +11,9 @@
   background-color: lighten($color-black, 95%);
 
   &__bg-top {
-    // BLOC : aux bords arrondis, au dessus du nom du restaurant //
+    // BLOC : aux bords arrondis, au dessus du nom du restaurant  qui inclus comme titre, le nom du restaurant//
     width: 100%;
-    padding: 30px 25px 0px 25px;
+    padding-top: 30px;
     margin-top: -50px;
     border-radius: 30px 30px 0px 0px;
     background-color: lighten($color-black, 95%);
@@ -23,14 +23,15 @@
     // TITRE : Nom du restaurant //
     font-family: "Shrikhand", cursive;
     font-size: 25px;
+    padding-right: 60px;
   }
 
-  // ==== MAIN (bas de page)=======================//
+  // ==== MAIN (bas de page) =======================//
   &.btn {
     // BOUTON : Commander en bas de page //
     @include btn-shadow(40px);
   }
-}
+} // FIN de la classe : .main-menu-page
 
 /*
 --------------------------------------------------------------------------

@@ -5,7 +5,13 @@
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-
+// <div class="loading-container">
+// <div class="loading">
+//   <div class="loading__border">
+//     <div class="loading__border__progress"></div>
+//   </div>
+// </div>
+// </div>
 /*
 ---------------------------------------------------------------
 CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
@@ -24,62 +30,138 @@ au niveau de : animation-name: revelation-menu-cards;
   height: 100%;
 
   display: flex;
+  justify-content: center;
   padding-top: 300px;
-  background-color: $color-white;
+  background-color: $color-black;
 
   //
 }
 
-.loading {
-  width: 100%;
-  height: auto;
+.letter-box {
+  width: 80%;
+  height: 50px; // Hauteur de ma boite.
+
+  //   border-radius: 50px;
+  padding: 0px 30px;
+  background-color: $color-white;
+
   display: flex;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
 
-  &__border {
-    width: 80%;
-    height: auto;
-    display: flex;
-    padding: 2px;
-    border: 2px solid greenyellow;
-    border-radius: 20px;
-
-    &__progress {
-      height: 20px;
-      border-radius: 20px;
-      background-color: greenyellow;
-      animation-name: animation;
-      animation-delay: 2s; // Temps avant le démarage de l'animation.
-      animation-duration: 10s; // Durée de l'animation.
-      animation-fill-mode: forwards;
-    }
-  }
+  animation-name: box-animation;
+  animation-delay: 0s; // Temps avant le démarage de l'animation.
+  animation-duration: 10s; // Durée de l'animation.
+  animation-fill-mode: forwards; /* "backwards" Applique les CSS de la première @Keyframe */
 }
 
-@keyframes animation {
+@keyframes box-animation {
   0% {
+    transform: scale(0);
     width: 0%;
+    opacity: 0;
+    border-radius: 0px;
+    background-color: $color-white;
+  }
+
+  20% {
+    transform: scale(0.5);
+    width: 5%;
+    opacity: 1;
+    border-radius: 100px;
+    background-color: $color-black;
+    box-shadow: 1px 1px 50px $color-white;
+  }
+
+  50% {
+    transform: scale(0.8);
+    width: 10%;
+    border-radius: 100px;
+    box-shadow: 1px 1px 50px $color-white;
   }
 
   100% {
-    width: 100%;
+    transform: scale(1);
+    width: 40%;
+    border-radius: 50px;
+    animation-timing-function: cubic-bezier(0, 0.82, 0.37, 1.06);
+
+    box-shadow: 1px 1px 50px $color-white;
+  }
+}
+
+.logo-letter {
+  display: flex;
+  justify-content: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 40px;
+  color: $color-black;
+  animation-name: letter-animation;
+
+  animation-delay: 6s; // Temps avant le démarage de l'animation.
+  animation-duration: 5s; // Durée de l'animation.
+  animation-fill-mode: both; /* "both"appliquent Les styles CSS, au début et à la fin de la cible */
+}
+
+@keyframes letter-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.7);
+    opacity: 1;
+    letter-spacing: 1px;
+  }
+  80% {
+    transform: scale(0.8);
+    opacity: 1;
+    letter-spacing: 2px;
+  }
+  90% {
+    transform: scale(0.7);
+    opacity: 1;
+    letter-spacing: 5px;
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 1;
+    letter-spacing: 5px;
   }
 }
 
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-        SUPPRESSION ANIMATION LOADING : PAGE D'ACCUEIL
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-*/
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+          SUPPRESSION ANIMATION LOADING : PAGE D'ACCUEIL
+  ---------------------------------------------------------------
+  °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+  */
 
 .loading-container {
   animation-name: visibility;
-  animation-delay: 11s; // Temps avant le démarage de l'animation.
+  animation-delay: 20s; // Temps avant le démarage de l'animation.
   animation-duration: 1s; // Durée de l'animation.
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
 }
 
 @keyframes visibility {

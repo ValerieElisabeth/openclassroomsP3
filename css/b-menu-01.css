@@ -810,7 +810,7 @@ l'icone du second-plan apparait */
 }
 .main-menu-page__bg-top {
   width: 100%;
-  padding: 30px 25px 0px 25px;
+  padding-top: 30px;
   margin-top: -50px;
   border-radius: 30px 30px 0px 0px;
   background-color: #f2f2f2;
@@ -818,6 +818,7 @@ l'icone du second-plan apparait */
 .main-menu-page h1 {
   font-family: "Shrikhand", cursive;
   font-size: 25px;
+  padding-right: 60px;
 }
 .main-menu-page.btn {
   /*
