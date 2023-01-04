@@ -154,9 +154,9 @@ Elle prend 1 mot clé et des "nombres" :
   0.5 = indique la moitié du cycle de l'animation.
 
 EXEMPLE :
-- animation-iteration-count: infinite;
-- animation-iteration-count: 5;
-- animation-iteration-count: 2.3;
+animation-iteration-count: infinite; /* Animation répétée à l'infinie */
+animation-iteration-count: 5;
+animation-iteration-count: 2.3;
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
@@ -177,7 +177,7 @@ PAR MOT CLÉS :
 - animation-timing-function: ease-in;
 - animation-timing-function: ease-out;
 - animation-timing-function: ease-in-out;
-- animation-timing-function: linear;
+- animation-timing-function: linear; /* Fluidité linéaire */
 - animation-timing-function: step-start;
 - animation-timing-function: step-end;
 

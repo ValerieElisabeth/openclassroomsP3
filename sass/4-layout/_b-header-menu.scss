@@ -45,6 +45,7 @@ très bien de manière responsive en leur assignant une contrainte de hauteur.
   —---------------------------------------------------------------
   */
   @include tab-med {
+    // 768px
     object-position: 0px 70%;
     // border: solid 2px rgb(0, 255, 13);
   }
