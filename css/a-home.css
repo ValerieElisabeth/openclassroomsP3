@@ -829,8 +829,9 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 .box-home-logo__location {
-  margin-top: 10px;
   width: 100%;
+  padding-left: 100px;
+  margin-top: 10px;
   height: 50px;
   box-shadow: inset 0px 5px 5px -2px #b3b3b3;
   background-color: #e6e6e6;
@@ -841,7 +842,6 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
 .box-home-logo__location input {
   font-size: 16px;
   font-weight: 500;
-  width: 50%;
   background-color: transparent;
   border: solid transparent;
 }
@@ -852,14 +852,12 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
 }
 @media (min-width: 768px) {
   .box-home-logo__location {
+    padding-left: 30px;
     display: flex;
     justify-content: flex-start;
   }
   .box-home-logo__location input {
     width: 100%;
-  }
-  .box-home-logo__location__icon {
-    margin-left: 30px;
   }
 }
 
