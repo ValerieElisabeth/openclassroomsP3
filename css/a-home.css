@@ -701,6 +701,8 @@ img {
     ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+POUR INFO :
+Comme hover ou active ":checked" permet de cibler les boutons cochés.
 */
 /*
 Classe qui gère l'animation des cœurs
@@ -717,21 +719,31 @@ Classe qui gère l'animation des cœurs
 }
 
 /* 
-(1) On masque le bouton : checkbox par default
-ainsi que l'icone "coeur" du second-plan */
+(1) On cible 2 éléments pour les masquer au chargement de la page :
+(a) le bouton checkbox par default.
+(b) l'icone "coeur" du second-plan
+*/
 .heart-animation input[type=checkbox],
 .heart-animation .second-plan {
   display: none;
 }
 
-/* (2) Quand l'icone du premier-plan est coché,
-elle disparait */
+/*
+(2a) Quand l'input est cochée, ":checked"
+Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
+Donc, tout de suite après l'input...
+(2b) Je cible l'icone du ".premier-plan", pour faire disparaitre son bloc
+*/
 .heart-animation input[type=checkbox]:checked ~ .premier-plan {
   display: none;
 }
 
-/* (3) Quand l'icone du premier-plan est coché,
-l'icone du second-plan apparait */
+/*
+(3a) Quand l'input est cochée, ":checked"
+Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
+Donc, tout de suite après l'input...
+(3b) Je cible l'icone du "second plan", pour faire apparaitre son bloc
+*/
 .heart-animation input[type=checkbox]:checked ~ .second-plan {
   display: block;
   background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
@@ -739,9 +751,20 @@ l'icone du second-plan apparait */
   /* Utiliser le texte comme masque pour l'arrière-plan. */
   /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/*
+(3c) LA PROPRITÉTÉ : background-clip
+Définit la manière dont l'arrière plan d'un élément s'étend sous la boite de cet éléments.
+1) Est-ce que l'arrière plan s'etend jusqu'à la bordure du bloc ?
+2) Est-ce que l'arrière plan s'etend jusqu'aux paddind du bloc ?
+3) Est-ce que l'arrière plan s'etend jusqu'au contenu du bloc ?
+4) Est-ce que l'arrière plan s'etend seulement au text contenu dans le bloc ?
+Dans ce dernier cas, pour que l'arrière plan apparaisse dans le texte,
+il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
+*/
 /* Règles CSS communes à tous le site */
 .footer-box {
   background: #333333;
@@ -1344,6 +1367,24 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
     opacity: 1;
   }
 }
+/*
+---------------------------------------------------------------
+ANIMATION 3 :
+CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
+@keyframes (name): "neon-keyframe"
+=> appelée par la classe : ".color"
+au niveau de : animation-name: neon-keyframe.
+---------------------------------------------------------------
+*/
+.color {
+  animation-name: neon-keyframe;
+  animation-timing-function: linear; /* Fluidité linéaire */
+  animation-iteration-count: infinite; /* Animation répétée à l'infinie */
+  /*
+  L'ANIMATION 3
+  Va s'appliquer alternativement sur chaque lettre du mot "Ohmyfood!"
+  */
+}
 .color:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -1372,20 +1413,9 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
   animation-delay: 0.9s;
 }
 
-.color {
-  animation-name: neon-keyframe;
-  animation-timing-function: linear; /* Fluidité linéaire */
-  animation-iteration-count: infinite; /* Animation répétée à l'infinie */
-}
-
 /*
----------------------------------------------------------------
-ANIMATION 3 :
-CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
-@keyframes (name): "neon-keyframe"
-=> appelée par la classe : ".color"
-au niveau de : animation-name: neon-keyframe.
----------------------------------------------------------------
+ANIMATION 3
+Crée un effet de va et viens entre 2 couleurs : Ohmyfood !
 */
 @keyframes neon-keyframe {
   0% {

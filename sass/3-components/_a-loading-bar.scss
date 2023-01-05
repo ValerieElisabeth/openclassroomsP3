@@ -191,7 +191,28 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
   }
 }
 
+/*
+---------------------------------------------------------------
+ANIMATION 3 :
+CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
+@keyframes (name): "neon-keyframe"
+=> appelée par la classe : ".color"
+au niveau de : animation-name: neon-keyframe.
+---------------------------------------------------------------
+*/
+
 .color {
+  // APPEL DE L'ANIMATION 3
+  animation-name: neon-keyframe;
+  animation-timing-function: linear; /* Fluidité linéaire */
+  animation-iteration-count: infinite; /* Animation répétée à l'infinie */
+
+
+/*
+L'ANIMATION 3
+Va s'appliquer alternativement sur chaque lettre du mot "Ohmyfood!"
+*/
+
   &:nth-child(1) {
     animation-delay: 0.1s;
   }
@@ -229,27 +250,14 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
   }
 }
 
-.color {
-  // APPEL DE L'ANIMATION 3
-  animation-name: neon-keyframe;
-  animation-timing-function: linear; /* Fluidité linéaire */
-  animation-iteration-count: infinite; /* Animation répétée à l'infinie */
-}
-
 /*
----------------------------------------------------------------
-ANIMATION 3 :
-CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
-@keyframes (name): "neon-keyframe"
-=> appelée par la classe : ".color"
-au niveau de : animation-name: neon-keyframe.
----------------------------------------------------------------
+ANIMATION 3
+Crée un effet de va et viens entre 2 couleurs : Ohmyfood !
 */
 
-// ANIMATION 3
 @keyframes neon-keyframe {
   0% {
-    color: lighten($color-02,10%);
+    color: lighten($color-02, 10%);
     text-shadow: 0 0 0 8px darken($color-02, 10%);
   }
 
@@ -260,7 +268,7 @@ au niveau de : animation-name: neon-keyframe.
 
   100% {
     opacity: 1;
-    color: lighten($color-02,10%);
+    color: lighten($color-02, 10%);
     text-shadow: 0 0 0 8px darken($color-02, 10%);
   }
 }
