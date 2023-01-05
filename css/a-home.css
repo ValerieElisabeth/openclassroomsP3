@@ -925,6 +925,14 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
   }
 }
 
+.main-home {
+  background-color: #f7f7f7;
+}
+.main-home h2 {
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
