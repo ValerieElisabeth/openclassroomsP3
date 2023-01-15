@@ -9,18 +9,19 @@ Comme hover ou active ":checked" permet de cibler les boutons cochés.
 */
 
 /*
-Classe qui gère l'animation des cœurs
+Classe qui gère le bouton de l'animation du cœur.
 */
 
 .heart-animation {
   /*
-    icone du coeur de la carte.
-    passe au premier plan avec "z-index-1",
-    pour être accessible au clique
+  Classe qui englobe le bouton du cœur des cartes de la page d'accueil et du titre des pages menus.
+  Il passe au premier plan avec la propriété : "z-index-1", pour être accessible au click,
+  sur les cartes de la page d'accueil
+
     */
   z-index: 1;
 
-  // icone du coeur
+  // Taill de l'icône du coeur.
   max-width: 100%;
   font-size: 30px;
 }
@@ -28,7 +29,7 @@ Classe qui gère l'animation des cœurs
 /* 
 (1) On cible 2 éléments pour les masquer au chargement de la page :
 (a) le bouton checkbox par default.
-(b) l'icone "coeur" du second-plan
+(b) l'icône "coeur" du second-plan
 */
 .heart-animation {
   input[type="checkbox"], // (1a)
@@ -42,7 +43,7 @@ Classe qui gère l'animation des cœurs
 (2a) Quand l'input est cochée, ":checked"
 Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
 Donc, tout de suite après l'input...
-(2b) Je cible l'icone du ".premier-plan", pour faire disparaitre son bloc
+(2b) Je cible l'icône du ".premier-plan", pour faire disparaitre son bloc
 */
 
 .heart-animation {
@@ -57,21 +58,28 @@ Donc, tout de suite après l'input...
 (3a) Quand l'input est cochée, ":checked"
 Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
 Donc, tout de suite après l'input...
-(3b) Je cible l'icone du "second plan", pour faire apparaitre son bloc
+(3b) Je cible l'icône du "second plan", pour faire apparaitre son bloc
 */
 
 .heart-animation {
   & input[type="checkbox"]:checked // (3a)
   ~ .second-plan // (3b)
   {
-    display: block;
+    display: block; // (3b)
 
-    // APPEL DE L'ANIMATION :
+    // Couleur dégradée en arrière plan du bloc qui contient l'icône du cœur.
     background-image: linear-gradient(45deg, $color-02 20%, $color-01 100%);
+
+    // Appliquer le Bg sur toute la largeur du bloc.
     background-size: 100%;
-    /* Utiliser le texte comme masque pour l'arrière-plan. */
-    /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
-    background-clip: text;
+
+    /*
+    (3c) La propriété : background-clip :
+    Permet d'utiliser la forme (d'un texte) ou dans notre cas, la forme du cœur comme masque.
+    Si nous rendons transparente, la couleur d'oridgine de ce texte ou cette icône, nous verrons apparaitre dans la forme (texte ou icône),
+    servant de masque, le fond de couleur dégradé, appliqué au bloc qui contient l'icône.
+     */
+    background-clip: text; // (3c)
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

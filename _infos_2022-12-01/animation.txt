@@ -73,9 +73,9 @@ Elle prends 4 mots clés :
 
 EXEMPLE :
 animation-fill-mode: none;
-animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
-animation-fill-mode: backwards; /* "backwards" Applique les CSS de la première @Keyframe */
-animation-fill-mode: both; /* "both"appliquent Les styles CSS, au début et à la fin de la cible */
+animation-fill-mode: forwards; // "forwards" Applique les CSS de la dernière @Keyframe.
+animation-fill-mode: backwards; // "backwards" Applique les CSS de la @Keyframe du début.
+animation-fill-mode: both; // "both" Étend les CSS du début et de la fin dans les 2 directions.
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------

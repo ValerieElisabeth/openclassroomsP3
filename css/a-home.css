@@ -36,71 +36,55 @@ dans le code de cette page, pour le bon onctionnement de SASS
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
         MIXIN DES ANIMATIONS : "CARTES PAGES MENUS"
-      (Mixin de l'effet d'opacité progressive des cartes)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      (Mixin de l'effet d'opacité progressive des cartes menu)
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 /*
----------------------------------------------------------------
+------------------------------------------------------------------------
 CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
-@keyframes (name): revelation-menu-cards
-=> appelée par la @mixin (ci-dessus) : "effet-revelation-carte-mix"
-au niveau de : animation-name: revelation-menu-cards;
----------------------------------------------------------------
+@keyframes (name): revelation-menu-cards-keyframe
+=> appelée par la @mixin (ci-dessus) : "revelation-cards-effect-mixin"
+au niveau de : animation-name: revelation-menu-cards-keyframe;
+------------------------------------------------------------------------
  */
-@keyframes revelation-menu-cards {
+@keyframes revelation-menu-cards-keyframe {
   0% {
     opacity: 0;
-    transform: translate(0px, 15px);
+    transform: translate(0px, 30px);
   }
   100% {
     opacity: 1;
   }
 }
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-        CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE
-      (Mixin de l'effet d'opacité progressive des cartes)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE CARTES MENU
+      (Mixin de l'effet d'opacité progressive des cartes menu)
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-.carte-1 {
-  animation-name: revelation-menu-cards;
+.card-container {
+  animation-name: revelation-menu-cards-keyframe;
   animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
   animation-duration: 1.5s;
   animation-delay: 1700ms;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
+}
+.card-container.card-1 {
   animation-delay: 500ms;
 }
-
-.carte-2 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
+.card-container.card-2 {
   animation-delay: 800ms;
 }
-
-.carte-3 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
+.card-container.card-3 {
   animation-delay: 1100ms;
 }
-
-.carte-4 {
-  animation-name: revelation-menu-cards;
-  animation-timing-function: cubic-bezier(0, 0.63, 0.34, 0.97);
-  animation-duration: 1.5s;
-  animation-delay: 1700ms;
-  animation-fill-mode: backwards;
+.card-container.card-4 {
   animation-delay: 1400ms;
 }
 
@@ -108,19 +92,19 @@ au niveau de : animation-name: revelation-menu-cards;
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
         ANIMATION : DU BOUTON CIRCULAIRE DES PAGES MENU
-  (Effet de l'icone tournante du bouton vert, des cartes menu)
+  (Effet de rotation de l'icone du bouton vert, des cartes menu)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 /*
 ---------------------------------------------------------------
-CRÉATION DE L'ANIMATION : de rotation de l'icône du bouton vert.
-@keyframes (name) : over-circle
-=> appelée par la @mixin (ci-dessus) : "over-circle-mix"
-au niveau de : animation-name: over-circle;
+CRÉATION DE L'ANIMATION : de l'effet de rotation de l'icône du bouton vert.
+@keyframes (name) : over-circle-keyframe
+=> appelée par la @mixin (ci-dessus) : "over-circle-mixin"
+au niveau de : animation-name: over-circle-keyframe;
 ---------------------------------------------------------------
  */
-@keyframes over-circle {
+@keyframes over-circle-keyframe {
   0% {
     transform: rotate(-190deg);
   }
@@ -440,8 +424,12 @@ img {
   margin: 20px auto 40px auto;
   font-size: 16px;
   color: white;
-  background: linear-gradient(#ff79da, #9356dc);
+  background: linear-gradient(180deg, #ff79da, #9356dc 90%);
   box-shadow: 5px 3px 5px #999999;
+}
+.btn:hover {
+  opacity: 0.85;
+  box-shadow: 5px 4px 5px #333333;
 }
 
 /* CSS des cartes qui composent les pages menus */
@@ -453,10 +441,10 @@ img {
 -------------------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-.carte-container {
+.card-container {
   /*
    ------------------------------------------------------------------------
-  .carte-container :classe qui enblobe toute la carte "menu".
+  .card-container :classe qui enblobe toute la carte "menu".
    (T) Les cartes s'adaptent en largeur à leur conteneur.
    NE PAS MODIFIER CETTE VALEUR en responsive.
    ------------------------------------------------------------------------ */
@@ -467,7 +455,7 @@ img {
   background-color: #99e2d0;
   /*
    ------------------------------------------------------------------------
-  .carte-container__description :
+  .card-container__description :
    classe qui enblobe : le h3:titre / <p> paragraphe / <p> tarif
 
    (Bs-a) = Largeur de la DIV "title" du conteneur "descriptif"
@@ -478,7 +466,7 @@ img {
    ------------------------------------------------------------------------ */
   /*
    ------------------------------------------------------------------------
-  .carte-container__check :
+  .card-container__check :
    classe qui englobe : le bouton vert.
    (Bz) La largeur de départ du bouton vert est de width:0%,
    et au click ou au survol il passera ) 20%.
@@ -496,18 +484,18 @@ img {
   (3a) Les bordures de la div tarif redeviennent des angles droit, au survol.
    */
 }
-.carte-container__description {
+.card-container__description {
   width: 100%;
   border-radius: 15px;
 }
-.carte-container__description__title {
+.card-container__description__title {
   width: 80%;
   height: auto;
   border-radius: 15px 0px 0px 15px;
   padding: 13px 10px 8px 15px;
   background-color: white;
 }
-.carte-container__description__title__h3 {
+.card-container__description__title__h3 {
   /* 
   Effet de texte se terminant par 3 petits points
    */
@@ -518,7 +506,7 @@ img {
   font-size: 17px;
   margin-bottom: 3px;
 }
-.carte-container__description__title__p {
+.card-container__description__title__p {
   /* 
   Effet de texte se terminant par 3 petits points
    */
@@ -531,7 +519,7 @@ img {
   font-size: 16px;
   font-weight: 400;
 }
-.carte-container__description__tarif {
+.card-container__description__tarif {
   width: 20%;
   height: auto;
   border-radius: 0px 15px 15px 0px;
@@ -540,48 +528,48 @@ img {
   padding: 0px 0px 11px 20px;
   background-color: white;
 }
-.carte-container--check {
+.card-container--check {
   width: 0%;
   overflow: hidden;
   background-color: #99e2d0;
   border-radius: 0px 15px 15px 0px;
 }
-.carte-container--check i {
+.card-container--check i {
   border-radius: 50px;
   color: white;
   font-size: 25px;
 }
-.carte-container:active .carte-container__description {
+.card-container:active .card-container__description {
   width: 80%;
   cursor: pointer;
   transition: 600ms;
   border-radius: 15px 0px 0px 15px;
 }
-.carte-container:active .carte-container__description__tarif {
+.card-container:active .card-container__description__tarif {
   border-radius: 0px;
 }
-.carte-container:active .carte-container--check {
+.card-container:active .card-container--check {
   width: 20%;
 }
-.carte-container:active .carte-container--check i {
+.card-container:active .card-container--check i {
   /* ------------------------------------------ */
   /* APPEL DE L'ANIMATION --------------------- */
   /* ------------------------------------------ */
-  animation-name: over-circle;
+  animation-name: over-circle-keyframe;
   animation-delay: 0s;
   animation-duration: 800ms;
   animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
 }
 
 @media (min-width: 600px) {
-  .carte-container {
+  .card-container {
     /* 
     (T) Les cartes s'adaptent en largeur à leur conteneur.
     NE PAS MODIFIER CETTE VALEUR en responsive.
     */
     /*
      ------------------------------------------------------------------------
-    .carte-container__description :
+    .card-container__description :
      classe qui enblobe : le h3:titre / <p> paragraphe / <p> tarif
      (Bs-a) = Largeur de la DIV "title" du conteneur "descriptif"
      (Bs-b) = Largeur de la DIV "tarif" du conteneur "descriptif"
@@ -602,22 +590,22 @@ img {
     (2a) Ralentis le mouvement du :hover ou du :active
      */
   }
-  .carte-container__description__title {
+  .card-container__description__title {
     width: 90%;
   }
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     width: 10%;
     padding: 13px 8px 8px 5px;
   }
-  .carte-container:active .carte-container__description {
+  .card-container:active .card-container__description {
     width: 90%;
   }
-  .carte-container:active .carte-container--check {
+  .card-container:active .card-container--check {
     width: 10%;
   }
 }
 @media (min-width: 768px) {
-  .carte-container {
+  .card-container {
     /*
     ------------------------------------------------------------------------
     ACTION UTILISATEUR
@@ -630,66 +618,66 @@ img {
     (2a) Ralentis le mouvement du :hover ou du :active
      */
   }
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     padding-left: 25px;
   }
-  .carte-container:active .carte-container__description {
+  .card-container:active .card-container__description {
     width: 90%;
   }
-  .carte-container:active .carte-container--check {
+  .card-container:active .card-container--check {
     width: 10%;
   }
 }
 @media (min-width: 850px) {
-  .carte-container__description__title {
+  .card-container__description__title {
     width: 80%;
   }
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     width: 20%;
     padding: 13px 8px 8px 5px;
   }
-  .carte-container:hover .carte-container__description {
+  .card-container:hover .card-container__description {
     width: 80%;
     cursor: pointer;
     transition: 600ms;
     border-radius: 15px 0px 0px 15px;
   }
-  .carte-container:hover .carte-container__description__tarif {
+  .card-container:hover .card-container__description__tarif {
     border-radius: 0px;
   }
-  .carte-container:hover .carte-container--check {
+  .card-container:hover .card-container--check {
     width: 20%;
   }
-  .carte-container:hover .carte-container--check i {
+  .card-container:hover .card-container--check i {
     /* ------------------------------------------ */
     /* APPEL DE L'ANIMATION --------------------- */
     /* ------------------------------------------ */
-    animation-name: over-circle;
+    animation-name: over-circle-keyframe;
     animation-delay: 0s;
     animation-duration: 800ms;
     animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
   }
 }
 @media (min-width: 992px) {
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     padding-left: 15px;
   }
 }
 @media (min-width: 1100px) {
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     padding-left: 15px;
   }
 }
 @media (min-width: 1200px) {
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     padding-left: 25px;
   }
 }
 @media (min-width: 1300px) {
-  .carte-container__description__title {
+  .card-container__description__title {
     width: 80%;
   }
-  .carte-container__description__tarif {
+  .card-container__description__tarif {
     width: 20%;
     padding-left: 25px;
     padding-right: 35px;
@@ -705,13 +693,14 @@ POUR INFO :
 Comme hover ou active ":checked" permet de cibler les boutons cochés.
 */
 /*
-Classe qui gère l'animation des cœurs
+Classe qui gère le bouton de l'animation du cœur.
 */
 .heart-animation {
   /*
-    icone du coeur de la carte.
-    passe au premier plan avec "z-index-1",
-    pour être accessible au clique
+  Classe qui englobe le bouton du cœur des cartes de la page d'accueil et du titre des pages menus.
+  Il passe au premier plan avec la propriété : "z-index-1", pour être accessible au click,
+  sur les cartes de la page d'accueil
+
     */
   z-index: 1;
   max-width: 100%;
@@ -721,7 +710,7 @@ Classe qui gère l'animation des cœurs
 /* 
 (1) On cible 2 éléments pour les masquer au chargement de la page :
 (a) le bouton checkbox par default.
-(b) l'icone "coeur" du second-plan
+(b) l'icône "coeur" du second-plan
 */
 .heart-animation input[type=checkbox],
 .heart-animation .second-plan {
@@ -732,7 +721,7 @@ Classe qui gère l'animation des cœurs
 (2a) Quand l'input est cochée, ":checked"
 Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
 Donc, tout de suite après l'input...
-(2b) Je cible l'icone du ".premier-plan", pour faire disparaitre son bloc
+(2b) Je cible l'icône du ".premier-plan", pour faire disparaitre son bloc
 */
 .heart-animation input[type=checkbox]:checked ~ .premier-plan {
   display: none;
@@ -742,14 +731,18 @@ Donc, tout de suite après l'input...
 (3a) Quand l'input est cochée, ":checked"
 Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
 Donc, tout de suite après l'input...
-(3b) Je cible l'icone du "second plan", pour faire apparaitre son bloc
+(3b) Je cible l'icône du "second plan", pour faire apparaitre son bloc
 */
 .heart-animation input[type=checkbox]:checked ~ .second-plan {
   display: block;
   background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
   background-size: 100%;
-  /* Utiliser le texte comme masque pour l'arrière-plan. */
-  /* Cela affichera le dégradé comme une couleur de texte plutôt que comme un élément bg. */
+  /*
+  (3c) La propriété : background-clip :
+  Permet d'utiliser la forme (d'un texte) ou dans notre cas, la forme du cœur comme masque.
+  Si nous rendons transparente, la couleur d'oridgine de ce texte ou cette icône, nous verrons apparaitre dans la forme (texte ou icône),
+  servant de masque, le fond de couleur dégradé, appliqué au bloc qui contient l'icône.
+   */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -899,8 +892,12 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
   margin: 20px auto 40px auto;
   font-size: 16px;
   color: white;
-  background: linear-gradient(#ff79da, #9356dc);
+  background: linear-gradient(180deg, #ff79da, #9356dc 90%);
   box-shadow: 5px 3px 5px #999999;
+}
+.box-title.btn:hover {
+  opacity: 0.85;
+  box-shadow: 5px 4px 5px #333333;
 }
 @media (min-width: 768px) {
   .box-title p,
@@ -1236,15 +1233,15 @@ il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
   /* APPEL DE L'ANIMATION 3
   Qui supprime le bloc qui contient l'animation du loading
   */
-  animation-name: visibility-key;
+  animation-name: visibility-hidden-keyframe;
   animation-delay: 5s;
   animation-duration: 1s;
   animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
 }
 
-/*
+/*  ÉTAPE 4
 ---------------------------------------------------------------
-ANIMATION 3 :
+ANIMATION 4 :
 SUPPRESSION DE L'ANIMATION CSS DE LA PAGE D'ACCUEIL
 @keyframes (name): "visibility-key"
 => appelée par la classe : ".loading-container"
@@ -1252,9 +1249,9 @@ au niveau de : animation-name: visibility-key.
 ---------------------------------------------------------------
 */
 /* ANIMATION 3
-Supprime le bloc qui contient l'animation du loading
+Qui rend invisible (ou cache) le container qui contient l'animation du loading au bout d’1 seconde.
 */
-@keyframes visibility-key {
+@keyframes visibility-hidden-keyframe {
   0% {
     opacity: 0%;
   }
@@ -1263,7 +1260,7 @@ Supprime le bloc qui contient l'animation du loading
     visibility: hidden;
   }
 }
-/*
+/* ÉTAPE 1
 ---------------------------------------------------------------
 ANIMATION 1 :
 CRÉATION DE L'ANIMATION CSS : du conteneur vert qui englobe le logo.
@@ -1309,16 +1306,16 @@ Augmente la taille du conteneur vert en partant de width: 0% à 100%
     box-shadow: 1px 1px 50px #99e2d0;
   }
 }
-/*
+/*  ÉTAPE 2
 ---------------------------------------------------------------
 ANIMATION 2 :
-CRÉATION DE L'ANIMATION CSS : des lettres du mot : Ohmyfood !
+CRÉATION DE L'ANIMATION CSS : qui contient les lettres du mot : Ohmyfood !
 @keyframes (name): "letter-animation-keyframe"
 => appelée par la classe : ".logo-letter"
 au niveau de : animation-name: letter-animation-keyframe.
 ---------------------------------------------------------------
 */
-.letter {
+.logo-letter {
   display: flex;
   justify-content: center;
   font-size: 40px;
@@ -1329,11 +1326,11 @@ au niveau de : animation-name: letter-animation-keyframe.
   animation-name: letter-animation-keyframe;
   animation-delay: 0s;
   animation-duration: 1s;
-  animation-fill-mode: both; /* "both"appliquent Les styles CSS, au début et à la fin de la cible */
+  animation-fill-mode: both;
 }
 
 /* ANIMATION 2
-Augmente la taille des lettres du logo de : transform: scale(0) à transform: scale(0.7);
+Augmente la taille des lettres du logo de : transform: scale(0) à transform: scale(0.8);
 */
 @keyframes letter-animation-keyframe {
   0% {
@@ -1373,55 +1370,56 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
     opacity: 1;
   }
 }
-/*
+/*  ÉTAPE 3
 ---------------------------------------------------------------
 ANIMATION 3 :
-CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
+CRÉATION DE L'ANIMATION CSS : qui donne un effet de néon, aux lettres du mot : Ohmyfood !
 @keyframes (name): "neon-keyframe"
-=> appelée par la classe : ".color"
+=> appelée par la classe : ".neon-color"
 au niveau de : animation-name: neon-keyframe.
 ---------------------------------------------------------------
 */
-.color {
+.neon-color {
   animation-name: neon-keyframe;
   animation-timing-function: linear; /* Fluidité linéaire */
   animation-iteration-count: infinite; /* Animation répétée à l'infinie */
   /*
   L'ANIMATION 3
-  Va s'appliquer alternativement sur chaque lettre du mot "Ohmyfood!"
+  Qui va appliquer alternativement l’effet sur chaque lettre du mot "Ohmyfood!
+  à 100ms milisecondes de différences"
   */
 }
-.color:nth-child(1) {
-  animation-delay: 0.1s;
+.neon-color:nth-child(1) {
+  animation-delay: 100ms;
 }
-.color:nth-child(2) {
-  animation-delay: 0.2s;
+.neon-color:nth-child(2) {
+  animation-delay: 200ms;
 }
-.color:nth-child(3) {
-  animation-delay: 0.3s;
+.neon-color:nth-child(3) {
+  animation-delay: 300ms;
 }
-.color:nth-child(4) {
-  animation-delay: 0.4s;
+.neon-color:nth-child(4) {
+  animation-delay: 400ms;
 }
-.color:nth-child(5) {
-  animation-delay: 0.5s;
+.neon-color:nth-child(5) {
+  animation-delay: 500ms;
 }
-.color:nth-child(6) {
-  animation-delay: 0.6s;
+.neon-color:nth-child(6) {
+  animation-delay: 600ms;
 }
-.color:nth-child(7) {
-  animation-delay: 0.7s;
+.neon-color:nth-child(7) {
+  animation-delay: 700ms;
 }
-.color:nth-child(8) {
-  animation-delay: 0.8s;
+.neon-color:nth-child(8) {
+  animation-delay: 800ms;
 }
-.color:nth-child(9) {
-  animation-delay: 0.9s;
+.neon-color:nth-child(9) {
+  animation-delay: 900ms;
 }
 
 /*
 ANIMATION 3
-Crée un effet de va et viens entre 2 couleurs : Ohmyfood !
+Qui crée un effet de va et viens entre 2 couleurs : Ohmyfood !
 */
 @keyframes neon-keyframe {
   0% {

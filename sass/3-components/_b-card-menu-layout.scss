@@ -7,10 +7,10 @@
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-.carte-container {
+.card-container {
   /*
   ------------------------------------------------------------------------
- .carte-container :classe qui enblobe toute la carte "menu".
+ .card-container :classe qui enblobe toute la carte "menu".
   (T) Les cartes s'adaptent en largeur à leur conteneur.
   NE PAS MODIFIER CETTE VALEUR en responsive.
   ------------------------------------------------------------------------ */
@@ -22,7 +22,7 @@
 
   /*
   ------------------------------------------------------------------------
- .carte-container__description :
+ .card-container__description :
   classe qui enblobe : le h3:titre / <p> paragraphe / <p> tarif
 
   (Bs-a) = Largeur de la DIV "title" du conteneur "descriptif"
@@ -75,7 +75,7 @@
   }
   /*
   ------------------------------------------------------------------------
- .carte-container__check :
+ .card-container__check :
   classe qui englobe : le bouton vert.
   (Bz) La largeur de départ du bouton vert est de width:0%,
   et au click ou au survol il passera ) 20%.
@@ -108,7 +108,7 @@
    */
 
   &:active {
-    .carte-container {
+    .card-container {
       &__description {
         width: 80%; // (Ai)
         cursor: pointer;
@@ -127,7 +127,7 @@
           /* ------------------------------------------ */
           /* APPEL DE L'ANIMATION --------------------- */
           /* ------------------------------------------ */
-          @include over-circle-mix;
+          @include over-circle-mixin;
         }
       }
     }
@@ -142,7 +142,7 @@
 @include tab-sm {
   //600px
 
-  .carte-container {
+  .card-container {
     // width: 100%; // (T)
 
     /* 
@@ -152,7 +152,7 @@
 
     /*
     ------------------------------------------------------------------------
-   .carte-container__description :
+   .card-container__description :
     classe qui enblobe : le h3:titre / <p> paragraphe / <p> tarif
     (Bs-a) = Largeur de la DIV "title" du conteneur "descriptif"
     (Bs-b) = Largeur de la DIV "tarif" du conteneur "descriptif"
@@ -187,7 +187,7 @@
      */
 
     &:active {
-      .carte-container {
+      .card-container {
         &__description {
           width: 90%; // (Ai)
         }
@@ -208,7 +208,7 @@
 @include tab-med {
   //768px
 
-  .carte-container {
+  .card-container {
     &__description {
       &__tarif {
         padding-left: 25px;
@@ -229,7 +229,7 @@
      */
 
     &:active {
-      .carte-container {
+      .card-container {
         &__description {
           width: 90%; // (Ai)
         }
@@ -249,7 +249,7 @@
 
 @include desk-sm {
   //850px
-  .carte-container {
+  .card-container {
     // width: 100%; // (T)
 
     &__description {
@@ -264,7 +264,7 @@
     }
 
     &:hover {
-      .carte-container {
+      .card-container {
         &__description {
           width: 80%; // (Ai)
           cursor: pointer;
@@ -283,7 +283,7 @@
             /* ------------------------------------------ */
             /* APPEL DE L'ANIMATION --------------------- */
             /* ------------------------------------------ */
-            @include over-circle-mix;
+            @include over-circle-mixin;
           }
         }
       }
@@ -298,7 +298,7 @@
 
 @include desk-med-lg1 {
   //992px / 1100px
-  .carte-container {
+  .card-container {
     &__description {
       &__tarif {
         padding-left: 15px;
@@ -309,7 +309,7 @@
 
 @include desk-lg2 {
   //1200px
-  .carte-container {
+  .card-container {
     &__description {
       &__tarif {
         padding-left: 25px;
@@ -320,7 +320,7 @@
 
 @include desk-lg3 {
   //1300px
-  .carte-container {
+  .card-container {
     &__description {
       &__title {
         width: 80%; // (Bs-a) Largeur de la DIV "title"

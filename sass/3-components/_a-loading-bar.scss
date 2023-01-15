@@ -22,15 +22,15 @@
   /* APPEL DE L'ANIMATION 3
   Qui supprime le bloc qui contient l'animation du loading
   */
-  animation-name: visibility-key;
+  animation-name: visibility-hidden-keyframe;
   animation-delay: 5s; // Temps avant le démarage de l'animation.
   animation-duration: 1s; // Durée de l'animation.
   animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
 }
 
-/*
+/*  ÉTAPE 4
 ---------------------------------------------------------------
-ANIMATION 3 :
+ANIMATION 4 :
 SUPPRESSION DE L'ANIMATION CSS DE LA PAGE D'ACCUEIL
 @keyframes (name): "visibility-key"
 => appelée par la classe : ".loading-container"
@@ -39,10 +39,10 @@ au niveau de : animation-name: visibility-key.
 */
 
 /* ANIMATION 3
-Supprime le bloc qui contient l'animation du loading
+Qui rend invisible (ou cache) le container qui contient l'animation du loading au bout d’1 seconde.
 */
 
-@keyframes visibility-key {
+@keyframes visibility-hidden-keyframe {
   0% {
     opacity: 0%;
   }
@@ -53,7 +53,7 @@ Supprime le bloc qui contient l'animation du loading
   }
 }
 
-/*
+/* ÉTAPE 1
 ---------------------------------------------------------------
 ANIMATION 1 :
 CRÉATION DE L'ANIMATION CSS : du conteneur vert qui englobe le logo.
@@ -115,17 +115,17 @@ Augmente la taille du conteneur vert en partant de width: 0% à 100%
   }
 }
 
-/*
+/*  ÉTAPE 2
 ---------------------------------------------------------------
 ANIMATION 2 :
-CRÉATION DE L'ANIMATION CSS : des lettres du mot : Ohmyfood !
+CRÉATION DE L'ANIMATION CSS : qui contient les lettres du mot : Ohmyfood !
 @keyframes (name): "letter-animation-keyframe"
 => appelée par la classe : ".logo-letter"
 au niveau de : animation-name: letter-animation-keyframe.
 ---------------------------------------------------------------
 */
 
-.letter {
+.logo-letter {
   display: flex;
   justify-content: center;
   font-size: 40px;
@@ -137,11 +137,11 @@ au niveau de : animation-name: letter-animation-keyframe.
   animation-name: letter-animation-keyframe;
   animation-delay: 0s; // Temps avant le démarage de l'animation.
   animation-duration: 1s; // Durée de l'animation.
-  animation-fill-mode: both; /* "both"appliquent Les styles CSS, au début et à la fin de la cible */
+  animation-fill-mode: both; // "both" Étend les CSS du début et de la fin dans les 2 directions.
 }
 
 /* ANIMATION 2
-Augmente la taille des lettres du logo de : transform: scale(0) à transform: scale(0.7);
+Augmente la taille des lettres du logo de : transform: scale(0) à transform: scale(0.8);
 */
 @keyframes letter-animation-keyframe {
   0% {
@@ -156,6 +156,7 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
   20% {
     transform: scale(0.1);
   }
+
   30% {
     transform: scale(0.2);
   }
@@ -191,68 +192,68 @@ Augmente la taille des lettres du logo de : transform: scale(0) à transform: sc
   }
 }
 
-/*
+/*  ÉTAPE 3
 ---------------------------------------------------------------
 ANIMATION 3 :
-CRÉATION DE L'ANIMATION CSS : couleur style neon, des lettres du mot : Ohmyfood !
+CRÉATION DE L'ANIMATION CSS : qui donne un effet de néon, aux lettres du mot : Ohmyfood !
 @keyframes (name): "neon-keyframe"
-=> appelée par la classe : ".color"
+=> appelée par la classe : ".neon-color"
 au niveau de : animation-name: neon-keyframe.
 ---------------------------------------------------------------
 */
 
-.color {
+.neon-color {
   // APPEL DE L'ANIMATION 3
   animation-name: neon-keyframe;
   animation-timing-function: linear; /* Fluidité linéaire */
   animation-iteration-count: infinite; /* Animation répétée à l'infinie */
 
-
-/*
+  /*
 L'ANIMATION 3
-Va s'appliquer alternativement sur chaque lettre du mot "Ohmyfood!"
+Qui va appliquer alternativement l’effet sur chaque lettre du mot "Ohmyfood!
+à 100ms milisecondes de différences"
 */
 
   &:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 100ms;
   }
 
   &:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 200ms;
   }
 
   &:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 300ms;
   }
 
   &:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 400ms;
   }
 
   &:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 500ms;
   }
 
   &:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: 600ms;
   }
 
   &:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: 700ms;
   }
 
   &:nth-child(8) {
-    animation-delay: 0.8s;
+    animation-delay: 800ms;
   }
 
   &:nth-child(9) {
-    animation-delay: 0.9s;
+    animation-delay: 900ms;
   }
 }
 
 /*
 ANIMATION 3
-Crée un effet de va et viens entre 2 couleurs : Ohmyfood !
+Qui crée un effet de va et viens entre 2 couleurs : Ohmyfood !
 */
 
 @keyframes neon-keyframe {

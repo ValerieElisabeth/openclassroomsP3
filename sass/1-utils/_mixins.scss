@@ -38,11 +38,15 @@
   cursor: pointer;
   border-radius: 50px;
   margin: 20px auto 40px auto;
-
   font-size: 16px;
   color: $color-white;
-  background: linear-gradient($color-02, $color-01);
+  background: linear-gradient(180deg, $color-02, $color-01 90%);
   @include shadow-box-size();
+
+  &:hover {
+    opacity: 0.85;
+    @include shadow-box-size(5px, 4px, 5px, 20%);
+  }
 }
 
 /*
@@ -54,7 +58,7 @@
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin card-home-globals {
+@mixin card-home-globals-mixin {
   // DIV : qui englobe toute la carte
 
   /*
@@ -123,18 +127,18 @@
     border-radius: 20px;
     inset: 0;
   }
-} // find mixin : card-home-globals
+} // find mixin : card-home-globals-mixin
 
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
         MIXIN DES ANIMATIONS : "CARTES PAGES MENUS"
-      (Mixin de l'effet d'opacité progressive des cartes)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+      (Mixin de l'effet d'opacité progressive des cartes menu)
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-@mixin effet-revelation-carte-mix {
-  animation-name: revelation-menu-cards;
+@mixin revelation-cards-effect-mixin {
+  animation-name: revelation-menu-cards-keyframe;
   animation-timing-function: cubic-bezier(
     0,
     0.63,
@@ -143,21 +147,21 @@
   ); // Fluidité de l'animation.
   animation-duration: 1.5s; // Durée animation d'1.5s pour 1 cycle.
   animation-delay: 1700ms; // Délais début démarrage animation.
-  animation-fill-mode: backwards; // Applique la premier règle du Keyframes
+  animation-fill-mode: both; // "both" Étend les CSS du début et de la fin dans les 2 directions.
 }
 
 /*
----------------------------------------------------------------
+------------------------------------------------------------------------
 CRÉATION DE L'ANIMATION : de révélation progressives des cartes menu.
-@keyframes (name): revelation-menu-cards
-=> appelée par la @mixin (ci-dessus) : "effet-revelation-carte-mix"
-au niveau de : animation-name: revelation-menu-cards;
----------------------------------------------------------------
+@keyframes (name): revelation-menu-cards-keyframe
+=> appelée par la @mixin (ci-dessus) : "revelation-cards-effect-mixin"
+au niveau de : animation-name: revelation-menu-cards-keyframe;
+------------------------------------------------------------------------
  */
-@keyframes revelation-menu-cards {
+@keyframes revelation-menu-cards-keyframe {
   0% {
     opacity: 0;
-    transform: translate(0px, 15px);
+    transform: translate(0px, 30px);
   }
 
   100% {
@@ -166,47 +170,46 @@ au niveau de : animation-name: revelation-menu-cards;
 }
 
 /*
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-        CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE
-      (Mixin de l'effet d'opacité progressive des cartes)
----------------------------------------------------------------
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    CLASSES QUI GÈRE L'ORDRE D'APPARITION PROGRESSIVE CARTES MENU
+      (Mixin de l'effet d'opacité progressive des cartes menu)
+----------------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
-.carte-1 {
-  @include effet-revelation-carte-mix();
-  animation-delay: 500ms; // Délais début démarrage animation.
-}
 
-.carte-2 {
-  @include effet-revelation-carte-mix();
-  animation-delay: 800ms; // Délais début démarrage animation.
-  // top: 64px;
-}
+.card-container {
+  @include revelation-cards-effect-mixin();
 
-.carte-3 {
-  @include effet-revelation-carte-mix();
-  animation-delay: 1100ms; // Délais début démarrage animation.
-  // top: 28px;
-}
+  &.card-1 {
+    animation-delay: 500ms; // Délais de début de démarrage de l'animation.
+  }
 
-.carte-4 {
-  @include effet-revelation-carte-mix();
-  animation-delay: 1400ms; // Délais début démarrage animation.
-  // top: 42px;
+  &.card-2 {
+    animation-delay: 800ms; // Délais de début de démarrage de l'animation.
+  }
+
+  &.card-3 {
+    animation-delay: 1100ms; // Délais de début de démarrage de l'animation.
+  }
+
+  &.card-4 {
+    animation-delay: 1400ms; // Délais de début de démarrage de l'animation.
+    // top: 42px;
+  }
 }
 
 /*
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
         ANIMATION : DU BOUTON CIRCULAIRE DES PAGES MENU
-  (Effet de l'icone tournante du bouton vert, des cartes menu)
+  (Effet de rotation de l'icone du bouton vert, des cartes menu)
 ---------------------------------------------------------------
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 */
 
-@mixin over-circle-mix {
-  animation-name: over-circle;
+@mixin over-circle-mixin {
+  animation-name: over-circle-keyframe;
   animation-delay: 0s; // elle démarre tout de suite.
   animation-duration: 800ms; // Durée animation d'1 cycle.
   animation-fill-mode: forwards; /* "forwards" Applique les CSS de la dernière @Keyframe */
@@ -214,14 +217,14 @@ au niveau de : animation-name: revelation-menu-cards;
 
 /*
 ---------------------------------------------------------------
-CRÉATION DE L'ANIMATION : de rotation de l'icône du bouton vert.
-@keyframes (name) : over-circle
-=> appelée par la @mixin (ci-dessus) : "over-circle-mix"
-au niveau de : animation-name: over-circle;
+CRÉATION DE L'ANIMATION : de l'effet de rotation de l'icône du bouton vert.
+@keyframes (name) : over-circle-keyframe
+=> appelée par la @mixin (ci-dessus) : "over-circle-mixin"
+au niveau de : animation-name: over-circle-keyframe;
 ---------------------------------------------------------------
  */
 
-@keyframes over-circle {
+@keyframes over-circle-keyframe {
   0% {
     transform: rotate(-190deg);
     // background-color: red; // TEST
