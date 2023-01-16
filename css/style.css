@@ -491,7 +491,7 @@ Classe qui gère le bouton de l'animation du cœur.
   animation-name: heart-color-progress-keyframe;
   animation-delay: 0s;
   animation-duration: 0.7s;
-  animation-fill-mode: both; /* "forwards" Applique les CSS de la dernière @Keyframe */
+  animation-fill-mode: both;
   background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
   background-size: 100%;
   /*
@@ -515,17 +515,8 @@ Classe qui gère le bouton de l'animation du cœur.
   Dans ce dernier cas, pour que l'arrière plan apparaisse dans le texte,
   il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
   */
-/*  ÉTAPE 0
----------------------------------------------------------------
-ANIMATION 4 :
-SUPPRESSION DE L'ANIMATION CSS DE LA PAGE D'ACCUEIL
-@keyframes (name): "visibility-key"
-=> appelée par la classe : ".loading-container"
-au niveau de : animation-name: visibility-key.
----------------------------------------------------------------
-*/
-/* ANIMATION 3
-Qui…
+/*  KEYFRAME
+Qui rend l'apparition du cœur progressif
 */
 @keyframes heart-color-progress-keyframe {
   0% {
