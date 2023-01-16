@@ -183,6 +183,7 @@ html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
   max-width: 1440px; /* Largeur max du site */
+  height: auto; /* Permet au site de ne pas avoir de blanc sous le footer */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -432,6 +433,109 @@ img {
   box-shadow: 5px 4px 5px #333333;
 }
 
+/*
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    ANIMATION DU COEUR DES CARTES DE LA PAGE D'ACCUEIL
+---------------------------------------------------------------
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+POUR INFO :
+Comme hover ou active ":checked" permet de cibler les boutons cochés.
+*/
+/*
+Classe qui gère le bouton de l'animation du cœur.
+*/
+.heart-animation-progress {
+  /*
+    Classe qui englobe le bouton du cœur des cartes de la page d'accueil et du titre des pages menus.
+    Il passe au premier plan avec la propriété : "z-index-1", pour être accessible au click,
+    sur les cartes de la page d'accueil
+
+      */
+  z-index: 1;
+  max-width: 100%;
+  font-size: 30px;
+}
+
+/* 
+  (1) On cible 2 éléments pour les masquer au chargement de la page :
+  (a) le bouton checkbox par default.
+  (b) l'icône "coeur" du second-plan
+  */
+.heart-animation-progress input[type=checkbox],
+.heart-animation-progress .heart-second-plan {
+  display: none;
+}
+
+/*
+  (2a) Quand l'input est cochée, ":checked"
+  Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
+  Donc, tout de suite après l'input...
+  (2b) Je cible l'icône du ".premier-plan", pour faire disparaitre son bloc
+  */
+.heart-animation-progress input[type=checkbox]:checked ~ .heart-premier-plan {
+  display: none;
+}
+
+/*
+  (3a) Quand l'input est cochée, ":checked"
+  Grâce au combinateur "~" on cible les classes des élémnents qui se situent, tout de suite après l'input.
+  Donc, tout de suite après l'input...
+  (3b) Je cible l'icône du "second plan", pour faire apparaitre son bloc
+  */
+.heart-animation-progress input[type=checkbox]:checked ~ .heart-second-plan {
+  display: block;
+  /* APPEL DE L'ANIMATION 3
+  Qui supprime le bloc qui contient l'animation du loading
+  */
+  animation-name: heart-color-progress-keyframe;
+  animation-delay: 0s;
+  animation-duration: 0.7s;
+  animation-fill-mode: both; /* "forwards" Applique les CSS de la dernière @Keyframe */
+  background-image: linear-gradient(45deg, #ff79da 20%, #9356dc 100%);
+  background-size: 100%;
+  /*
+    (3c) La propriété : background-clip :
+    Permet d'utiliser la forme (d'un texte) ou dans notre cas, la forme du cœur comme masque.
+    Si nous rendons transparente, la couleur d'oridgine de ce texte ou cette icône, nous verrons apparaitre dans la forme (texte ou icône),
+    servant de masque, le fond de couleur dégradé, appliqué au bloc qui contient l'icône.
+     */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*
+  (3c) LA PROPRITÉTÉ : background-clip
+  Définit la manière dont l'arrière plan d'un élément s'étend sous la boite de cet éléments.
+  1) Est-ce que l'arrière plan s'etend jusqu'à la bordure du bloc ?
+  2) Est-ce que l'arrière plan s'etend jusqu'aux paddind du bloc ?
+  3) Est-ce que l'arrière plan s'etend jusqu'au contenu du bloc ?
+  4) Est-ce que l'arrière plan s'etend seulement au text contenu dans le bloc ?
+  Dans ce dernier cas, pour que l'arrière plan apparaisse dans le texte,
+  il faudra que la couleur d'origine ou par defaut du texte soit TRANSPARENTE.
+  */
+/*  ÉTAPE 0
+---------------------------------------------------------------
+ANIMATION 4 :
+SUPPRESSION DE L'ANIMATION CSS DE LA PAGE D'ACCUEIL
+@keyframes (name): "visibility-key"
+=> appelée par la classe : ".loading-container"
+au niveau de : animation-name: visibility-key.
+---------------------------------------------------------------
+*/
+/* ANIMATION 3
+Qui…
+*/
+@keyframes heart-color-progress-keyframe {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0, 1.26, 0.89, 1.02);
+  }
+}
 /* CSS des cartes qui composent les pages menus */
 /*
 --------------------------------------------------------------------------

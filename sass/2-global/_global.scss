@@ -14,6 +14,7 @@ html {
   font-size: 100%;
   box-sizing: border-box; /* facilite et simplifie la gestion de la taille des éléments d'un navigateur à l'autre */
   max-width: 1440px; /* Largeur max du site */
+  height: auto; /* Permet au site de ne pas avoir de blanc sous le footer */
   margin: auto; /* A pour effet de centrer le site dans la page du navigateur */
 }
 
@@ -84,7 +85,6 @@ img {
 }
 
 ///////////////////// < width > //////////////////////////
-
 
 /////////////////////////////////////////////////////////
 ////////////////////// CONTAINERS ///////////////////////
